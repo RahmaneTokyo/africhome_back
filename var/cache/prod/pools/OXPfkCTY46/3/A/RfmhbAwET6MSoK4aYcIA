@@ -1,0 +1,96 @@
+<?php //App_Entity_Contact
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Contact',
+                'id',
+                'latitude',
+                'longitude',
+                'email',
+                'telephone',
+                'ville',
+                'batiment',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'latitude' => $o[2],
+                    'longitude' => $o[3],
+                    'email' => $o[4],
+                    'telephone' => $o[5],
+                    'ville' => $o[6],
+                    'batiment' => $o[7],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'entites:read',
+                    'superadmin:read',
+                    'admin:read',
+                    'superadmin:write',
+                    'admin:write',
+                    'gestionnaire:read',
+                    'gestionnaire:write',
+                    'BatimentGest',
+                ],
+                [
+                    'entites:read',
+                    'entites:write',
+                    'employes:read',
+                    'adminEntite:read',
+                    'entiteSon',
+                    'BatimentGest',
+                    'batiment:read',
+                ],
+                [
+                    'entites:read',
+                    'entites:write',
+                    'employes:read',
+                    'adminEntite:read',
+                    'entiteSon',
+                    'BatimentGest',
+                    'batiment:read',
+                ],
+                [
+                    'entites:read',
+                    'entites:write',
+                    'employes:read',
+                    'adminEntite:read',
+                    'entiteSon',
+                    'batiment:read',
+                ],
+                [
+                    'entites:read',
+                    'entites:write',
+                    'employes:read',
+                    'adminEntite:read',
+                    'entiteSon',
+                    'batiment:read',
+                ],
+                [
+                    'entites:read',
+                    'entites:write',
+                    'employes:read',
+                    'adminEntite:read',
+                    'entiteSon',
+                    'batiment:read',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

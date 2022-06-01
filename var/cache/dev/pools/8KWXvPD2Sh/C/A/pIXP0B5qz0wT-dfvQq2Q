@@ -1,3 +1,0 @@
-<?php //route_name_cfb85db95da98851637e842c4d3e8454
-
-return [PHP_INT_MAX, 'api_entites_get_collection'];

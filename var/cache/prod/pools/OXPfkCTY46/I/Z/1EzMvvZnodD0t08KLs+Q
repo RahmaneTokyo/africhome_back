@@ -1,0 +1,110 @@
+<?php //App_Entity_Batiment
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Batiment',
+                'id',
+                'titre',
+                'description',
+                'contact',
+                'localisation',
+                'entite',
+                'numeroParcelle',
+                'typeBatiment',
+                'titreFoncier',
+                'dateConstruction',
+                'batimentOwners',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'titre' => $o[2],
+                    'description' => $o[3],
+                    'contact' => $o[4],
+                    'localisation' => $o[5],
+                    'entite' => $o[6],
+                    'numeroParcelle' => $o[7],
+                    'typeBatiment' => $o[8],
+                    'titreFoncier' => $o[9],
+                    'dateConstruction' => $o[10],
+                    'batimentOwners' => $o[11],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'batiment:read',
+                    'BatimentGest',
+                ],
+                [
+                    'batiment:read',
+                    'batiment:write',
+                    'BatimentGest',
+                    'entites:read',
+                ],
+                [
+                    'batiment:read',
+                    'batiment:write',
+                    'BatimentGest',
+                    'entites:read',
+                ],
+                [
+                    'batiment:read',
+                    'BatimentGest',
+                    'entites:read',
+                ],
+                [
+                    'batiment:read',
+                    'batiment:write',
+                    'BatimentGest',
+                ],
+                [
+                    'batiment:read',
+                    'batiment:write',
+                    'BatimentGest',
+                ],
+                [
+                    'batiment:read',
+                    'batiment:write',
+                    'BatimentGest',
+                    'entites:read',
+                ],
+                [
+                    'batiment:read',
+                    'batiment:write',
+                    'BatimentGest',
+                ],
+                [
+                    'batiment:read',
+                    'batiment:write',
+                    'BatimentGest',
+                    'entites:read',
+                ],
+                [
+                    'batiment:read',
+                    'batiment:write',
+                    'BatimentGest',
+                    'entites:read',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

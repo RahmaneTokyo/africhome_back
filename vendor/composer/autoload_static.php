@@ -38,6 +38,7 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'S' => 
         array (
             'Symfony\\Runtime\\Symfony\\Component\\' => 34,
+            'Symfony\\Requirements\\' => 21,
             'Symfony\\Polyfill\\Php81\\' => 23,
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Php73\\' => 23,
@@ -90,6 +91,7 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
             'Symfony\\Bridge\\Twig\\' => 20,
             'Symfony\\Bridge\\ProxyManager\\' => 28,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'StellaMaris\\Clock\\' => 18,
         ),
         'P' => 
         array (
@@ -171,6 +173,10 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'Symfony\\Runtime\\Symfony\\Component\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/runtime/Internal',
+        ),
+        'Symfony\\Requirements\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/requirements-checker/src',
         ),
         'Symfony\\Polyfill\\Php81\\' => 
         array (
@@ -379,6 +385,10 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'Symfony\\Bridge\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
+        ),
+        'StellaMaris\\Clock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stella-maris/clock/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -1030,11 +1040,13 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'ApiPlatform\\Core\\Validator\\EventListener\\ValidateListener' => __DIR__ . '/..' . '/api-platform/core/src/Validator/EventListener/ValidateListener.php',
         'ApiPlatform\\Core\\Validator\\Exception\\ValidationException' => __DIR__ . '/..' . '/api-platform/core/src/Validator/Exception/ValidationException.php',
         'ApiPlatform\\Core\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/api-platform/core/src/Validator/ValidatorInterface.php',
+        'App\\Controller\\BatimentController' => __DIR__ . '/../..' . '/src/Controller/BatimentController.php',
         'App\\Controller\\EmployesController' => __DIR__ . '/../..' . '/src/Controller/EmployesController.php',
         'App\\Controller\\EntiteController' => __DIR__ . '/../..' . '/src/Controller/EntiteController.php',
         'App\\Controller\\ParametrageController' => __DIR__ . '/../..' . '/src/Controller/ParametrageController.php',
         'App\\Controller\\UserCommonController' => __DIR__ . '/../..' . '/src/Controller/UserCommonController.php',
         'App\\DataPersister\\AdminPersister' => __DIR__ . '/../..' . '/src/DataPersister/AdminPersister.php',
+        'App\\DataPersister\\BatimentPersister' => __DIR__ . '/../..' . '/src/DataPersister/BatimentPersister.php',
         'App\\DataPersister\\EntitePersister' => __DIR__ . '/../..' . '/src/DataPersister/EntitePersister.php',
         'App\\DataPersister\\GestionnairePersister' => __DIR__ . '/../..' . '/src/DataPersister/GestionnairePersister.php',
         'App\\DataPersister\\LocalisationPersister' => __DIR__ . '/../..' . '/src/DataPersister/LocalisationPersister.php',
@@ -1862,6 +1874,7 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AnnotationDriver.php',
         'Doctrine\\ORM\\Mapping\\Driver\\AttributeDriver' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AttributeDriver.php',
         'Doctrine\\ORM\\Mapping\\Driver\\AttributeReader' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AttributeReader.php',
+        'Doctrine\\ORM\\Mapping\\Driver\\CompatibilityAnnotationDriver' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/CompatibilityAnnotationDriver.php',
         'Doctrine\\ORM\\Mapping\\Driver\\DatabaseDriver' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DatabaseDriver.php',
         'Doctrine\\ORM\\Mapping\\Driver\\DriverChain' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DriverChain.php',
         'Doctrine\\ORM\\Mapping\\Driver\\PHPDriver' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/PHPDriver.php',
@@ -1927,6 +1940,7 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'Doctrine\\ORM\\NonUniqueResultException' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/NonUniqueResultException.php',
         'Doctrine\\ORM\\ORMException' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/ORMException.php',
         'Doctrine\\ORM\\ORMInvalidArgumentException' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/ORMInvalidArgumentException.php',
+        'Doctrine\\ORM\\ORMSetup' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/ORMSetup.php',
         'Doctrine\\ORM\\OptimisticLockException' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/OptimisticLockException.php',
         'Doctrine\\ORM\\PersistentCollection' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/PersistentCollection.php',
         'Doctrine\\ORM\\Persisters\\Collection\\AbstractCollectionPersister' => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM/Persisters/Collection/AbstractCollectionPersister.php',
@@ -2250,6 +2264,8 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'Egulias\\EmailValidator\\Result\\SpoofEmail' => __DIR__ . '/..' . '/egulias/email-validator/src/Result/SpoofEmail.php',
         'Egulias\\EmailValidator\\Result\\ValidEmail' => __DIR__ . '/..' . '/egulias/email-validator/src/Result/ValidEmail.php',
         'Egulias\\EmailValidator\\Validation\\DNSCheckValidation' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/DNSCheckValidation.php',
+        'Egulias\\EmailValidator\\Validation\\DNSGetRecordWrapper' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/DNSGetRecordWrapper.php',
+        'Egulias\\EmailValidator\\Validation\\DNSRecords' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/DNSRecords.php',
         'Egulias\\EmailValidator\\Validation\\EmailValidation' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/EmailValidation.php',
         'Egulias\\EmailValidator\\Validation\\Exception\\EmptyValidationList' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/Exception/EmptyValidationList.php',
         'Egulias\\EmailValidator\\Validation\\Extra\\SpoofCheckValidation' => __DIR__ . '/..' . '/egulias/email-validator/src/Validation/Extra/SpoofCheckValidation.php',
@@ -2887,6 +2903,7 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'ProxyManager\\Generator\\Util\\IdentifierSuffixer' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Generator/Util/IdentifierSuffixer.php',
         'ProxyManager\\Generator\\Util\\ProxiedMethodReturnExpression' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Generator/Util/ProxiedMethodReturnExpression.php',
         'ProxyManager\\Generator\\Util\\UniqueIdentifierGenerator' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Generator/Util/UniqueIdentifierGenerator.php',
+        'ProxyManager\\Generator\\ValueGenerator' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Generator/ValueGenerator.php',
         'ProxyManager\\Inflector\\ClassNameInflector' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Inflector/ClassNameInflector.php',
         'ProxyManager\\Inflector\\ClassNameInflectorInterface' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Inflector/ClassNameInflectorInterface.php',
         'ProxyManager\\Inflector\\Util\\ParameterEncoder' => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Inflector/Util/ParameterEncoder.php',
@@ -3017,6 +3034,7 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'Psr\\Log\\LoggerTrait' => __DIR__ . '/..' . '/psr/log/src/LoggerTrait.php',
         'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/src/NullLogger.php',
         'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
+        'StellaMaris\\Clock\\ClockInterface' => __DIR__ . '/..' . '/stella-maris/clock/src/ClockInterface.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Bridge\\Doctrine\\CacheWarmer\\ProxyCacheWarmer' => __DIR__ . '/..' . '/symfony/doctrine-bridge/CacheWarmer/ProxyCacheWarmer.php',
         'Symfony\\Bridge\\Doctrine\\ContainerAwareEventManager' => __DIR__ . '/..' . '/symfony/doctrine-bridge/ContainerAwareEventManager.php',
@@ -5092,6 +5110,11 @@ class ComposerStaticInit1ee447b3a1343a190629777a0934d32d
         'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
         'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
         'Symfony\\Polyfill\\Php81\\Php81' => __DIR__ . '/..' . '/symfony/polyfill-php81/Php81.php',
+        'Symfony\\Requirements\\PhpConfigRequirement' => __DIR__ . '/..' . '/symfony/requirements-checker/src/PhpConfigRequirement.php',
+        'Symfony\\Requirements\\ProjectRequirements' => __DIR__ . '/..' . '/symfony/requirements-checker/src/ProjectRequirements.php',
+        'Symfony\\Requirements\\Requirement' => __DIR__ . '/..' . '/symfony/requirements-checker/src/Requirement.php',
+        'Symfony\\Requirements\\RequirementCollection' => __DIR__ . '/..' . '/symfony/requirements-checker/src/RequirementCollection.php',
+        'Symfony\\Requirements\\SymfonyRequirements' => __DIR__ . '/..' . '/symfony/requirements-checker/src/SymfonyRequirements.php',
         'Symfony\\Runtime\\Symfony\\Component\\Console\\ApplicationRuntime' => __DIR__ . '/..' . '/symfony/runtime/Internal/Console/ApplicationRuntime.php',
         'Symfony\\Runtime\\Symfony\\Component\\Console\\Command\\CommandRuntime' => __DIR__ . '/..' . '/symfony/runtime/Internal/Console/Command/CommandRuntime.php',
         'Symfony\\Runtime\\Symfony\\Component\\Console\\Input\\InputInterfaceRuntime' => __DIR__ . '/..' . '/symfony/runtime/Internal/Console/Input/InputInterfaceRuntime.php',

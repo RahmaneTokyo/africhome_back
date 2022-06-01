@@ -1,0 +1,73 @@
+<?php //App.Entity.Gestionnaire
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        (($f = &\Symfony\Component\VarExporter\Internal\Registry::$factories)['Symfony\\Component\\Validator\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\ClassMetadata'))(),
+        ($f['Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::f('Symfony\\Component\\Validator\\Mapping\\PropertyMetadata'))(),
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Symfony\\Component\\Validator\\Constraints\\Choice'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Validator\\Constraints\\Choice')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Gestionnaire',
+                'typeGestionnaire',
+            ],
+            'defaultGroup' => [
+                'Gestionnaire',
+            ],
+            'members' => [
+                [
+                    'typeGestionnaire' => [
+                        $o[1],
+                    ],
+                ],
+            ],
+            'properties' => [
+                [
+                    'typeGestionnaire' => $o[1],
+                ],
+            ],
+            'class' => [
+                1 => 'App\\Entity\\Gestionnaire',
+            ],
+            'property' => [
+                1 => 'typeGestionnaire',
+            ],
+            'constraints' => [
+                1 => [
+                    $o[2],
+                ],
+            ],
+            'constraintsByGroup' => [
+                1 => [
+                    'Default' => [
+                        $o[2],
+                    ],
+                    'Gestionnaire' => [
+                        $o[2],
+                    ],
+                ],
+            ],
+            'choices' => [
+                2 => [
+                    1,
+                    2,
+                    3,
+                    4,
+                ],
+            ],
+            'message' => [
+                2 => 'Choissez un type de gestionnaire valide',
+            ],
+            'groups' => [
+                2 => [
+                    'Default',
+                    'Gestionnaire',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

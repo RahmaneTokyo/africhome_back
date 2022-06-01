@@ -1,0 +1,64 @@
+<?php //App_Entity_Admin
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Serializer\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\ClassMetadata')),
+        clone ($p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata')),
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+        clone $p['Symfony\\Component\\Serializer\\Mapping\\AttributeMetadata'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Admin',
+                'id',
+                'user',
+                'matricule',
+                'numeroCarteProf',
+                'entites',
+            ],
+            'attributesMetadata' => [
+                [
+                    'id' => $o[1],
+                    'user' => $o[2],
+                    'matricule' => $o[3],
+                    'numeroCarteProf' => $o[4],
+                    'entites' => $o[5],
+                ],
+            ],
+            'groups' => [
+                1 => [
+                    'admin:read',
+                ],
+                [
+                    'admin:write',
+                    'admin:read',
+                    'employe_entite',
+                    'entites:write',
+                    'employes:read',
+                ],
+                [
+                    'admin:read',
+                    'admin:write',
+                    'entites:write',
+                    'employes:read',
+                ],
+                [
+                    'admin:read',
+                    'admin:write',
+                    'entites:write',
+                    'employes:read',
+                ],
+                [
+                    'admin:read',
+                    'admin:write',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];
