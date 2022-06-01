@@ -67,10 +67,10 @@ class Contact extends \App\Entity\Contact implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'latitude', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'longitude', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'telephone', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'ville'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'latitude', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'longitude', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'telephone', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'batiment'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'latitude', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'longitude', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'telephone', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'ville'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'latitude', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'longitude', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'telephone', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Contact' . "\0" . 'batiment'];
     }
 
     /**
@@ -300,6 +300,28 @@ class Contact extends \App\Entity\Contact implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setVille', [$ville]);
 
         return parent::setVille($ville);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBatiment(): ?\App\Entity\Batiment
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBatiment', []);
+
+        return parent::getBatiment();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setBatiment(\App\Entity\Batiment $batiment): \App\Entity\Contact
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBatiment', [$batiment]);
+
+        return parent::setBatiment($batiment);
     }
 
 }

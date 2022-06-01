@@ -1,22 +1,22 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => '2f8d17cdac5bcf2beca4b385d20c89337e9e34d8',
         'name' => '__root__',
         'dev' => true,
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => '2f8d17cdac5bcf2beca4b385d20c89337e9e34d8',
             'dev_requirement' => false,
         ),
         'api-platform/core' => array(
@@ -197,6 +197,24 @@
             'install_path' => __DIR__ . '/../friendsofphp/proxy-manager-lts',
             'aliases' => array(),
             'reference' => 'c828ced1f932094ab79e4120a106a666565e4d9c',
+            'dev_requirement' => false,
+        ),
+        'knplabs/knp-components' => array(
+            'pretty_version' => 'v3.3.0',
+            'version' => '3.3.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../knplabs/knp-components',
+            'aliases' => array(),
+            'reference' => '03e8ad16261dd8a70a8c6e01f18eb3852437546e',
+            'dev_requirement' => false,
+        ),
+        'knplabs/knp-paginator-bundle' => array(
+            'pretty_version' => 'v5.8.0',
+            'version' => '5.8.0.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../knplabs/knp-paginator-bundle',
+            'aliases' => array(),
+            'reference' => '216b9d5708001788321916c5b7632da9fb9ef6ca',
             'dev_requirement' => false,
         ),
         'laminas/laminas-code' => array(
@@ -826,6 +844,15 @@
             'reference' => '9daab339f226ac958192bf89836cb3378cc0e652',
             'dev_requirement' => false,
         ),
+        'symfony/translation' => array(
+            'pretty_version' => 'v5.3.14',
+            'version' => '5.3.14.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/translation',
+            'aliases' => array(),
+            'reference' => '945066809dc18f6e26123098e1b6e1d7a948660b',
+            'dev_requirement' => false,
+        ),
         'symfony/translation-contracts' => array(
             'pretty_version' => 'v2.5.1',
             'version' => '2.5.1.0',
@@ -834,6 +861,12 @@
             'aliases' => array(),
             'reference' => '1211df0afa701e45a04253110e959d4af4ef0f07',
             'dev_requirement' => false,
+        ),
+        'symfony/translation-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '2.3',
+            ),
         ),
         'symfony/twig-bridge' => array(
             'pretty_version' => 'v5.3.14',

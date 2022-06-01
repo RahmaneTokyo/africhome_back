@@ -39,33 +39,26 @@ class Entite
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"entites:read", "admin:read","gestionnaire:read", "employes:read", "adminEntite:read"})
+     * @Groups({"entites:read", "admin:read","gestionnaire:read", "employes:read", "adminEntite:read", "entiteSon", "batiment:read", "BatimentOwner", "EntiteOwner"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"entites:read", "entites:write", "employes:read", "adminEntite:read"})
+     * @Groups({"entites:read", "entites:write", "employes:read", "adminEntite:read", "entiteSon", "batiment:read", "BatimentOwner", "EntiteOwner"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"entites:read", "entites:write", "employes:read", "adminEntite:read"})
+     * @Groups({"entites:read", "entites:write", "employes:read", "adminEntite:read", "entiteSon", "BatimentOwner", "EntiteOwner"})
      */
     private $description;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
-     * @Groups({"entites:read"})
-     * @Assert\Choice(choices=Entite::ENTITES_TYPE, message = "Choissez un type d'entité valide")
-     */
-    private $type;
-
-    /**
      * @ORM\OneToOne(targetEntity=Contact::class, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"entites:read", "entites:write", "employes:read", "adminEntite:read"})
+     * @Groups({"entites:read", "entites:write", "employes:read", "adminEntite:read", "entiteSon"})
      */
     private $contact;
 
@@ -98,14 +91,13 @@ class Entite
 
     /**
      * @ORM\ManyToOne(targetEntity=TypeEntite::class, inversedBy="entites")
-     * @Groups({"entites:read", "employes:read"})
+     * @Groups({"entites:read", "employes:read", "EntiteOwner"})
      */
     private $typeEntite;
 
     /**
      * @ORM\ManyToMany(targetEntity=Admin::class, inversedBy="entites", cascade={"persist","remove"})
-     * @Groups({"entites:read", "admin:read", "employes:read"})
-     *
+     * @Groups({"entites:read", "entites:write", "admin:read", "employes:read"})
      */
     private $admins;
 
@@ -117,8 +109,9 @@ class Entite
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"entiteSon", "entites:write", "entites:read"})
      */
-    private $isEntreprise;
+    private $isEntreprise = false;
 
     /**
      * @ORM\ManyToOne(targetEntity=Entite::class, inversedBy="son")
@@ -126,9 +119,21 @@ class Entite
     private $father;
 
     /**
-     * @ORM\OneToMany(targetEntity=Entite::class, mappedBy="father")
+     * @ORM\OneToMany(targetEntity=Batiment::class, mappedBy="entite")
+     * @Groups({"entites:read"})
      */
-    private $son;
+    private $batiments;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Proprietaire::class, mappedBy="entite", cascade={"persist", "remove"})
+     */
+    private $proprietaire;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"entites:read", "entites:write", "employes:read", "adminEntite:read", "entiteSon", "batiment:read", "BatimentOwner", "EntiteOwner"})
+     */
+    private $type;
 
     public function __construct()
     {
@@ -141,6 +146,12 @@ class Entite
         $this->incidents = new ArrayCollection();
         $this->admins = new ArrayCollection();
         $this->son = new ArrayCollection();
+        $this->batiments = new ArrayCollection();
+        if ($this->isEntreprise == false) {
+            $this->type = 'COLLECTIVITE';
+        }if ($this->isEntreprise == true) {
+            $this->type = 'ENTREPRISE';
+        }
     }
 
     public function getId(): ?int
@@ -170,20 +181,6 @@ class Entite
         $this->description = $description;
 
         return $this;
-    }
-
-    public function getType(): ?int
-    {
-        return $this->type;
-    }
-
-    public function setType(int $type): self
-    {
-        // if((in_array($type,Entite::ENTITES_TYPE))){
-            $this->type = $type;
-            return $this;
-        // }
-        // throw new \Exception("Le type d'entité n'est pas valide");
     }
 
     public function getContact(): ?Contact
@@ -397,32 +394,67 @@ class Entite
     }
 
     /**
-     * @return Collection<int, self>
+     * @return Collection<int, Batiment>
      */
-    public function getSon(): Collection
+    public function getBatiments(): Collection
     {
-        return $this->son;
+        return $this->batiments;
     }
 
-    public function addSon(self $son): self
+    public function addBatiment(Batiment $batiment): self
     {
-        if (!$this->son->contains($son)) {
-            $this->son[] = $son;
-            $son->setFather($this);
+        if (!$this->batiments->contains($batiment)) {
+            $this->batiments[] = $batiment;
+            $batiment->setEntite($this);
         }
 
         return $this;
     }
 
-    public function removeSon(self $son): self
+    public function removeBatiment(Batiment $batiment): self
     {
-        if ($this->son->removeElement($son)) {
+        if ($this->batiments->removeElement($batiment)) {
             // set the owning side to null (unless already changed)
-            if ($son->getFather() === $this) {
-                $son->setFather(null);
+            if ($batiment->getEntite() === $this) {
+                $batiment->setEntite(null);
             }
         }
 
         return $this;
     }
+
+    public function getProprietaire(): ?Proprietaire
+    {
+        return $this->proprietaire;
+    }
+
+    public function setProprietaire(?Proprietaire $proprietaire): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($proprietaire === null && $this->proprietaire !== null) {
+            $this->proprietaire->setEntite(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($proprietaire !== null && $proprietaire->getEntite() !== $this) {
+            $proprietaire->setEntite($this);
+        }
+
+        $this->proprietaire = $proprietaire;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(?string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
 }

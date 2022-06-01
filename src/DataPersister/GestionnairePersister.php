@@ -4,6 +4,7 @@ namespace App\DataPersister;
 
 use App\Entity\Gestionnaire;
 use App\Enums\TypeGestionnaireEnum;
+use App\Repository\EntiteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -17,14 +18,16 @@ final class GestionnairePersister implements ContextAwareDataPersisterInterface
     private $entityManager;
     private $requestStack;
     private $encoder;
+    private $entiteRepository;
 
     const GESTIONNAIRE_TYPE = [TypeGestionnaireEnum::DIRIGEANT,TypeGestionnaireEnum::EMPLOYE, TypeGestionnaireEnum::INVITE, TypeGestionnaireEnum::AUTRE];
 
-    public function __construct(EntityManagerInterface $entityManager,RequestStack $requestStack, UserPasswordEncoderInterface $encoder)
+    public function __construct(EntityManagerInterface $entityManager,RequestStack $requestStack, UserPasswordEncoderInterface $encoder, EntiteRepository $entiteRepository)
     {
         $this->entityManager = $entityManager;
         $this->requestStack = $requestStack->getCurrentRequest();
         $this->encoder = $encoder;
+        $this->entiteRepository = $entiteRepository;
     }
 
     public function supports($data, array $context = []): bool
@@ -42,7 +45,6 @@ final class GestionnairePersister implements ContextAwareDataPersisterInterface
         }
 
         $newData->type = $data->getTypeGestionnaire();
-
 
         if (in_array($newData->typeGestionnaire, self::GESTIONNAIRE_TYPE)) {
 
@@ -65,6 +67,26 @@ final class GestionnairePersister implements ContextAwareDataPersisterInterface
             return new Response(json_encode(['message'=>'Le type selectionné n\'existe pas  !!!']), 403,
                 ['content-type' => 'application/json']);
         }
+
+        $entite = $data->getEntites();
+
+        foreach($entite as $son) {
+            $fathers[] = $son->getFather();
+        }
+
+        foreach ($entite as $father) {
+            $sons[] = $this->entiteRepository->findBy(['father' => $father]);
+        }
+
+        if ($sons !== []) {
+            $son = array_merge(...$sons);
+
+            foreach($son as $key=>$value) {
+                $son[$key]->addGestionnaire($data);
+            }
+        }
+
+        $data->getUser()->setType('GESTIONNAIRE');
 
         $this->entityManager->persist($data);
         $this->entityManager->flush();

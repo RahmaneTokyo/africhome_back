@@ -18,39 +18,44 @@ class Contact
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups({"entites:read"})
-     * @Groups({"superadmin:read","admin:read","superadmin:write","admin:write", "gestionnaire:read","gestionnaire:write"})
+     * @Groups({"superadmin:read","admin:read","superadmin:write","admin:write", "gestionnaire:read","gestionnaire:write", "BatimentGest"})
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string")
-     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read"})
+     * @ORM\Column(type="string", nullable=true)
+     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read", "entiteSon", "BatimentGest", "batiment:read"})
      */
     private $latitude;
 
     /**
-     * @ORM\Column(type="string")
-     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read"})
+     * @ORM\Column(type="string", nullable=true)
+     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read", "entiteSon", "BatimentGest", "batiment:read"})
      */
     private $longitude;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"entites:read","entites:write", "employes:read", "employes:read", "adminEntite:read"})
+     * @Groups({"entites:read","entites:write", "employes:read", "employes:read", "adminEntite:read", "entiteSon", "batiment:read"})
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read"})
+     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read", "entiteSon", "batiment:read"})
      */
     private $telephone;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read"})
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read", "entiteSon", "batiment:read"})
      */
     private $ville;
+
+    /**
+     * @ORM\OneToOne(targetEntity=Batiment::class, mappedBy="contact", cascade={"persist", "remove"})
+     */
+    private $batiment;
 
     public function getId(): ?int
     {
@@ -113,6 +118,23 @@ class Contact
     public function setVille(string $ville): self
     {
         $this->ville = $ville;
+
+        return $this;
+    }
+
+    public function getBatiment(): ?Batiment
+    {
+        return $this->batiment;
+    }
+
+    public function setBatiment(Batiment $batiment): self
+    {
+        // set the owning side of the relation if necessary
+        if ($batiment->getContact() !== $this) {
+            $batiment->setContact($this);
+        }
+
+        $this->batiment = $batiment;
 
         return $this;
     }

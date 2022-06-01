@@ -11,4 +11,5 @@ return [
     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
     Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle::class => ['all' => true],
     Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
+    Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
 ];

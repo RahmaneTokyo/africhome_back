@@ -24,7 +24,7 @@ class TypeEntite
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"entites:read", "employes:read"})
+     * @Groups({"entites:read", "employes:read", "EntiteOwner"})
      */
     private $titre;
 

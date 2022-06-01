@@ -67,10 +67,10 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateDeNaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isBloked', '' . "\0" . 'App\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'type', '' . "\0" . 'App\\Entity\\User' . "\0" . 'superAdmin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'admin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'gestionnaire', '' . "\0" . 'App\\Entity\\User' . "\0" . 'agent', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenConfirm', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenUpdatedAt'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateDeNaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isBloked', '' . "\0" . 'App\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'type', '' . "\0" . 'App\\Entity\\User' . "\0" . 'superAdmin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'admin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'gestionnaire', '' . "\0" . 'App\\Entity\\User' . "\0" . 'agent', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenConfirm', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenUpdatedAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'proprietaire'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateDeNaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isBloked', '' . "\0" . 'App\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'type', '' . "\0" . 'App\\Entity\\User' . "\0" . 'superAdmin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'admin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'gestionnaire', '' . "\0" . 'App\\Entity\\User' . "\0" . 'agent', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenConfirm', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenUpdatedAt'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\User' . "\0" . 'id', '' . "\0" . 'App\\Entity\\User' . "\0" . 'email', '' . "\0" . 'App\\Entity\\User' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\User' . "\0" . 'password', '' . "\0" . 'App\\Entity\\User' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\User' . "\0" . 'dateDeNaissance', '' . "\0" . 'App\\Entity\\User' . "\0" . 'isBloked', '' . "\0" . 'App\\Entity\\User' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'type', '' . "\0" . 'App\\Entity\\User' . "\0" . 'superAdmin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'admin', '' . "\0" . 'App\\Entity\\User' . "\0" . 'gestionnaire', '' . "\0" . 'App\\Entity\\User' . "\0" . 'agent', '' . "\0" . 'App\\Entity\\User' . "\0" . 'token', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenConfirm', '' . "\0" . 'App\\Entity\\User' . "\0" . 'tokenUpdatedAt', '' . "\0" . 'App\\Entity\\User' . "\0" . 'proprietaire'];
     }
 
     /**
@@ -586,6 +586,28 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTokenUpdatedAt', [$tokenUpdatedAt]);
 
         return parent::setTokenUpdatedAt($tokenUpdatedAt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getProprietaire(): ?\App\Entity\Proprietaire
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getProprietaire', []);
+
+        return parent::getProprietaire();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setProprietaire(?\App\Entity\Proprietaire $proprietaire): \App\Entity\User
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setProprietaire', [$proprietaire]);
+
+        return parent::setProprietaire($proprietaire);
     }
 
 }

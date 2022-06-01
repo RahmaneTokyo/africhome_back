@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Contact;
 use App\Entity\Entite;
+use App\Repository\EntiteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
@@ -62,15 +65,95 @@ class EntiteController extends AbstractController
     /**
      * @Route("/api/admin/entites", name="getEntitesOfAdmin", methods={"GET"})
      */
-    public function getEntitesOfAdmin(Security $security) {
+    public function getEntitesOfAdmin(Security $security, EntiteRepository $entiteRepository) {
         $user = $security->getUser();
         if ($user->getAdmin()) {
             $entite = $user->getAdmin()->getEntites();
             return $this->json($entite, 200, [], ['groups' => ['adminEntite:read']]);
         }else {
             return $this->json([
+                'message'=>'Accès non autorisé',          
+                'status'=>'FAILED'], 401);
+        }
+    }
+
+    /**
+     * @Route("/api/gestionnaire/entites", name="getEntitesOfGestionnaire", methods={"GET"})
+     */
+    public function getEntitesOfGestionnaire(Security $security, EntiteRepository $entiteRepository) {
+        $gestionnaire = $this->getUser()->getGestionnaire();
+
+        foreach ($gestionnaire->getEntites() as $entites) {
+            $entite[] = $entites;
+        }
+
+        return $this->json($entite, 200, [], ["groups" => ["entiteSon"]]);
+    }
+
+    /**
+     * @Route("/api/admin/entite/son", name="getEntiteSon", methods={"GET"})
+     */
+    public function getEntiteSon( EntiteRepository $entiteRepository) {
+        $admin = $this->getUser()->getAdmin();
+
+        foreach ($admin->getEntites() as $entites) {
+            $fiw[] = $entiteRepository->findBy(['father' => $entites->getId()]);
+        }
+        $son = array_merge(...$fiw);
+
+        return $this->json($son, 200, [], ["groups" => ["entiteSon"]]);
+    }
+
+    /**
+     * @Route("/api/admin/entite/father/type", name="getEntiteatherByType", methods={"GET"})
+     */
+    public function getEntiteFatherByType(Security $security) {
+        $user = $security->getUser();
+        if ($user->getAdmin()) {
+            $entite = $user->getAdmin()->getEntites();
+            $entreprise = [];
+            $collectivite = [];
+
+            foreach ($entite as $admin) {
+                if ($admin->getType() === 'ENTREPRISE') {
+                    $entreprise[] = $admin;
+                }
+                if ($admin->getType() === 'COLLECTIVITE') {
+                    $collectivite[] = $admin;
+                }
+            }
+
+            $data = [
+                'entreprise' => $entreprise,
+                'collectivite' => $collectivite
+            ];
+
+            return $this->json($data, 200, [], ['groups' => ['adminEntite:read']]);
+        }else {
+            return $this->json([
                 'message'=>'Accès non autorisé',
                 'status'=>'FAILED'], 401);
         }
     }
+
+    /**
+     * @Route("/api/entite/{id}/localisation", name="addLocalisationEntite", methods={"PUT"})
+     */
+    public function addLocalisationEntite(RequestStack $requestStack, $id, EntityManagerInterface $manager, EntiteRepository $entiteRepository) {
+        $newData=json_decode($requestStack->getCurrentRequest()->getContent());
+
+        $entite = $entiteRepository->findOneBy(['id' => $id]);
+
+        $contacts = $entite->getContact();
+
+        $contacts->setLatitude($newData->lat)
+            ->setLongitude($newData->lng)
+            ->setVille($newData->ville);
+
+        $manager->persist($entite);
+        $manager->flush();
+
+        return $this->json($entite, 201);
+    }
+
 }

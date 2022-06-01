@@ -39,7 +39,7 @@ final class AdminPersister implements ContextAwareDataPersisterInterface
     {
         $newData=json_decode($this->requestStack->getContent());
 
-        if ((($context['collection_operations_name'] ?? null) === 'post')){
+        if ((($context['collection_operation_name'] ?? null) === 'post')){
             $data->getUser()->setCreatedAt(new \DateTime());
             $data->getUser()->setPassword($this->encoder->encodePassword($data->getUser(), $data->getUser()->getPassword()));
             $data->getUser()->setType('ADMIN');

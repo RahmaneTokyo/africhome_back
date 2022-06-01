@@ -18,4 +18,5 @@ return array(
     'f598d06aa772fa33d905e87be6398fb1' => $vendorDir . '/symfony/polyfill-intl-idn/bootstrap.php',
     'c2aad8997a98dfc4771bdbffea3d62b7' => $vendorDir . '/laminas/laminas-code/polyfill/ReflectionEnumPolyfill.php',
     '2c102faa651ef8ea5874edb585946bce' => $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
+    'a1105708a18b76903365ca1c4aa61b02' => $vendorDir . '/symfony/translation/Resources/functions.php',
 );

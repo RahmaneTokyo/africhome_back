@@ -67,10 +67,10 @@ class Localisation extends \App\Entity\Localisation implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'typeLocalisation', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'father', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'zipCode'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'typeLocalisation', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'father', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'zipCode', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'batiments'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'typeLocalisation', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'father', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'zipCode'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'typeLocalisation', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'father', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'zipCode', '' . "\0" . 'App\\Entity\\Localisation' . "\0" . 'batiments'];
     }
 
     /**
@@ -300,6 +300,39 @@ class Localisation extends \App\Entity\Localisation implements \Doctrine\ORM\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setZipCode', [$zipCode]);
 
         return parent::setZipCode($zipCode);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBatiments(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBatiments', []);
+
+        return parent::getBatiments();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addBatiment(\App\Entity\Batiment $batiment): \App\Entity\Localisation
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addBatiment', [$batiment]);
+
+        return parent::addBatiment($batiment);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeBatiment(\App\Entity\Batiment $batiment): \App\Entity\Localisation
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeBatiment', [$batiment]);
+
+        return parent::removeBatiment($batiment);
     }
 
 }
