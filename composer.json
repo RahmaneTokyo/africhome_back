@@ -11,6 +11,7 @@
         "api-platform/core": "^2.6",
         "doctrine/annotations": "^1.0",
         "doctrine/doctrine-bundle": "^2.5",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.11",
         "knplabs/knp-paginator-bundle": "^5.8",
@@ -69,7 +70,13 @@
             "requirements-checker": "script"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "mkdir -p config/jwt",
+            "openssl genrsa -out config/jwt/private.pem 4096",
+            "openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem",
+"php bin/console doctrine:database:drop --force", 
+            "php bin/console doctrine:database:create --if-not-exists",
+            "php bin/console doctrine:schema:update --force"
         ],
         "post-update-cmd": [
             "@auto-scripts"
