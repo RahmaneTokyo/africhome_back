@@ -5,8 +5,8 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev</parameter>
+    <parameter key="kernel.build_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">D:\GSExpertise\Africhrome\Africhome-back\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -105,14 +105,14 @@
     <parameter key="translator.logging">false</parameter>
     <parameter key="translator.default_path">D:\GSExpertise\Africhrome\Africhome-back/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/App_KernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="serializer.mapping.cache.file">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/serialization.php</parameter>
+    <parameter key="serializer.mapping.cache.file">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/serialization.php</parameter>
     <parameter key="cache.prefix.seed">_D:\GSExpertise\Africhrome\Africhome-back.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
@@ -122,9 +122,9 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
-    <parameter key="validator.mapping.cache.file">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/validation.php</parameter>
+    <parameter key="validator.mapping.cache.file">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="twig.form.resources" type="collection">
@@ -209,7 +209,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -365,7 +365,7 @@
     <parameter key="lexik_jwt_authentication.encoder.signature_algorithm">RS256</parameter>
     <parameter key="lexik_jwt_authentication.encoder.crypto_engine">openssl</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">dynamic</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -515,7 +515,15 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\CoordonneesRepository" class="App\Repository\CoordonneesRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\EntiteRepository" class="App\Repository\EntiteRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\FormateurRepository" class="App\Repository\FormateurRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -568,6 +576,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -641,7 +653,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/http_cache</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -651,7 +663,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/App_KernelDevDebugContainerDeprecations.log</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -1217,7 +1229,7 @@
       <tag name="kernel.reset" method="reset"/>
       <argument>s9rc61MuT-</argument>
       <argument>0</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1232,7 +1244,7 @@
       <argument>Wp3F+Ct9Ul</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1242,7 +1254,7 @@
       <argument>6DgGdS-7lN</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1252,7 +1264,7 @@
       <argument>QMLoWNKcKg</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1262,7 +1274,7 @@
       <argument>0zPHg8XiE+</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1272,7 +1284,7 @@
       <argument>UiB5BR1wTM</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1282,7 +1294,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1311,7 +1323,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1516,7 +1528,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/translations</argument>
+        <argument key="cache_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -2680,7 +2692,7 @@
       <argument type="service" id=".service_locator.WOytlHA.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev</argument>
+        <argument key="cache_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -2786,13 +2798,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/annotations.php</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/annotations.php</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -2945,10 +2957,10 @@
           </service>
         </argument>
       </argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/serialization.php</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/serialization.php</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3076,7 +3088,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/sessions</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3108,7 +3120,7 @@
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-          <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/sessions</argument>
+          <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -3181,10 +3193,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/validation.php</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/validation.php</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3204,7 +3216,7 @@
       <argument>jULrWT8w00</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3239,7 +3251,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-        <argument key="cache">D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/twig</argument>
+        <argument key="cache">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -3683,7 +3695,7 @@
       <argument>+AkZKgXty1</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4805,7 +4817,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.xTjkLYI"/>
+      <argument type="service" id=".service_locator.bFWh30N"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4974,7 +4986,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-        <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/doctrine/orm/Proxies</argument>
+        <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -5435,7 +5447,7 @@
       <argument>8KWXvPD2Sh</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5445,7 +5457,7 @@
       <argument>T-hKnvRHSb</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5455,7 +5467,7 @@
       <argument>XstuAf+MU2</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5559,7 +5571,7 @@
       <argument>U6ul3YkPv7</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -5569,7 +5581,7 @@
       <argument>aMHRXawEkP</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/GSExpertise/Africhrome/Africhome-back/var/cache/dev/pools</argument>
+      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6648,8 +6660,12 @@
     <service id=".abstract.instanceof.App\Repository\BatimentRepository" class="App\Repository\BatimentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CoordonneesRepository" class="App\Repository\CoordonneesRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CoordonneesRepository" class="App\Repository\CoordonneesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EntiteRepository" class="App\Repository\EntiteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EntiteRepository" class="App\Repository\EntiteRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FormateurRepository" class="App\Repository\FormateurRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\FormateurRepository" class="App\Repository\FormateurRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GestionnaireRepository" class="App\Repository\GestionnaireRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\GestionnaireRepository" class="App\Repository\GestionnaireRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\IncidentRepository" class="App\Repository\IncidentRepository" autowire="true" abstract="true"/>
@@ -6676,6 +6692,8 @@
     <service id=".abstract.instanceof.App\Repository\TypeLocalisationRepository" class="App\Repository\TypeLocalisationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.0GV1BZZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7208,7 +7226,7 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.xTjkLYI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.bFWh30N" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
@@ -7216,7 +7234,9 @@
         <argument key="App\Repository\BatimentOwnerRepository" type="service_closure" id="App\Repository\BatimentOwnerRepository"/>
         <argument key="App\Repository\BatimentRepository" type="service_closure" id="App\Repository\BatimentRepository"/>
         <argument key="App\Repository\ContactRepository" type="service_closure" id="App\Repository\ContactRepository"/>
+        <argument key="App\Repository\CoordonneesRepository" type="service_closure" id="App\Repository\CoordonneesRepository"/>
         <argument key="App\Repository\EntiteRepository" type="service_closure" id="App\Repository\EntiteRepository"/>
+        <argument key="App\Repository\FormateurRepository" type="service_closure" id="App\Repository\FormateurRepository"/>
         <argument key="App\Repository\GestionnaireRepository" type="service_closure" id="App\Repository\GestionnaireRepository"/>
         <argument key="App\Repository\IncidentRepository" type="service_closure" id="App\Repository\IncidentRepository"/>
         <argument key="App\Repository\LocalisationRepository" type="service_closure" id="App\Repository\LocalisationRepository"/>
@@ -7230,6 +7250,7 @@
         <argument key="App\Repository\TypeIncidentRepository" type="service_closure" id="App\Repository\TypeIncidentRepository"/>
         <argument key="App\Repository\TypeLocalisationRepository" type="service_closure" id="App\Repository\TypeLocalisationRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
+        <argument key="App\Repository\VilleRepository" type="service_closure" id="App\Repository\VilleRepository"/>
       </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">
