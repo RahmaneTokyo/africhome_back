@@ -1,0 +1,3 @@
+<?php //route_name_cd19e7c71cb12258e9d765790c69290e
+
+return [PHP_INT_MAX, 'api_batiment_criteres_get_item'];

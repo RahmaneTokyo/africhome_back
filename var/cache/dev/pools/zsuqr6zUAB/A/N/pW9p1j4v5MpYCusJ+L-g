@@ -1,0 +1,3 @@
+<?php //route_name_52085cc491f16d7834339bee5f4ab373
+
+return [PHP_INT_MAX, 'api_gestionnaires_get_item'];

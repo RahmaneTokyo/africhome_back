@@ -1,0 +1,76 @@
+<?php //App%255CEntity%255CEntite
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'collectionOperations' => [
+                [
+                    'get' => [
+                        'method' => 'GET',
+                        'path' => '/entites',
+                    ],
+                    'post' => [
+                        'method' => 'POST',
+                        'path' => '/entites',
+                    ],
+                ],
+            ],
+            'itemOperations' => [
+                [
+                    'get' => [
+                        'method' => 'GET',
+                        'path' => '/entites/{id}',
+                    ],
+                    'employes_of_one_entite' => [
+                        'method' => 'GET',
+                        'path' => '/entites/{id}/employes',
+                        'normalization_context' => [
+                            'groups' => [
+                                'employe_entite',
+                            ],
+                        ],
+                    ],
+                    'put' => [
+                        'method' => 'PUT',
+                        'path' => '/entites/{id}',
+                    ],
+                    'archived' => [
+                        'method' => 'PUT',
+                        'path' => '/entites/{id}/archived',
+                    ],
+                    'delete' => [
+                        'method' => 'DELETE',
+                        'path' => '/entites/{id}',
+                    ],
+                ],
+            ],
+            'attributes' => [
+                [
+                    'normalization_context' => [
+                        'groups' => [
+                            'entites:read',
+                        ],
+                    ],
+                    'denormalization_context' => [
+                        'groups' => [
+                            'entites:write',
+                        ],
+                    ],
+                ],
+            ],
+            'repositoryClass' => [
+                1 => 'App\\Repository\\EntiteRepository',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];

@@ -1,0 +1,3 @@
+<?php //App%255CEntity%255CTypeEntite%2523getEntites
+
+return [PHP_INT_MAX, []];
