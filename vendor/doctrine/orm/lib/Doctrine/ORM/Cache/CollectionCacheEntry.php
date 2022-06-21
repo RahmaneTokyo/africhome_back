@@ -10,8 +10,15 @@ namespace Doctrine\ORM\Cache;
 class CollectionCacheEntry implements CacheEntry
 {
     /**
+<<<<<<< HEAD
      * @readonly Public only for performance reasons, it should be considered immutable.
      * @var CacheKey[] The list of entity identifiers hold by the collection
+=======
+     * The list of entity identifiers hold by the collection
+     *
+     * @readonly Public only for performance reasons, it should be considered immutable.
+     * @var CacheKey[]
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public $identifiers;
 

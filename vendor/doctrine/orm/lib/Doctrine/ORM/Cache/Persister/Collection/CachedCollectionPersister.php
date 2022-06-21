@@ -29,14 +29,22 @@ interface CachedCollectionPersister extends CachedPersister, CollectionPersister
     /**
      * Loads a collection from cache
      *
+<<<<<<< HEAD
      * @return PersistentCollection|null
+=======
+     * @return mixed[]|null
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function loadCollectionCache(PersistentCollection $collection, CollectionCacheKey $key);
 
     /**
      * Stores a collection into cache
      *
+<<<<<<< HEAD
      * @param array|mixed[]|Collection $elements
+=======
+     * @param mixed[]|Collection $elements
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return void
      */

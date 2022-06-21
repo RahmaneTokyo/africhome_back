@@ -4,11 +4,19 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM;
 
+<<<<<<< HEAD
+=======
+use BackedEnum;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Countable;
 use Doctrine\Common\Cache\Psr6\CacheAdapter;
 use Doctrine\Common\Cache\Psr6\DoctrineProvider;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+<<<<<<< HEAD
+=======
+use Doctrine\Common\Util\ClassUtils;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\DBAL\Cache\QueryCacheProfile;
 use Doctrine\DBAL\Result;
 use Doctrine\Deprecations\Deprecation;
@@ -424,15 +432,30 @@ abstract class AbstractQuery
             return $value->name;
         }
 
+<<<<<<< HEAD
+=======
+        if ($value instanceof BackedEnum) {
+            return $value->value;
+        }
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         if (! is_object($value)) {
             return $value;
         }
 
         try {
+<<<<<<< HEAD
             $value = $this->_em->getUnitOfWork()->getSingleIdentifierValue($value);
 
             if ($value === null) {
                 throw ORMInvalidArgumentException::invalidIdentifierBindingEntity();
+=======
+            $class = ClassUtils::getClass($value);
+            $value = $this->_em->getUnitOfWork()->getSingleIdentifierValue($value);
+
+            if ($value === null) {
+                throw ORMInvalidArgumentException::invalidIdentifierBindingEntity($class);
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             }
         } catch (MappingException | ORMMappingException $e) {
             /* Silence any mapping exceptions. These can occur if the object in

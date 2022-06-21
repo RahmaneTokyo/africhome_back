@@ -7,6 +7,10 @@ namespace Doctrine\ORM\Cache\Persister\Collection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\Common\Util\ClassUtils;
+<<<<<<< HEAD
+=======
+use Doctrine\Deprecations\Deprecation;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\Cache\CollectionCacheKey;
 use Doctrine\ORM\Cache\CollectionHydrator;
 use Doctrine\ORM\Cache\EntityCacheKey;
@@ -108,7 +112,11 @@ abstract class AbstractCollectionPersister implements CachedCollectionPersister
     }
 
     /**
+<<<<<<< HEAD
      * @return object[]|null
+=======
+     * {@inheritdoc}
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function loadCollectionCache(PersistentCollection $collection, CollectionCacheKey $key)
     {
@@ -224,10 +232,24 @@ abstract class AbstractCollectionPersister implements CachedCollectionPersister
     /**
      * Clears cache entries related to the current collection
      *
+<<<<<<< HEAD
+=======
+     * @deprecated This method is not used anymore.
+     *
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @return void
      */
     protected function evictCollectionCache(PersistentCollection $collection)
     {
+<<<<<<< HEAD
+=======
+        Deprecation::trigger(
+            'doctrine/orm',
+            'https://github.com/doctrine/orm/pull/9512',
+            'The method %s() is deprecated and will be removed without replacement.'
+        );
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $key = new CollectionCacheKey(
             $this->sourceEntity->rootEntityName,
             $this->association['fieldName'],
@@ -242,13 +264,30 @@ abstract class AbstractCollectionPersister implements CachedCollectionPersister
     }
 
     /**
+<<<<<<< HEAD
      * @param string $targetEntity
      * @param object $element
+=======
+     * @deprecated This method is not used anymore.
+     *
+     * @param string $targetEntity
+     * @param object $element
+     * @psalm-param class-string $targetEntity
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return void
      */
     protected function evictElementCache($targetEntity, $element)
     {
+<<<<<<< HEAD
+=======
+        Deprecation::trigger(
+            'doctrine/orm',
+            'https://github.com/doctrine/orm/pull/9512',
+            'The method %s() is deprecated and will be removed without replacement.'
+        );
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $targetPersister = $this->uow->getEntityPersister($targetEntity);
         assert($targetPersister instanceof CachedEntityPersister);
         $targetRegion = $targetPersister->getCacheRegion();

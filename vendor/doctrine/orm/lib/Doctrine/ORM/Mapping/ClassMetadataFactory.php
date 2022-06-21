@@ -35,8 +35,13 @@ use function end;
 use function explode;
 use function in_array;
 use function is_subclass_of;
+<<<<<<< HEAD
 use function strlen;
 use function strpos;
+=======
+use function str_contains;
+use function strlen;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function strtolower;
 use function substr;
 
@@ -193,6 +198,13 @@ class ClassMetadataFactory extends AbstractClassMetadataFactory
                 $class->containsForeignIdentifier = true;
             }
 
+<<<<<<< HEAD
+=======
+            if ($parent->containsEnumIdentifier) {
+                $class->containsEnumIdentifier = true;
+            }
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             if (! empty($parent->namedQueries)) {
                 $this->addInheritedNamedQueries($class, $parent);
             }
@@ -338,7 +350,11 @@ class ClassMetadataFactory extends AbstractClassMetadataFactory
      */
     private function getShortName(string $className): string
     {
+<<<<<<< HEAD
         if (strpos($className, '\\') === false) {
+=======
+        if (! str_contains($className, '\\')) {
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             return strtolower($className);
         }
 
@@ -718,7 +734,13 @@ class ClassMetadataFactory extends AbstractClassMetadataFactory
     }
 
     /**
+<<<<<<< HEAD
      * {@inheritDoc}
+=======
+     * @deprecated This method will be removed in ORM 3.0.
+     *
+     * @return class-string
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     protected function getFqcnFromAlias($namespaceAlias, $simpleClassName)
     {

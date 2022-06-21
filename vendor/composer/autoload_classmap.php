@@ -512,7 +512,11 @@ return array(
     'App\\Controller\\EntiteController' => $baseDir . '/src/Controller/EntiteController.php',
     'App\\Controller\\ParametrageController' => $baseDir . '/src/Controller/ParametrageController.php',
     'App\\Controller\\UserCommonController' => $baseDir . '/src/Controller/UserCommonController.php',
+<<<<<<< HEAD
     'App\\DataPersister\\AdminPersister' => $baseDir . '/src/DataPersister/AdminPersister.php',
+=======
+    'App\\DataFixtures\\AppFixtures' => $baseDir . '/src/DataFixtures/AppFixtures.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'App\\DataPersister\\BatimentPersister' => $baseDir . '/src/DataPersister/BatimentPersister.php',
     'App\\DataPersister\\EntitePersister' => $baseDir . '/src/DataPersister/EntitePersister.php',
     'App\\DataPersister\\GestionnairePersister' => $baseDir . '/src/DataPersister/GestionnairePersister.php',
@@ -525,7 +529,13 @@ return array(
     'App\\Entity\\Batiment' => $baseDir . '/src/Entity/Batiment.php',
     'App\\Entity\\BatimentOwner' => $baseDir . '/src/Entity/BatimentOwner.php',
     'App\\Entity\\Contact' => $baseDir . '/src/Entity/Contact.php',
+<<<<<<< HEAD
     'App\\Entity\\Entite' => $baseDir . '/src/Entity/Entite.php',
+=======
+    'App\\Entity\\Coordonnees' => $baseDir . '/src/Entity/Coordonnees.php',
+    'App\\Entity\\Entite' => $baseDir . '/src/Entity/Entite.php',
+    'App\\Entity\\Formateur' => $baseDir . '/src/Entity/Formateur.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'App\\Entity\\Gestionnaire' => $baseDir . '/src/Entity/Gestionnaire.php',
     'App\\Entity\\Incident' => $baseDir . '/src/Entity/Incident.php',
     'App\\Entity\\Localisation' => $baseDir . '/src/Entity/Localisation.php',
@@ -539,6 +549,10 @@ return array(
     'App\\Entity\\TypeIncident' => $baseDir . '/src/Entity/TypeIncident.php',
     'App\\Entity\\TypeLocalisation' => $baseDir . '/src/Entity/TypeLocalisation.php',
     'App\\Entity\\User' => $baseDir . '/src/Entity/User.php',
+<<<<<<< HEAD
+=======
+    'App\\Entity\\Ville' => $baseDir . '/src/Entity/Ville.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'App\\Enums\\TypeAdminEnum' => $baseDir . '/src/Enums/TypeAdminEnum.php',
     'App\\Enums\\TypeEntiteEnum' => $baseDir . '/src/Enums/TypeEntiteEnum.php',
     'App\\Enums\\TypeGestionnaireEnum' => $baseDir . '/src/Enums/TypeGestionnaireEnum.php',
@@ -549,7 +563,13 @@ return array(
     'App\\Repository\\BatimentOwnerRepository' => $baseDir . '/src/Repository/BatimentOwnerRepository.php',
     'App\\Repository\\BatimentRepository' => $baseDir . '/src/Repository/BatimentRepository.php',
     'App\\Repository\\ContactRepository' => $baseDir . '/src/Repository/ContactRepository.php',
+<<<<<<< HEAD
     'App\\Repository\\EntiteRepository' => $baseDir . '/src/Repository/EntiteRepository.php',
+=======
+    'App\\Repository\\CoordonneesRepository' => $baseDir . '/src/Repository/CoordonneesRepository.php',
+    'App\\Repository\\EntiteRepository' => $baseDir . '/src/Repository/EntiteRepository.php',
+    'App\\Repository\\FormateurRepository' => $baseDir . '/src/Repository/FormateurRepository.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'App\\Repository\\GestionnaireRepository' => $baseDir . '/src/Repository/GestionnaireRepository.php',
     'App\\Repository\\IncidentRepository' => $baseDir . '/src/Repository/IncidentRepository.php',
     'App\\Repository\\LocalisationRepository' => $baseDir . '/src/Repository/LocalisationRepository.php',
@@ -563,6 +583,10 @@ return array(
     'App\\Repository\\TypeIncidentRepository' => $baseDir . '/src/Repository/TypeIncidentRepository.php',
     'App\\Repository\\TypeLocalisationRepository' => $baseDir . '/src/Repository/TypeLocalisationRepository.php',
     'App\\Repository\\UserRepository' => $baseDir . '/src/Repository/UserRepository.php',
+<<<<<<< HEAD
+=======
+    'App\\Repository\\VilleRepository' => $baseDir . '/src/Repository/VilleRepository.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Doctrine\\Bundle\\DoctrineBundle\\Attribute\\AsEntityListener' => $vendorDir . '/doctrine/doctrine-bundle/Attribute/AsEntityListener.php',
@@ -625,6 +649,20 @@ return array(
     'Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository' => $vendorDir . '/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php',
     'Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepositoryInterface' => $vendorDir . '/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php',
     'Doctrine\\Bundle\\DoctrineBundle\\Twig\\DoctrineExtension' => $vendorDir . '/doctrine/doctrine-bundle/Twig/DoctrineExtension.php',
+<<<<<<< HEAD
+=======
+    'Doctrine\\Bundle\\FixturesBundle\\Command\\LoadDataFixturesDoctrineCommand' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/Command/LoadDataFixturesDoctrineCommand.php',
+    'Doctrine\\Bundle\\FixturesBundle\\DependencyInjection\\CompilerPass\\FixturesCompilerPass' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/DependencyInjection/CompilerPass/FixturesCompilerPass.php',
+    'Doctrine\\Bundle\\FixturesBundle\\DependencyInjection\\CompilerPass\\PurgerFactoryCompilerPass' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/DependencyInjection/CompilerPass/PurgerFactoryCompilerPass.php',
+    'Doctrine\\Bundle\\FixturesBundle\\DependencyInjection\\DoctrineFixturesExtension' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/DependencyInjection/DoctrineFixturesExtension.php',
+    'Doctrine\\Bundle\\FixturesBundle\\DoctrineFixturesBundle' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/DoctrineFixturesBundle.php',
+    'Doctrine\\Bundle\\FixturesBundle\\Fixture' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/Fixture.php',
+    'Doctrine\\Bundle\\FixturesBundle\\FixtureGroupInterface' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/FixtureGroupInterface.php',
+    'Doctrine\\Bundle\\FixturesBundle\\Loader\\SymfonyFixturesLoader' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/Loader/SymfonyFixturesLoader.php',
+    'Doctrine\\Bundle\\FixturesBundle\\ORMFixtureInterface' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/ORMFixtureInterface.php',
+    'Doctrine\\Bundle\\FixturesBundle\\Purger\\ORMPurgerFactory' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/Purger/ORMPurgerFactory.php',
+    'Doctrine\\Bundle\\FixturesBundle\\Purger\\PurgerFactory' => $vendorDir . '/doctrine/doctrine-fixtures-bundle/Purger/PurgerFactory.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'Doctrine\\Bundle\\MigrationsBundle\\Collector\\MigrationsCollector' => $vendorDir . '/doctrine/doctrine-migrations-bundle/Collector/MigrationsCollector.php',
     'Doctrine\\Bundle\\MigrationsBundle\\Collector\\MigrationsFlattener' => $vendorDir . '/doctrine/doctrine-migrations-bundle/Collector/MigrationsFlattener.php',
     'Doctrine\\Bundle\\MigrationsBundle\\DependencyInjection\\CompilerPass\\ConfigureDependencyFactoryPass' => $vendorDir . '/doctrine/doctrine-migrations-bundle/DependencyInjection/CompilerPass/ConfigureDependencyFactoryPass.php',
@@ -683,6 +721,31 @@ return array(
     'Doctrine\\Common\\Collections\\Selectable' => $vendorDir . '/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php',
     'Doctrine\\Common\\CommonException' => $vendorDir . '/doctrine/common/lib/Doctrine/Common/CommonException.php',
     'Doctrine\\Common\\Comparable' => $vendorDir . '/doctrine/common/lib/Doctrine/Common/Comparable.php',
+<<<<<<< HEAD
+=======
+    'Doctrine\\Common\\DataFixtures\\AbstractFixture' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/AbstractFixture.php',
+    'Doctrine\\Common\\DataFixtures\\DependentFixtureInterface' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/DependentFixtureInterface.php',
+    'Doctrine\\Common\\DataFixtures\\Event\\Listener\\MongoDBReferenceListener' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Event/Listener/MongoDBReferenceListener.php',
+    'Doctrine\\Common\\DataFixtures\\Event\\Listener\\ORMReferenceListener' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Event/Listener/ORMReferenceListener.php',
+    'Doctrine\\Common\\DataFixtures\\Exception\\CircularReferenceException' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Exception/CircularReferenceException.php',
+    'Doctrine\\Common\\DataFixtures\\Executor\\AbstractExecutor' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Executor/AbstractExecutor.php',
+    'Doctrine\\Common\\DataFixtures\\Executor\\MongoDBExecutor' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Executor/MongoDBExecutor.php',
+    'Doctrine\\Common\\DataFixtures\\Executor\\ORMExecutor' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Executor/ORMExecutor.php',
+    'Doctrine\\Common\\DataFixtures\\Executor\\PHPCRExecutor' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Executor/PHPCRExecutor.php',
+    'Doctrine\\Common\\DataFixtures\\FixtureInterface' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/FixtureInterface.php',
+    'Doctrine\\Common\\DataFixtures\\Loader' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Loader.php',
+    'Doctrine\\Common\\DataFixtures\\OrderedFixtureInterface' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/OrderedFixtureInterface.php',
+    'Doctrine\\Common\\DataFixtures\\ProxyReferenceRepository' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/ProxyReferenceRepository.php',
+    'Doctrine\\Common\\DataFixtures\\Purger\\MongoDBPurger' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/MongoDBPurger.php',
+    'Doctrine\\Common\\DataFixtures\\Purger\\ORMPurger' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/ORMPurger.php',
+    'Doctrine\\Common\\DataFixtures\\Purger\\ORMPurgerInterface' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/ORMPurgerInterface.php',
+    'Doctrine\\Common\\DataFixtures\\Purger\\PHPCRPurger' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/PHPCRPurger.php',
+    'Doctrine\\Common\\DataFixtures\\Purger\\PurgerInterface' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/PurgerInterface.php',
+    'Doctrine\\Common\\DataFixtures\\ReferenceRepository' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/ReferenceRepository.php',
+    'Doctrine\\Common\\DataFixtures\\SharedFixtureInterface' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/SharedFixtureInterface.php',
+    'Doctrine\\Common\\DataFixtures\\Sorter\\TopologicalSorter' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Sorter/TopologicalSorter.php',
+    'Doctrine\\Common\\DataFixtures\\Sorter\\Vertex' => $vendorDir . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Sorter/Vertex.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'Doctrine\\Common\\EventArgs' => $vendorDir . '/doctrine/event-manager/lib/Doctrine/Common/EventArgs.php',
     'Doctrine\\Common\\EventManager' => $vendorDir . '/doctrine/event-manager/lib/Doctrine/Common/EventManager.php',
     'Doctrine\\Common\\EventSubscriber' => $vendorDir . '/doctrine/event-manager/lib/Doctrine/Common/EventSubscriber.php',
@@ -1341,6 +1404,10 @@ return array(
     'Doctrine\\ORM\\Mapping\\Driver\\AnnotationDriver' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AnnotationDriver.php',
     'Doctrine\\ORM\\Mapping\\Driver\\AttributeDriver' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AttributeDriver.php',
     'Doctrine\\ORM\\Mapping\\Driver\\AttributeReader' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/AttributeReader.php',
+<<<<<<< HEAD
+=======
+    'Doctrine\\ORM\\Mapping\\Driver\\CompatibilityAnnotationDriver' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/CompatibilityAnnotationDriver.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'Doctrine\\ORM\\Mapping\\Driver\\DatabaseDriver' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DatabaseDriver.php',
     'Doctrine\\ORM\\Mapping\\Driver\\DriverChain' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/DriverChain.php',
     'Doctrine\\ORM\\Mapping\\Driver\\PHPDriver' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/Mapping/Driver/PHPDriver.php',
@@ -1406,6 +1473,10 @@ return array(
     'Doctrine\\ORM\\NonUniqueResultException' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/NonUniqueResultException.php',
     'Doctrine\\ORM\\ORMException' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/ORMException.php',
     'Doctrine\\ORM\\ORMInvalidArgumentException' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/ORMInvalidArgumentException.php',
+<<<<<<< HEAD
+=======
+    'Doctrine\\ORM\\ORMSetup' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/ORMSetup.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'Doctrine\\ORM\\OptimisticLockException' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/OptimisticLockException.php',
     'Doctrine\\ORM\\PersistentCollection' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/PersistentCollection.php',
     'Doctrine\\ORM\\Persisters\\Collection\\AbstractCollectionPersister' => $vendorDir . '/doctrine/orm/lib/Doctrine/ORM/Persisters/Collection/AbstractCollectionPersister.php',
@@ -1729,6 +1800,11 @@ return array(
     'Egulias\\EmailValidator\\Result\\SpoofEmail' => $vendorDir . '/egulias/email-validator/src/Result/SpoofEmail.php',
     'Egulias\\EmailValidator\\Result\\ValidEmail' => $vendorDir . '/egulias/email-validator/src/Result/ValidEmail.php',
     'Egulias\\EmailValidator\\Validation\\DNSCheckValidation' => $vendorDir . '/egulias/email-validator/src/Validation/DNSCheckValidation.php',
+<<<<<<< HEAD
+=======
+    'Egulias\\EmailValidator\\Validation\\DNSGetRecordWrapper' => $vendorDir . '/egulias/email-validator/src/Validation/DNSGetRecordWrapper.php',
+    'Egulias\\EmailValidator\\Validation\\DNSRecords' => $vendorDir . '/egulias/email-validator/src/Validation/DNSRecords.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'Egulias\\EmailValidator\\Validation\\EmailValidation' => $vendorDir . '/egulias/email-validator/src/Validation/EmailValidation.php',
     'Egulias\\EmailValidator\\Validation\\Exception\\EmptyValidationList' => $vendorDir . '/egulias/email-validator/src/Validation/Exception/EmptyValidationList.php',
     'Egulias\\EmailValidator\\Validation\\Extra\\SpoofCheckValidation' => $vendorDir . '/egulias/email-validator/src/Validation/Extra/SpoofCheckValidation.php',
@@ -2366,6 +2442,10 @@ return array(
     'ProxyManager\\Generator\\Util\\IdentifierSuffixer' => $vendorDir . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Generator/Util/IdentifierSuffixer.php',
     'ProxyManager\\Generator\\Util\\ProxiedMethodReturnExpression' => $vendorDir . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Generator/Util/ProxiedMethodReturnExpression.php',
     'ProxyManager\\Generator\\Util\\UniqueIdentifierGenerator' => $vendorDir . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Generator/Util/UniqueIdentifierGenerator.php',
+<<<<<<< HEAD
+=======
+    'ProxyManager\\Generator\\ValueGenerator' => $vendorDir . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Generator/ValueGenerator.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'ProxyManager\\Inflector\\ClassNameInflector' => $vendorDir . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Inflector/ClassNameInflector.php',
     'ProxyManager\\Inflector\\ClassNameInflectorInterface' => $vendorDir . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Inflector/ClassNameInflectorInterface.php',
     'ProxyManager\\Inflector\\Util\\ParameterEncoder' => $vendorDir . '/friendsofphp/proxy-manager-lts/src/ProxyManager/Inflector/Util/ParameterEncoder.php',
@@ -2496,6 +2576,10 @@ return array(
     'Psr\\Log\\LoggerTrait' => $vendorDir . '/psr/log/src/LoggerTrait.php',
     'Psr\\Log\\NullLogger' => $vendorDir . '/psr/log/src/NullLogger.php',
     'ReturnTypeWillChange' => $vendorDir . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
+<<<<<<< HEAD
+=======
+    'StellaMaris\\Clock\\ClockInterface' => $vendorDir . '/stella-maris/clock/src/ClockInterface.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
     'Symfony\\Bridge\\Doctrine\\CacheWarmer\\ProxyCacheWarmer' => $vendorDir . '/symfony/doctrine-bridge/CacheWarmer/ProxyCacheWarmer.php',
     'Symfony\\Bridge\\Doctrine\\ContainerAwareEventManager' => $vendorDir . '/symfony/doctrine-bridge/ContainerAwareEventManager.php',
@@ -4571,6 +4655,14 @@ return array(
     'Symfony\\Polyfill\\Php80\\Php80' => $vendorDir . '/symfony/polyfill-php80/Php80.php',
     'Symfony\\Polyfill\\Php80\\PhpToken' => $vendorDir . '/symfony/polyfill-php80/PhpToken.php',
     'Symfony\\Polyfill\\Php81\\Php81' => $vendorDir . '/symfony/polyfill-php81/Php81.php',
+<<<<<<< HEAD
+=======
+    'Symfony\\Requirements\\PhpConfigRequirement' => $vendorDir . '/symfony/requirements-checker/src/PhpConfigRequirement.php',
+    'Symfony\\Requirements\\ProjectRequirements' => $vendorDir . '/symfony/requirements-checker/src/ProjectRequirements.php',
+    'Symfony\\Requirements\\Requirement' => $vendorDir . '/symfony/requirements-checker/src/Requirement.php',
+    'Symfony\\Requirements\\RequirementCollection' => $vendorDir . '/symfony/requirements-checker/src/RequirementCollection.php',
+    'Symfony\\Requirements\\SymfonyRequirements' => $vendorDir . '/symfony/requirements-checker/src/SymfonyRequirements.php',
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     'Symfony\\Runtime\\Symfony\\Component\\Console\\ApplicationRuntime' => $vendorDir . '/symfony/runtime/Internal/Console/ApplicationRuntime.php',
     'Symfony\\Runtime\\Symfony\\Component\\Console\\Command\\CommandRuntime' => $vendorDir . '/symfony/runtime/Internal/Console/Command/CommandRuntime.php',
     'Symfony\\Runtime\\Symfony\\Component\\Console\\Input\\InputInterfaceRuntime' => $vendorDir . '/symfony/runtime/Internal/Console/Input/InputInterfaceRuntime.php',

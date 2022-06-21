@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Doctrine\ORM\Decorator;
 
 use Doctrine\ORM\EntityManagerInterface;
+<<<<<<< HEAD
+=======
+use Doctrine\ORM\EntityRepository;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\Persistence\ObjectManagerDecorator;
 
@@ -45,6 +49,31 @@ abstract class EntityManagerDecorator extends ObjectManagerDecorator implements 
 
     /**
      * {@inheritdoc}
+<<<<<<< HEAD
+=======
+     *
+     * @psalm-param class-string<T> $className
+     *
+     * @psalm-return EntityRepository<T>
+     *
+     * @template T of object
+     */
+    public function getRepository($className)
+    {
+        return $this->wrapped->getRepository($className);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getClassMetadata($className)
+    {
+        return $this->wrapped->getClassMetadata($className);
+    }
+
+    /**
+     * {@inheritdoc}
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function beginTransaction()
     {

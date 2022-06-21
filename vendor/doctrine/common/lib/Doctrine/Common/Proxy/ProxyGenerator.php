@@ -162,7 +162,11 @@ class <proxyShortClassName> extends \<className> implements \<baseProxyInterface
     /**
      * Forces initialization of the proxy
      */
+<<<<<<< HEAD
     public function __load()
+=======
+    public function __load(): void
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         $this->__initializer__ && $this->__initializer__->__invoke($this, \'__load\', []);
     }
@@ -171,7 +175,11 @@ class <proxyShortClassName> extends \<className> implements \<baseProxyInterface
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
+<<<<<<< HEAD
     public function __isInitialized()
+=======
+    public function __isInitialized(): bool
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         return $this->__isInitialized__;
     }
@@ -180,7 +188,11 @@ class <proxyShortClassName> extends \<className> implements \<baseProxyInterface
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
+<<<<<<< HEAD
     public function __setInitialized($initialized)
+=======
+    public function __setInitialized($initialized): void
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         $this->__isInitialized__ = $initialized;
     }
@@ -189,7 +201,11 @@ class <proxyShortClassName> extends \<className> implements \<baseProxyInterface
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
+<<<<<<< HEAD
     public function __setInitializer(\Closure $initializer = null)
+=======
+    public function __setInitializer(\Closure $initializer = null): void
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         $this->__initializer__ = $initializer;
     }
@@ -198,7 +214,11 @@ class <proxyShortClassName> extends \<className> implements \<baseProxyInterface
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
+<<<<<<< HEAD
     public function __getInitializer()
+=======
+    public function __getInitializer(): ?\Closure
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         return $this->__initializer__;
     }
@@ -207,7 +227,11 @@ class <proxyShortClassName> extends \<className> implements \<baseProxyInterface
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
+<<<<<<< HEAD
     public function __setCloner(\Closure $cloner = null)
+=======
+    public function __setCloner(\Closure $cloner = null): void
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         $this->__cloner__ = $cloner;
     }
@@ -216,7 +240,11 @@ class <proxyShortClassName> extends \<className> implements \<baseProxyInterface
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific cloning logic
      */
+<<<<<<< HEAD
     public function __getCloner()
+=======
+    public function __getCloner(): ?\Closure
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         return $this->__cloner__;
     }
@@ -227,7 +255,11 @@ class <proxyShortClassName> extends \<className> implements \<baseProxyInterface
      * @deprecated no longer in use - generated code now relies on internal components rather than generated public API
      * @static
      */
+<<<<<<< HEAD
     public function __getLazyProperties()
+=======
+    public function __getLazyProperties(): array
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         return self::$lazyPropertiesDefaults;
     }

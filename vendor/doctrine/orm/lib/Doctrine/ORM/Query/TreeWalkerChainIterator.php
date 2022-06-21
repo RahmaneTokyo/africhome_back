@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Doctrine\ORM\Query;
 
 use ArrayAccess;
+<<<<<<< HEAD
+=======
+use Doctrine\Deprecations\Deprecation;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\AbstractQuery;
 use Iterator;
 use ReturnTypeWillChange;
@@ -14,6 +18,11 @@ use function next;
 use function reset;
 
 /**
+<<<<<<< HEAD
+=======
+ * @deprecated This class will be removed in 3.0 without replacement.
+ *
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
  * @template-implements Iterator<TreeWalker>
  * @template-implements ArrayAccess<int, TreeWalker>
  */
@@ -34,6 +43,16 @@ class TreeWalkerChainIterator implements Iterator, ArrayAccess
      */
     public function __construct(TreeWalkerChain $treeWalkerChain, $query, $parserResult)
     {
+<<<<<<< HEAD
+=======
+        Deprecation::trigger(
+            'doctrine/orm',
+            'https://github.com/doctrine/orm/pull/9511',
+            '%s is deprecated and will be removed without replacement.',
+            self::class
+        );
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $this->treeWalkerChain = $treeWalkerChain;
         $this->query           = $query;
         $this->parserResult    = $parserResult;

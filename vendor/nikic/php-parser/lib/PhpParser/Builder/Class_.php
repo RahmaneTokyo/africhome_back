@@ -67,7 +67,11 @@ class Class_ extends Declaration
      * @return $this The builder instance (for fluid interface)
      */
     public function makeAbstract() {
+<<<<<<< HEAD
         $this->flags = BuilderHelpers::addModifier($this->flags, Stmt\Class_::MODIFIER_ABSTRACT);
+=======
+        $this->flags = BuilderHelpers::addClassModifier($this->flags, Stmt\Class_::MODIFIER_ABSTRACT);
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
         return $this;
     }
@@ -78,7 +82,17 @@ class Class_ extends Declaration
      * @return $this The builder instance (for fluid interface)
      */
     public function makeFinal() {
+<<<<<<< HEAD
         $this->flags = BuilderHelpers::addModifier($this->flags, Stmt\Class_::MODIFIER_FINAL);
+=======
+        $this->flags = BuilderHelpers::addClassModifier($this->flags, Stmt\Class_::MODIFIER_FINAL);
+
+        return $this;
+    }
+
+    public function makeReadonly() {
+        $this->flags = BuilderHelpers::addClassModifier($this->flags, Stmt\Class_::MODIFIER_READONLY);
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
         return $this;
     }

@@ -15,12 +15,15 @@ use Doctrine\ORM\Persisters\Entity\EntityPersister;
  */
 class ReadWriteCachedEntityPersister extends AbstractEntityPersister
 {
+<<<<<<< HEAD
     /**
      * @param EntityPersister        $persister The entity persister to cache.
      * @param ConcurrentRegion       $region    The entity cache region.
      * @param EntityManagerInterface $em        The entity manager.
      * @param ClassMetadata          $class     The entity metadata.
      */
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     public function __construct(EntityPersister $persister, ConcurrentRegion $region, EntityManagerInterface $em, ClassMetadata $class)
     {
         parent::__construct($persister, $region, $em, $class);

@@ -9,6 +9,10 @@ use DateTimeInterface;
 use Doctrine\Common\EventManager;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\LockMode;
+<<<<<<< HEAD
+=======
+use Doctrine\ORM\Exception\ORMException;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\Internal\Hydration\AbstractHydrator;
 use Doctrine\ORM\Proxy\ProxyFactory;
 use Doctrine\ORM\Query\Expr;
@@ -31,7 +35,11 @@ interface EntityManagerInterface extends ObjectManager
      *
      * @psalm-return EntityRepository<T>
      *
+<<<<<<< HEAD
      * @template T
+=======
+     * @template T of object
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function getRepository($className);
 

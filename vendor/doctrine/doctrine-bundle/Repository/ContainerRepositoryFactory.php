@@ -20,7 +20,11 @@ use function sprintf;
  */
 final class ContainerRepositoryFactory implements RepositoryFactory
 {
+<<<<<<< HEAD
     /** @var ObjectRepository[] */
+=======
+    /** @var array<string, ObjectRepository> */
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     private $managedRepositories = [];
 
     /** @var ContainerInterface */
@@ -68,6 +72,16 @@ final class ContainerRepositoryFactory implements RepositoryFactory
         return $this->getOrCreateRepository($entityManager, $metadata);
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @param ClassMetadata<TEntity> $metadata
+     *
+     * @return ObjectRepository<TEntity>
+     *
+     * @template TEntity of object
+     */
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     private function getOrCreateRepository(
         EntityManagerInterface $entityManager,
         ClassMetadata $metadata
@@ -79,6 +93,10 @@ final class ContainerRepositoryFactory implements RepositoryFactory
 
         $repositoryClassName = $metadata->customRepositoryClassName ?: $entityManager->getConfiguration()->getDefaultRepositoryClassName();
 
+<<<<<<< HEAD
+=======
+        /** @psalm-var ObjectRepository<TEntity> */
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         return $this->managedRepositories[$repositoryHash] = new $repositoryClassName($entityManager, $metadata);
     }
 }

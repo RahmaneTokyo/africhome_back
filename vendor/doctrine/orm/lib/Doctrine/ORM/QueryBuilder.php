@@ -27,6 +27,10 @@ use function is_string;
 use function key;
 use function reset;
 use function sprintf;
+<<<<<<< HEAD
+=======
+use function str_starts_with;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function strpos;
 use function strrpos;
 use function substr;
@@ -195,7 +199,13 @@ class QueryBuilder
     }
 
     /**
+<<<<<<< HEAD
      * @return bool TRUE if the query results are enable for second level cache, FALSE otherwise.
+=======
+     * Are the query results enabled for second level cache?
+     *
+     * @return bool
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function isCacheable()
     {
@@ -606,7 +616,11 @@ class QueryBuilder
     /**
      * Gets a (previously set) query parameter of the query being constructed.
      *
+<<<<<<< HEAD
      * @param mixed $key The key (index or name) of the bound parameter.
+=======
+     * @param string|int $key The key (index or name) of the bound parameter.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return Parameter|null The value of the bound parameter.
      */
@@ -832,8 +846,13 @@ class QueryBuilder
      *         ->setParameter('user_id', 1);
      * </code>
      *
+<<<<<<< HEAD
      * @param string $delete The class/type whose instances are subject to the deletion.
      * @param string $alias  The class/type alias used in the constructed query.
+=======
+     * @param string|null $delete The class/type whose instances are subject to the deletion.
+     * @param string|null $alias  The class/type alias used in the constructed query.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return $this
      */
@@ -859,8 +878,13 @@ class QueryBuilder
      *         ->where('u.id = ?2');
      * </code>
      *
+<<<<<<< HEAD
      * @param string $update The class/type whose instances are subject to the update.
      * @param string $alias  The class/type alias used in the constructed query.
+=======
+     * @param string|null $update The class/type whose instances are subject to the update.
+     * @param string|null $alias  The class/type alias used in the constructed query.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return $this
      */
@@ -885,9 +909,15 @@ class QueryBuilder
      *         ->from('User', 'u');
      * </code>
      *
+<<<<<<< HEAD
      * @param string $from    The class name.
      * @param string $alias   The alias of the class.
      * @param string $indexBy The index for the from.
+=======
+     * @param string      $from    The class name.
+     * @param string      $alias   The alias of the class.
+     * @param string|null $indexBy The index for the from.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return $this
      */
@@ -960,6 +990,10 @@ class QueryBuilder
      * @param string|null                                $conditionType The condition type constant. Either ON or WITH.
      * @param string|Expr\Comparison|Expr\Composite|null $condition     The condition for the join.
      * @param string|null                                $indexBy       The index for the join.
+<<<<<<< HEAD
+=======
+     * @psalm-param Expr\Join::ON|Expr\Join::WITH|null $conditionType
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return $this
      */
@@ -986,6 +1020,10 @@ class QueryBuilder
      * @param string|null                                $conditionType The condition type constant. Either ON or WITH.
      * @param string|Expr\Comparison|Expr\Composite|null $condition     The condition for the join.
      * @param string|null                                $indexBy       The index for the join.
+<<<<<<< HEAD
+=======
+     * @psalm-param Expr\Join::ON|Expr\Join::WITH|null $conditionType
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return $this
      */
@@ -1026,6 +1064,10 @@ class QueryBuilder
      * @param string|null                                $conditionType The condition type constant. Either ON or WITH.
      * @param string|Expr\Comparison|Expr\Composite|null $condition     The condition for the join.
      * @param string|null                                $indexBy       The index for the join.
+<<<<<<< HEAD
+=======
+     * @psalm-param Expr\Join::ON|Expr\Join::WITH|null $conditionType
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return $this
      */
@@ -1276,7 +1318,11 @@ class QueryBuilder
      * Replaces any previously specified orderings, if any.
      *
      * @param string|Expr\OrderBy $sort  The ordering expression.
+<<<<<<< HEAD
      * @param string              $order The ordering direction.
+=======
+     * @param string|null         $order The ordering direction.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return $this
      */
@@ -1291,7 +1337,11 @@ class QueryBuilder
      * Adds an ordering to the query results.
      *
      * @param string|Expr\OrderBy $sort  The ordering expression.
+<<<<<<< HEAD
      * @param string              $order The ordering direction.
+=======
+     * @param string|null         $order The ordering direction.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return $this
      */
@@ -1334,7 +1384,11 @@ class QueryBuilder
             foreach ($criteria->getOrderings() as $sort => $order) {
                 $hasValidAlias = false;
                 foreach ($allAliases as $alias) {
+<<<<<<< HEAD
                     if (strpos($sort . '.', $alias . '.') === 0) {
+=======
+                    if (str_starts_with($sort . '.', $alias . '.')) {
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                         $hasValidAlias = true;
                         break;
                     }

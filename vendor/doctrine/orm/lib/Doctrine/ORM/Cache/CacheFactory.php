@@ -31,9 +31,13 @@ interface CacheFactory
     /**
      * Build a collection persister for the given relation mapping.
      *
+<<<<<<< HEAD
      * @param EntityManagerInterface $em        The entity manager.
      * @param CollectionPersister    $persister The collection persister that will be cached.
      * @param mixed[]                $mapping   The association mapping.
+=======
+     * @param mixed[] $mapping The association mapping.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return CachedCollectionPersister
      */
@@ -42,8 +46,12 @@ interface CacheFactory
     /**
      * Build a query cache based on the given region name
      *
+<<<<<<< HEAD
      * @param EntityManagerInterface $em         The Entity manager.
      * @param string                 $regionName The region name.
+=======
+     * @param string|null $regionName The region name.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return QueryCache The built query cache.
      */
@@ -52,9 +60,12 @@ interface CacheFactory
     /**
      * Build an entity hydrator
      *
+<<<<<<< HEAD
      * @param EntityManagerInterface $em       The Entity manager.
      * @param ClassMetadata          $metadata The entity metadata.
      *
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @return EntityHydrator The built entity hydrator.
      */
     public function buildEntityHydrator(EntityManagerInterface $em, ClassMetadata $metadata);
@@ -62,8 +73,12 @@ interface CacheFactory
     /**
      * Build a collection hydrator
      *
+<<<<<<< HEAD
      * @param EntityManagerInterface $em      The Entity manager.
      * @param mixed[]                $mapping The association mapping.
+=======
+     * @param mixed[] $mapping The association mapping.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return CollectionHydrator The built collection hydrator.
      */

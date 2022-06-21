@@ -38,6 +38,7 @@ class RecipePatcher
      */
     public function applyPatch(RecipePatch $patch): bool
     {
+<<<<<<< HEAD
         if (!$patch->getPatch()) {
             // nothing to do!
             return true;
@@ -72,10 +73,22 @@ class RecipePatcher
                 unlink($filename);
             }
         }
+=======
+        $withConflicts = $this->_applyPatchFile($patch);
+
+        foreach ($patch->getDeletedFiles() as $deletedFile) {
+            if (file_exists($this->rootDir.'/'.$deletedFile)) {
+                $this->execute(sprintf('git rm %s', ProcessExecutor::escape($deletedFile)), $this->rootDir);
+            }
+        }
+
+        return $withConflicts;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     }
 
     public function generatePatch(array $originalFiles, array $newFiles): RecipePatch
     {
+<<<<<<< HEAD
         // null implies "file does not exist"
         $originalFiles = array_filter($originalFiles, function ($file) {
             return null !== $file;
@@ -88,6 +101,26 @@ class RecipePatcher
         foreach ($originalFiles as $file => $contents) {
             if (!isset($newFiles[$file])) {
                 $newFiles[$file] = null;
+=======
+        $ignoredFiles = $this->getIgnoredFiles(array_keys($originalFiles) + array_keys($newFiles));
+
+        // null implies "file does not exist"
+        $originalFiles = array_filter($originalFiles, function ($file, $fileName) use ($ignoredFiles) {
+            return null !== $file && !\in_array($fileName, $ignoredFiles);
+        }, \ARRAY_FILTER_USE_BOTH);
+
+        $newFiles = array_filter($newFiles, function ($file, $fileName) use ($ignoredFiles) {
+            return null !== $file && !\in_array($fileName, $ignoredFiles);
+        }, \ARRAY_FILTER_USE_BOTH);
+
+        $deletedFiles = [];
+        // find removed files & record that they are deleted
+        // unset them from originalFiles to avoid unnecessary blobs being added
+        foreach ($originalFiles as $file => $contents) {
+            if (!isset($newFiles[$file])) {
+                $deletedFiles[] = $file;
+                unset($originalFiles[$file]);
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             }
         }
 
@@ -130,6 +163,10 @@ class RecipePatcher
             return new RecipePatch(
                 $patchString,
                 $blobs,
+<<<<<<< HEAD
+=======
+                $deletedFiles,
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 $removedPatches
             );
         } finally {
@@ -223,4 +260,54 @@ class RecipePatcher
 
         return '.git/objects/'.$hashStart.'/'.$hashEnd;
     }
+<<<<<<< HEAD
+=======
+
+    private function _applyPatchFile(RecipePatch $patch)
+    {
+        if (!$patch->getPatch()) {
+            // nothing to do!
+            return true;
+        }
+
+        $addedBlobs = $this->addMissingBlobs($patch->getBlobs());
+
+        $patchPath = $this->rootDir.'/_flex_recipe_update.patch';
+        file_put_contents($patchPath, $patch->getPatch());
+
+        try {
+            $this->execute('git update-index --refresh', $this->rootDir);
+
+            $output = '';
+            $statusCode = $this->processExecutor->execute('git apply "_flex_recipe_update.patch" -3', $output, $this->rootDir);
+
+            if (0 === $statusCode) {
+                // successful with no conflicts
+                return true;
+            }
+
+            if (false !== strpos($this->processExecutor->getErrorOutput(), 'with conflicts')) {
+                // successful with conflicts
+                return false;
+            }
+
+            throw new \LogicException('Error applying the patch: '.$this->processExecutor->getErrorOutput());
+        } finally {
+            unlink($patchPath);
+            // clean up any temporary blobs
+            foreach ($addedBlobs as $filename) {
+                unlink($filename);
+            }
+        }
+    }
+
+    private function getIgnoredFiles(array $fileNames): array
+    {
+        $args = implode(' ', array_map([ProcessExecutor::class, 'escape'], $fileNames));
+        $output = '';
+        $this->processExecutor->execute(sprintf('git check-ignore %s', $args), $output, $this->rootDir);
+
+        return $this->processExecutor->splitLines($output);
+    }
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 }

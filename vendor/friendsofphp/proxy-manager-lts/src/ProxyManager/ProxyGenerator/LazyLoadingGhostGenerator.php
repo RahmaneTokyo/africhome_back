@@ -63,7 +63,11 @@ class LazyLoadingGhostGenerator implements ProxyGeneratorInterface
         $filteredProperties = Properties::fromReflectionClass($originalClass)
             ->filter($proxyOptions['skippedProperties'] ?? []);
 
+<<<<<<< HEAD
         $publicProperties    = new PublicPropertiesMap($filteredProperties);
+=======
+        $publicProperties    = new PublicPropertiesMap($filteredProperties, true);
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $privateProperties   = new PrivatePropertiesMap($filteredProperties);
         $protectedProperties = new ProtectedPropertiesMap($filteredProperties);
         $skipDestructor      = ($proxyOptions['skipDestructor'] ?? false) && $originalClass->hasMethod('__destruct');

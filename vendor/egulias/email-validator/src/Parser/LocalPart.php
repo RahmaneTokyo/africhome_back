@@ -15,6 +15,20 @@ use Egulias\EmailValidator\Parser\CommentStrategy\LocalComment;
 
 class LocalPart extends PartParser
 {
+<<<<<<< HEAD
+=======
+    const INVALID_TOKENS = [
+        EmailLexer::S_COMMA => EmailLexer::S_COMMA,
+        EmailLexer::S_CLOSEBRACKET => EmailLexer::S_CLOSEBRACKET,
+        EmailLexer::S_OPENBRACKET => EmailLexer::S_OPENBRACKET,
+        EmailLexer::S_GREATERTHAN => EmailLexer::S_GREATERTHAN,
+        EmailLexer::S_LOWERTHAN => EmailLexer::S_LOWERTHAN,
+        EmailLexer::S_COLON => EmailLexer::S_COLON,
+        EmailLexer::S_SEMICOLON => EmailLexer::S_SEMICOLON,
+        EmailLexer::INVALID => EmailLexer::INVALID
+    ];
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     /**
      * @var string
      */
@@ -88,6 +102,7 @@ class LocalPart extends PartParser
 
     protected function validateTokens(bool $hasComments) : Result
     {
+<<<<<<< HEAD
         $invalidTokens = array(
             EmailLexer::S_COMMA => EmailLexer::S_COMMA,
             EmailLexer::S_CLOSEBRACKET => EmailLexer::S_CLOSEBRACKET,
@@ -99,6 +114,9 @@ class LocalPart extends PartParser
             EmailLexer::INVALID => EmailLexer::INVALID
         );
         if (isset($invalidTokens[$this->lexer->token['type']])) {
+=======
+        if (isset(self::INVALID_TOKENS[$this->lexer->token['type']])) {
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             return new InvalidEmail(new ExpectingATEXT('Invalid token found'), $this->lexer->token['value']);
         }
         return new ValidEmail();

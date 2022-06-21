@@ -24,6 +24,13 @@ final class ProxiedMethodReturnExpression
             return $returnedValueExpression . ";\nreturn;";
         }
 
+<<<<<<< HEAD
+=======
+        if ($originalReturnType instanceof ReflectionNamedType && $originalReturnType->getName() === 'never') {
+            return $returnedValueExpression . ';';
+        }
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         return 'return ' . $returnedValueExpression . ';';
     }
 }

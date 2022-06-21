@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM\Tools;
 
+<<<<<<< HEAD
+=======
+use BackedEnum;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Schema\AbstractAsset;
@@ -787,6 +791,13 @@ class SchemaTool
             $mappingOptions['enumType'] = $mapping['enumType'];
         }
 
+<<<<<<< HEAD
+=======
+        if (($mappingOptions['default'] ?? null) instanceof BackedEnum) {
+            $mappingOptions['default'] = $mappingOptions['default']->value;
+        }
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         if (empty($mappingOptions)) {
             return [];
         }

@@ -87,7 +87,11 @@ class ComposeFileManipulator
         $portData[] = sprintf('%s To allow the host machine to access the ports below, modify the lines below.', YamlSourceManipulator::COMMENT_PLACEHOLDER_VALUE);
         $portData[] = sprintf('%s For example, to allow the host to connect to port 3306 on the container, you would change', YamlSourceManipulator::COMMENT_PLACEHOLDER_VALUE);
         $portData[] = sprintf('%s "3306" to "3306:3306". Where the first port is exposed to the host and the second is the container port.', YamlSourceManipulator::COMMENT_PLACEHOLDER_VALUE);
+<<<<<<< HEAD
         $portData[] = sprintf('%s See https://docs.docker.com/compose/compose-file/#ports for more information.', YamlSourceManipulator::COMMENT_PLACEHOLDER_VALUE);
+=======
+        $portData[] = sprintf('%s See https://docs.docker.com/compose/compose-file/compose-file-v3/#ports for more information.', YamlSourceManipulator::COMMENT_PLACEHOLDER_VALUE);
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
         foreach ($ports as $port) {
             $portData[] = $port;

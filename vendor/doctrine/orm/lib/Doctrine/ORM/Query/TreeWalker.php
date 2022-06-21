@@ -5,10 +5,18 @@ declare(strict_types=1);
 namespace Doctrine\ORM\Query;
 
 use Doctrine\ORM\AbstractQuery;
+<<<<<<< HEAD
 use Doctrine\ORM\Mapping\ClassMetadata;
 
 /**
  * Interface for walkers of DQL ASTs (abstract syntax trees).
+=======
+
+/**
+ * Interface for walkers of DQL ASTs (abstract syntax trees).
+ *
+ * @psalm-import-type QueryComponent from Parser
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
  */
 interface TreeWalker
 {
@@ -18,6 +26,10 @@ interface TreeWalker
      * @param AbstractQuery $query           The parsed Query.
      * @param ParserResult  $parserResult    The result of the parsing process.
      * @param mixed[]       $queryComponents The query components (symbol table).
+<<<<<<< HEAD
+=======
+     * @psalm-param array<string, QueryComponent> $queryComponents The query components (symbol table).
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function __construct($query, $parserResult, array $queryComponents);
 
@@ -25,6 +37,7 @@ interface TreeWalker
      * Returns internal queryComponents array.
      *
      * @return array<string, array<string, mixed>>
+<<<<<<< HEAD
      * @psalm-return array<string, array{
      *                   metadata: ClassMetadata,
      *                   parent: string,
@@ -33,6 +46,9 @@ interface TreeWalker
      *                   nestingLevel: int,
      *                   token: array
      *               }>
+=======
+     * @psalm-return array<string, QueryComponent>
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function getQueryComponents();
 
@@ -41,6 +57,10 @@ interface TreeWalker
      *
      * @param string               $dqlAlias       The DQL alias.
      * @param array<string, mixed> $queryComponent
+<<<<<<< HEAD
+=======
+     * @psalm-param QueryComponent $queryComponent
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return void
      */
@@ -339,7 +359,11 @@ interface TreeWalker
     /**
      * Walks down a literal that represents an AST node, thereby generating the appropriate SQL.
      *
+<<<<<<< HEAD
      * @param mixed $literal
+=======
+     * @param AST\Literal $literal
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return string The SQL.
      */
@@ -438,7 +462,11 @@ interface TreeWalker
     /**
      * Walks down a PathExpression AST node, thereby generating the appropriate SQL.
      *
+<<<<<<< HEAD
      * @param mixed $pathExpr
+=======
+     * @param AST\PathExpression $pathExpr
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return string The SQL.
      */

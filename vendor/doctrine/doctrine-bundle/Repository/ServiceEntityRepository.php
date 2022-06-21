@@ -22,7 +22,11 @@ use function sprintf;
  *     }
  * }
  *
+<<<<<<< HEAD
  * @template T
+=======
+ * @template T of object
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
  * @template-extends EntityRepository<T>
  */
 class ServiceEntityRepository extends EntityRepository implements ServiceEntityRepositoryInterface

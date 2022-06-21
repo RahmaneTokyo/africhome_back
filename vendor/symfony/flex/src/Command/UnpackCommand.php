@@ -110,9 +110,20 @@ class UnpackCommand extends BaseCommand
             ->setDumpAutoloader(false)
             ->setIgnorePlatformRequirements(true)
             ->setUpdate(true)
+<<<<<<< HEAD
             ->setUpdateAllowList(['php'])
         ;
 
+=======
+        ;
+
+        if (method_exists($installer, 'setUpdateAllowList')) {
+            $installer->setUpdateAllowList(['php']);
+        } else {
+            $installer->setUpdateWhiteList(['php']);
+        }
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         if (method_exists($composer->getEventDispatcher(), 'setRunScripts')) {
             $composer->getEventDispatcher()->setRunScripts(false);
         } else {

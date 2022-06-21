@@ -141,6 +141,11 @@ interface Cache
      * Evicts all cached query results under the given name, or default query cache if the region name is NULL.
      *
      * @param string|null $regionName The cache name associated to the queries being cached.
+<<<<<<< HEAD
+=======
+     *
+     * @return void
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function evictQueryRegion($regionName = null);
 

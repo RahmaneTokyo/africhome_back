@@ -10,7 +10,14 @@ class Literal extends Node
     public const BOOLEAN = 2;
     public const NUMERIC = 3;
 
+<<<<<<< HEAD
     /** @var int */
+=======
+    /**
+     * @var int
+     * @psalm-var self::*
+     */
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     public $type;
 
     /** @var mixed */
@@ -19,6 +26,10 @@ class Literal extends Node
     /**
      * @param int   $type
      * @param mixed $value
+<<<<<<< HEAD
+=======
+     * @psalm-param self::* $type
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function __construct($type, $value)
     {

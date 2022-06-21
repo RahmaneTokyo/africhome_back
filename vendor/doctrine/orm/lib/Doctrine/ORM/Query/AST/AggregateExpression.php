@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM\Query\AST;
 
+<<<<<<< HEAD
 /**
  * Description of AggregateExpression.
  *
  * @link    www.doctrine-project.org
  */
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 class AggregateExpression extends Node
 {
     /** @var string */

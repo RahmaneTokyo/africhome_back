@@ -13,7 +13,11 @@ abstract class ClassLike extends Node\Stmt
     /** @var Node\AttributeGroup[] PHP attribute groups */
     public $attrGroups;
 
+<<<<<<< HEAD
     /** @var Node\Name Namespaced name (if using NameResolver) */
+=======
+    /** @var Node\Name|null Namespaced name (if using NameResolver) */
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     public $namespacedName;
 
     /**

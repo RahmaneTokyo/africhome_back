@@ -47,6 +47,7 @@ class FilterCollection
      * Instances of enabled filters.
      *
      * @var SQLFilter[]
+<<<<<<< HEAD
      */
     private $enabledFilters = [];
 
@@ -54,6 +55,25 @@ class FilterCollection
     private $filterHash;
 
     /** @var int The current state of this filter. */
+=======
+     * @psalm-var array<string, SQLFilter>
+     */
+    private $enabledFilters = [];
+
+    /**
+     * The filter hash from the last time the query was parsed.
+     *
+     * @var string
+     */
+    private $filterHash = '';
+
+    /**
+     * The current state of this filter.
+     *
+     * @var int
+     * @psalm-var self::FILTERS_STATE_*
+     */
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     private $filtersState = self::FILTERS_STATE_CLEAN;
 
     public function __construct(EntityManagerInterface $em)
@@ -66,6 +86,10 @@ class FilterCollection
      * Gets all the enabled filters.
      *
      * @return SQLFilter[] The enabled filters.
+<<<<<<< HEAD
+=======
+     * @psalm-return array<string, SQLFilter>
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function getEnabledFilters()
     {
@@ -167,7 +191,13 @@ class FilterCollection
     }
 
     /**
+<<<<<<< HEAD
      * @return bool True, if the filter collection is clean.
+=======
+     * Checks if the filter collection is clean.
+     *
+     * @return bool
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function isClean()
     {

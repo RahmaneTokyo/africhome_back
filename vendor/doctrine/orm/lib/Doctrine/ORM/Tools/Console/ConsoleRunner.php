@@ -25,6 +25,11 @@ final class ConsoleRunner
 {
     /**
      * Create a Symfony Console HelperSet
+<<<<<<< HEAD
+=======
+     *
+     * @deprecated This method will be removed in ORM 3.0 without replacement.
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public static function createHelperSet(EntityManagerInterface $entityManager): HelperSet
     {
@@ -120,6 +125,12 @@ final class ConsoleRunner
         );
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * @deprecated This method will be removed in ORM 3.0 without replacement.
+     */
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     public static function printCliConfigTemplate(): void
     {
         echo <<<'HELP'

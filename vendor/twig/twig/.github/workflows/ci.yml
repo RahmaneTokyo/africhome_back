@@ -25,24 +25,38 @@ jobs:
                     - '7.4'
                     - '8.0'
                     - '8.1'
+<<<<<<< HEAD
                 composer-options: ['']
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 experimental: [false]
 
         steps:
             - name: "Checkout code"
+<<<<<<< HEAD
               uses: actions/checkout@v2.3.3
 
             - name: "Install PHP with extensions"
               uses: shivammathur/setup-php@2.7.0
+=======
+              uses: actions/checkout@v2
+
+            - name: "Install PHP with extensions"
+              uses: shivammathur/setup-php@v2
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
               with:
                   coverage: "none"
                   php-version: ${{ matrix.php-version }}
                   ini-values: memory_limit=-1
+<<<<<<< HEAD
                   tools: composer:v2
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
             - name: "Add PHPUnit matcher"
               run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
+<<<<<<< HEAD
             - name: "Set composer cache directory"
               id: composer-cache
               run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -55,6 +69,9 @@ jobs:
                   restore-keys: ${{ runner.os }}-${{ matrix.php-version }}-composer-
 
             - run: composer install ${{ matrix.composer-options }}
+=======
+            - run: composer install
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
             - name: "Install PHPUnit"
               run: vendor/bin/simple-phpunit install
@@ -92,24 +109,38 @@ jobs:
                     - 'extra/markdown-extra'
                     - 'extra/string-extra'
                     - 'extra/twig-extra-bundle'
+<<<<<<< HEAD
                 composer-options: ['']
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 experimental: [false]
 
         steps:
             - name: "Checkout code"
+<<<<<<< HEAD
               uses: actions/checkout@v2.3.3
 
             - name: "Install PHP with extensions"
               uses: shivammathur/setup-php@2.7.0
+=======
+              uses: actions/checkout@v2
+
+            - name: "Install PHP with extensions"
+              uses: shivammathur/setup-php@v2
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
               with:
                   coverage: "none"
                   php-version: ${{ matrix.php-version }}
                   ini-values: memory_limit=-1
+<<<<<<< HEAD
                   tools: composer:v2
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
             - name: "Add PHPUnit matcher"
               run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
+<<<<<<< HEAD
             - name: "Set composer cache directory"
               id: composer-cache
               run: echo "::set-output name=dir::$(composer config cache-files-dir)"
@@ -121,6 +152,8 @@ jobs:
                   key: ${{ runner.os }}-${{ matrix.php-version }}-${{ matrix.extension }}-${{ hashFiles('composer.json') }}
                   restore-keys: ${{ runner.os }}-${{ matrix.php-version }}-${{ matrix.extension }}-
 
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             - run: composer install
 
             - name: "Install PHPUnit"
@@ -129,10 +162,13 @@ jobs:
             - name: "PHPUnit version"
               run: vendor/bin/simple-phpunit --version
 
+<<<<<<< HEAD
             - if: matrix.extension == 'extra/markdown-extra' && matrix.php-version == '8.0'
               working-directory: ${{ matrix.extension}}
               run: composer config platform.php 7.4.99
 
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             - name: "Composer install"
               working-directory: ${{ matrix.extension}}
               run: composer install
@@ -140,6 +176,10 @@ jobs:
             - name: "Run tests"
               working-directory: ${{ matrix.extension}}
               run: ../../vendor/bin/simple-phpunit
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 #
 #    Drupal does not support Twig 3 now!
 #
@@ -160,10 +200,17 @@ jobs:
 #
 #        steps:
 #            - name: "Checkout code"
+<<<<<<< HEAD
 #              uses: actions/checkout@v2.3.3
 #
 #            - name: "Install PHP with extensions"
 #              uses: shivammathur/setup-php@2.7.0
+=======
+#              uses: actions/checkout@v2
+#
+#            - name: "Install PHP with extensions"
+#              uses: shivammathur/setup-php@2
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 #              with:
 #                  coverage: "none"
 #                  extensions: "gd, pdo_sqlite"

@@ -3,6 +3,19 @@
 use Symfony\Component\Console\Helper\HelperSet;
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 
+<<<<<<< HEAD
+=======
+fwrite(
+    STDERR,
+    '[Warning] The use of this script is discouraged. See'
+    . ' https://www.doctrine-project.org/projects/doctrine-orm/en/current/reference/tools.html#doctrine-console'
+    . ' for instructions on bootstrapping the console runner.'
+    . PHP_EOL
+);
+
+echo PHP_EOL . PHP_EOL;
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 $autoloadFiles = [
     __DIR__ . '/../vendor/autoload.php',
     __DIR__ . '/../../../autoload.php'

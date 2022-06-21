@@ -15,20 +15,42 @@ use function strtolower;
 class CollectionCacheKey extends CacheKey
 {
     /**
+<<<<<<< HEAD
      * @readonly Public only for performance reasons, it should be considered immutable.
      * @var array<string, mixed> The owner entity identifier
+=======
+     * The owner entity identifier
+     *
+     * @readonly Public only for performance reasons, it should be considered immutable.
+     * @var array<string, mixed>
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public $ownerIdentifier;
 
     /**
+<<<<<<< HEAD
      * @readonly Public only for performance reasons, it should be considered immutable.
      * @var string The owner entity class
+=======
+     * The owner entity class
+     *
+     * @readonly Public only for performance reasons, it should be considered immutable.
+     * @var string
+     * @psalm-var class-string
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public $entityClass;
 
     /**
+<<<<<<< HEAD
      * @readonly Public only for performance reasons, it should be considered immutable.
      * @var string The association name
+=======
+     * The association name
+     *
+     * @readonly Public only for performance reasons, it should be considered immutable.
+     * @var string
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public $association;
 
@@ -36,6 +58,10 @@ class CollectionCacheKey extends CacheKey
      * @param string               $entityClass     The entity class.
      * @param string               $association     The field name that represents the association.
      * @param array<string, mixed> $ownerIdentifier The identifier of the owning entity.
+<<<<<<< HEAD
+=======
+     * @psalm-param class-string $entityClass
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function __construct($entityClass, $association, array $ownerIdentifier)
     {

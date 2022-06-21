@@ -54,9 +54,15 @@ class Parameter
     private $typeSpecified;
 
     /**
+<<<<<<< HEAD
      * @param string $name  Parameter name
      * @param mixed  $value Parameter value
      * @param mixed  $type  Parameter type
+=======
+     * @param string|int $name  Parameter name
+     * @param mixed      $value Parameter value
+     * @param mixed      $type  Parameter type
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function __construct($name, $value, $type = null)
     {

@@ -49,8 +49,13 @@ use function is_subclass_of;
 use function ltrim;
 use function method_exists;
 use function spl_object_id;
+<<<<<<< HEAD
 use function str_replace;
 use function strpos;
+=======
+use function str_contains;
+use function str_replace;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function strtolower;
 use function trait_exists;
 use function trim;
@@ -519,7 +524,13 @@ class ClassMetadataInfo implements ClassMetadata
      *
      * @see discriminatorColumn
      *
+<<<<<<< HEAD
      * @var mixed
+=======
+     * @var array<string, string>
+     *
+     * @psalm-var array<string, class-string>
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public $discriminatorMap = [];
 
@@ -543,10 +554,17 @@ class ClassMetadataInfo implements ClassMetadata
      * @var mixed[]
      * @psalm-var array{
      *               name: string,
+<<<<<<< HEAD
      *               schema: string,
      *               indexes: array,
      *               uniqueConstraints: array,
      *               options: array<string, mixed>,
+=======
+     *               schema?: string,
+     *               indexes?: array,
+     *               uniqueConstraints?: array,
+     *               options?: array<string, mixed>,
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *               quoted?: bool
      *           }
      */
@@ -640,6 +658,18 @@ class ClassMetadataInfo implements ClassMetadata
     public $containsForeignIdentifier = false;
 
     /**
+<<<<<<< HEAD
+=======
+     * READ-ONLY: Flag indicating whether the identifier/primary key contains at least one ENUM type.
+     *
+     * This flag is necessary because some code blocks require special treatment of this cases.
+     *
+     * @var bool
+     */
+    public $containsEnumIdentifier = false;
+
+    /**
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * READ-ONLY: The ID generator used for generating IDs for this class.
      *
      * @var AbstractIdGenerator
@@ -958,6 +988,13 @@ class ClassMetadataInfo implements ClassMetadata
             $serialized[] = 'containsForeignIdentifier';
         }
 
+<<<<<<< HEAD
+=======
+        if ($this->containsEnumIdentifier) {
+            $serialized[] = 'containsEnumIdentifier';
+        }
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         if ($this->isVersioned) {
             $serialized[] = 'isVersioned';
             $serialized[] = 'versionField';
@@ -1675,6 +1712,13 @@ class ClassMetadataInfo implements ClassMetadata
             if (! enum_exists($mapping['enumType'])) {
                 throw MappingException::nonEnumTypeMapped($this->name, $mapping['fieldName'], $mapping['enumType']);
             }
+<<<<<<< HEAD
+=======
+
+            if (! empty($mapping['id'])) {
+                $this->containsEnumIdentifier = true;
+            }
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         }
 
         return $mapping;
@@ -2671,7 +2715,11 @@ class ClassMetadataInfo implements ClassMetadata
     {
         if (isset($table['name'])) {
             // Split schema and table name from a table name like "myschema.mytable"
+<<<<<<< HEAD
             if (strpos($table['name'], '.') !== false) {
+=======
+            if (str_contains($table['name'], '.')) {
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 [$this->table['schema'], $table['name']] = explode('.', $table['name'], 2);
             }
 
@@ -2917,7 +2965,11 @@ class ClassMetadataInfo implements ClassMetadata
 
                         if (! isset($field['column'])) {
                             $fieldName = $field['name'];
+<<<<<<< HEAD
                             if (strpos($fieldName, '.')) {
+=======
+                            if (str_contains($fieldName, '.')) {
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                                 [, $fieldName] = explode('.', $fieldName);
                             }
 
@@ -3701,7 +3753,11 @@ class ClassMetadataInfo implements ClassMetadata
             return $className;
         }
 
+<<<<<<< HEAD
         if (strpos($className, '\\') === false && $this->namespace) {
+=======
+        if (! str_contains($className, '\\') && $this->namespace) {
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             return $this->namespace . '\\' . $className;
         }
 

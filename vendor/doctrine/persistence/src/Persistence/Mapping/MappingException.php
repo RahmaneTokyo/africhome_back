@@ -106,4 +106,15 @@ class MappingException extends Exception
     {
         return new self(sprintf("Class '%s' does not exist", $className));
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * @param class-string $className
+     */
+    public static function classIsAnonymous(string $className): self
+    {
+        return new self(sprintf('Class "%s" is anonymous', $className));
+    }
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 }

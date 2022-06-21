@@ -63,6 +63,7 @@ EOT
 
         $ifExists = $input->getOption('if-exists');
 
+<<<<<<< HEAD
         $driverOptions = [];
         $params        = $connection->getParams();
 
@@ -79,6 +80,12 @@ EOT
         if (isset($params['master'])) {
             $params                  = $params['master'];
             $params['driverOptions'] = $driverOptions;
+=======
+        $params = $connection->getParams();
+
+        if (isset($params['primary'])) {
+            $params = $params['primary'];
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         }
 
         if (isset($params['shards'])) {

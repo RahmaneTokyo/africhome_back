@@ -37,8 +37,13 @@ interface CollectionPersister
     /**
      * Slices elements.
      *
+<<<<<<< HEAD
      * @param int $offset
      * @param int $length
+=======
+     * @param int      $offset
+     * @param int|null $length
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return mixed[]
      */

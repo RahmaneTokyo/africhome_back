@@ -6,9 +6,15 @@ namespace Doctrine\ORM\Mapping\Driver;
 
 use Doctrine\Deprecations\Deprecation;
 use Doctrine\ORM\Mapping\Builder\EntityListenerBuilder;
+<<<<<<< HEAD
 use Doctrine\ORM\Mapping\ClassMetadata as Metadata;
 use Doctrine\ORM\Mapping\MappingException;
 use Doctrine\Persistence\Mapping\ClassMetadata;
+=======
+use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\ORM\Mapping\MappingException;
+use Doctrine\Persistence\Mapping\ClassMetadata as PersistenceClassMetadata;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\Persistence\Mapping\Driver\FileDriver;
 use InvalidArgumentException;
 use LogicException;
@@ -60,8 +66,18 @@ class YamlDriver extends FileDriver
 
     /**
      * {@inheritDoc}
+<<<<<<< HEAD
      */
     public function loadMetadataForClass($className, ClassMetadata $metadata)
+=======
+     *
+     * @psalm-param class-string<T> $className
+     * @psalm-param ClassMetadata<T> $metadata
+     *
+     * @template T of object
+     */
+    public function loadMetadataForClass($className, PersistenceClassMetadata $metadata)
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         $element = $this->getElement($className);
 
@@ -186,7 +202,11 @@ class YamlDriver extends FileDriver
         if (isset($element['inheritanceType'])) {
             $metadata->setInheritanceType(constant('Doctrine\ORM\Mapping\ClassMetadata::INHERITANCE_TYPE_' . strtoupper($element['inheritanceType'])));
 
+<<<<<<< HEAD
             if ($metadata->inheritanceType !== Metadata::INHERITANCE_TYPE_NONE) {
+=======
+            if ($metadata->inheritanceType !== ClassMetadata::INHERITANCE_TYPE_NONE) {
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 // Evaluate discriminatorColumn
                 if (isset($element['discriminatorColumn'])) {
                     $discrColumn = $element['discriminatorColumn'];
@@ -683,7 +703,11 @@ class YamlDriver extends FileDriver
 
                 // Check for `fetch`
                 if (isset($associationOverrideElement['fetch'])) {
+<<<<<<< HEAD
                     $override['fetch'] = constant(Metadata::class . '::FETCH_' . $associationOverrideElement['fetch']);
+=======
+                    $override['fetch'] = constant(ClassMetadata::class . '::FETCH_' . $associationOverrideElement['fetch']);
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 }
 
                 $metadata->setAssociationOverride($fieldName, $override);

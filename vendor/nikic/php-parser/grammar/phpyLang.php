@@ -128,6 +128,7 @@ function resolveMacros($code) {
                        . ' else { ' . $args[0] . ' = null; }';
             }
 
+<<<<<<< HEAD
             if ('strKind' === $name) {
                 assertArgs(1, $args, $name);
 
@@ -136,6 +137,8 @@ function resolveMacros($code) {
                        . '? Scalar\String_::KIND_SINGLE_QUOTED : Scalar\String_::KIND_DOUBLE_QUOTED)';
             }
 
+=======
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             if ('prependLeadingComments' === $name) {
                 assertArgs(1, $args, $name);
 

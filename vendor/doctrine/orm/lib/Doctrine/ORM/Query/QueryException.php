@@ -7,12 +7,17 @@ namespace Doctrine\ORM\Query;
 use Doctrine\ORM\Exception\ORMException;
 use Doctrine\ORM\Query\AST\PathExpression;
 use Exception;
+<<<<<<< HEAD
 
 /**
  * Description of QueryException.
  *
  * @link    www.doctrine-project.org
  */
+=======
+use Stringable;
+
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 class QueryException extends ORMException
 {
     /**
@@ -127,7 +132,11 @@ class QueryException extends ORMException
     }
 
     /**
+<<<<<<< HEAD
      * @param object $pathExpr
+=======
+     * @param PathExpression $pathExpr
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return QueryException
      */
@@ -139,7 +148,11 @@ class QueryException extends ORMException
     }
 
     /**
+<<<<<<< HEAD
      * @param string $literal
+=======
+     * @param string|Stringable $literal
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return QueryException
      */

@@ -19,6 +19,7 @@ class DoubleQuote extends PartParser
         $validQuotedString = $this->checkDQUOTE();
         if($validQuotedString->isInvalid()) return $validQuotedString;
 
+<<<<<<< HEAD
         $special = array(
             EmailLexer::S_CR => true,
             EmailLexer::S_HTAB => true,
@@ -26,11 +27,25 @@ class DoubleQuote extends PartParser
         );
 
         $invalid = array(
+=======
+        $special = [
+            EmailLexer::S_CR => true,
+            EmailLexer::S_HTAB => true,
+            EmailLexer::S_LF => true
+        ];
+
+        $invalid = [
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             EmailLexer::C_NUL => true,
             EmailLexer::S_HTAB => true,
             EmailLexer::S_CR => true,
             EmailLexer::S_LF => true
+<<<<<<< HEAD
         );
+=======
+        ];
+        
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $setSpecialsWarning = true;
 
         $this->lexer->moveNext();

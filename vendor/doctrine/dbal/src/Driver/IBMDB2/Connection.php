@@ -108,7 +108,11 @@ final class Connection implements ServerInfoAwareConnection
             );
         }
 
+<<<<<<< HEAD
         return db2_last_insert_id($this->connection);
+=======
+        return db2_last_insert_id($this->connection) ?? false;
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     }
 
     public function beginTransaction(): bool

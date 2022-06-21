@@ -310,4 +310,16 @@ final class BuilderHelpers
         Stmt\Class_::verifyModifier($modifiers, $modifier);
         return $modifiers | $modifier;
     }
+<<<<<<< HEAD
+=======
+
+    /**
+     * Adds a modifier and returns new modifier bitmask.
+     * @return int New modifiers
+     */
+    public static function addClassModifier(int $existingModifiers, int $modifierToSet) : int {
+        Stmt\Class_::verifyClassModifier($existingModifiers, $modifierToSet);
+        return $existingModifiers | $modifierToSet;
+    }
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 }

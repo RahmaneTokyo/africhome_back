@@ -12,6 +12,12 @@ use Symfony\Component\Console\Helper\HelperSet;
 
 use function assert;
 
+<<<<<<< HEAD
+=======
+/**
+ * @deprecated This class will be removed in ORM 3.0 without replacement.
+ */
+>>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 final class HelperSetManagerProvider implements EntityManagerProvider
 {
     /** @var HelperSet */
