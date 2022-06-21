@@ -393,6 +393,13 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\BatimentController"/>
       </call>
     </service>
+    <service id="App\Controller\BatimentCritereController" class="App\Controller\BatimentCritereController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\BatimentCritereController"/>
+      </call>
+    </service>
     <service id="App\Controller\EmployesController" class="App\Controller\EmployesController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -6612,6 +6619,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BatimentCritereController" class="App\Controller\BatimentCritereController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BatimentCritereController" class="App\Controller\BatimentCritereController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\BatimentCritereController" class="App\Controller\BatimentCritereController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EmployesController" class="App\Controller\EmployesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EmployesController" class="App\Controller\EmployesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\EmployesController" class="App\Controller\EmployesController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7033,6 +7043,14 @@
         <argument key="requestStack" type="service_closure" id="request_stack"/>
       </argument>
     </service>
+    <service id=".service_locator.EkhKBXP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="batimentCritereRepository" type="service_closure" id="App\Repository\BatimentCritereRepository"/>
+        <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="requestStack" type="service_closure" id="request_stack"/>
+      </argument>
+    </service>
     <service id=".service_locator.oiABibH" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7081,7 +7099,7 @@
         <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.jtGLV6i" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.O5OHPZ4" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\BatimentController::addLocalisation" type="service_closure" id=".service_locator.62LO1d0"/>
@@ -7090,6 +7108,7 @@
         <argument key="App\Controller\BatimentController::getBatimentOwnerEntite" type="service_closure" id=".service_locator.iuEkddy"/>
         <argument key="App\Controller\BatimentController::getBatimentOwnerUser" type="service_closure" id=".service_locator.iuEkddy"/>
         <argument key="App\Controller\BatimentController::unblockPropUser" type="service_closure" id=".service_locator.rJDOf44"/>
+        <argument key="App\Controller\BatimentCritereController::putBatimentCritere" type="service_closure" id=".service_locator.EkhKBXP"/>
         <argument key="App\Controller\EntiteController::addLocalisationEntite" type="service_closure" id=".service_locator.oSD7j_4"/>
         <argument key="App\Controller\EntiteController::blockEntite" type="service_closure" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\EntiteController::getEntiteFatherByType" type="service_closure" id=".service_locator.M9PMcRV"/>
@@ -7115,6 +7134,7 @@
         <argument key="App\Controller\BatimentController:getBatimentOwnerEntite" type="service_closure" id=".service_locator.iuEkddy"/>
         <argument key="App\Controller\BatimentController:getBatimentOwnerUser" type="service_closure" id=".service_locator.iuEkddy"/>
         <argument key="App\Controller\BatimentController:unblockPropUser" type="service_closure" id=".service_locator.rJDOf44"/>
+        <argument key="App\Controller\BatimentCritereController:putBatimentCritere" type="service_closure" id=".service_locator.EkhKBXP"/>
         <argument key="App\Controller\EntiteController:addLocalisationEntite" type="service_closure" id=".service_locator.oSD7j_4"/>
         <argument key="App\Controller\EntiteController:blockEntite" type="service_closure" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\EntiteController:getEntiteFatherByType" type="service_closure" id=".service_locator.M9PMcRV"/>
@@ -7297,6 +7317,12 @@
     <service id=".service_locator.W9y3dzm.App\Controller\BatimentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\BatimentController"/>
       <argument>App\Controller\BatimentController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\BatimentCritereController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\BatimentCritereController"/>
+      <argument>App\Controller\BatimentCritereController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
@@ -7498,12 +7524,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.jtGLV6i"/>
+      <argument type="service" id=".service_locator.O5OHPZ4"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.jtGLV6i"/>
+      <argument type="service" id=".service_locator.O5OHPZ4"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -8386,7 +8412,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.jtGLV6i"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.O5OHPZ4"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8459,6 +8485,7 @@
     <service id=".service_locator.gqb6ZaC" alias=".service_locator.iuEkddy"/>
     <service id=".service_locator.VhyyoZo" alias=".service_locator.rJDOf44"/>
     <service id=".service_locator.2sZq97J" alias=".service_locator.62LO1d0"/>
+    <service id=".service_locator.V7mo34k" alias=".service_locator.EkhKBXP"/>
     <service id=".service_locator.fyH.VEA" alias=".service_locator.oiABibH"/>
     <service id=".service_locator.Q4xyEdE" alias=".service_locator.CMsR.AP"/>
     <service id=".service_locator.tF0tk8K" alias=".service_locator.M9PMcRV"/>

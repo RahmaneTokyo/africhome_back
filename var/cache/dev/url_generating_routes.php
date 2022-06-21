@@ -10,6 +10,8 @@ return [
     'blockPropUser' => [['id'], ['_controller' => 'App\\Controller\\BatimentController::blockPropUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/batiments/owner/block']], [], []],
     'unblockPropUser' => [['id'], ['_controller' => 'App\\Controller\\BatimentController::unblockPropUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/batiments/owner/unblock']], [], []],
     'addLocalisation' => [['id'], ['_controller' => 'App\\Controller\\BatimentController::addLocalisation'], [], [['text', '/localisation'], ['variable', '/', '[^/]++', 'id', true], ['text', '/api/batiments']], [], []],
+    'app_batiment_critere' => [[], ['_controller' => 'App\\Controller\\BatimentCritereController::index'], [], [['text', '/batiment/critere']], [], []],
+    'putBatimentCritere' => [['id'], ['_controller' => 'App\\Controller\\BatimentCritereController::putBatimentCritere'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/api/batiment_criteres/block']], [], []],
     'get_list_employes' => [[], ['_controller' => 'App\\Controller\\EmployesController::getListEmployes'], [], [['text', '/api/employes']], [], []],
     'edit_employe' => [['id', 'gestionnaire'], ['_controller' => 'App\\Controller\\EmployesController::putEmploye'], [], [['variable', '/', '[^/]++', 'gestionnaire', true], ['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/api/employes']], [], []],
     'app_entite' => [[], ['_controller' => 'App\\Controller\\EntiteController::index'], [], [['text', '/entite']], [], []],

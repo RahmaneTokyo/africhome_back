@@ -2,6 +2,7 @@
 
 namespace App\DataPersister;
 
+use App\Entity\BatimentCritere;
 use App\Entity\Gestionnaire;
 use App\Entity\Incident;
 use App\Enums\EtatIncidentEnum;
@@ -26,11 +27,16 @@ final class BatimentCriterePersister implements ContextAwareDataPersisterInterfa
 
     public function supports($data, array $context = []): bool
     {
-        return $data instanceof Incident;
+        return $data instanceof BatimentCritere;
     }
 
     public function persist($data, array $context = [])
     {
+
+        if ((($context['collection_operation_name'] ?? null) === 'post')) {
+            $data->setDateCreation(new \DateTime('now'));
+        }
+
         $this->entityManager->persist($data);
         $this->entityManager->flush();
     }
