@@ -79,20 +79,6 @@ final class Properties
                 return false;
             }
 
-<<<<<<< HEAD
-=======
-            if (\PHP_VERSION_ID >= 80100 && $property->isReadOnly()) {
-                return true;
-            }
-
-            $type = $property->getType();
-            assert($type instanceof ReflectionType);
-
-            if ($type->allowsNull()) {
-                return false;
-            }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             return ! array_key_exists(
                 $property->getName(),
                 // https://bugs.php.net/bug.php?id=77673
@@ -117,13 +103,6 @@ final class Properties
                 return true;
             }
 
-<<<<<<< HEAD
-=======
-            if (\PHP_VERSION_ID >= 80100 && $property->isReadOnly()) {
-                return false;
-            }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             $type = $property->getType();
             assert($type instanceof ReflectionType);
 

@@ -12,16 +12,9 @@ use Doctrine\DBAL\Schema\Table;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\Inflector\Inflector;
 use Doctrine\Inflector\InflectorFactory;
-<<<<<<< HEAD
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
 use Doctrine\ORM\Mapping\MappingException;
 use Doctrine\Persistence\Mapping\ClassMetadata;
-=======
-use Doctrine\ORM\Mapping\ClassMetadata;
-use Doctrine\ORM\Mapping\ClassMetadataInfo;
-use Doctrine\ORM\Mapping\MappingException;
-use Doctrine\Persistence\Mapping\ClassMetadata as PersistenceClassMetadata;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\Persistence\Mapping\Driver\MappingDriver;
 use InvalidArgumentException;
 
@@ -173,18 +166,8 @@ class DatabaseDriver implements MappingDriver
 
     /**
      * {@inheritDoc}
-<<<<<<< HEAD
      */
     public function loadMetadataForClass($className, ClassMetadata $metadata)
-=======
-     *
-     * @psalm-param class-string<T> $className
-     * @psalm-param ClassMetadata<T> $metadata
-     *
-     * @template T of object
-     */
-    public function loadMetadataForClass($className, PersistenceClassMetadata $metadata)
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         $this->reverseEngineerMappingFromDatabase();
 

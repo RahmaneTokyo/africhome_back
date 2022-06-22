@@ -1,13 +1,8 @@
 {
     "name": "lcobucci/clock",
     "description": "Yet another clock abstraction",
-<<<<<<< HEAD
     "type": "library",
     "license": "MIT",
-=======
-    "license": "MIT",
-    "type": "library",
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     "authors": [
         {
             "name": "Luís Cobucci",
@@ -15,18 +10,10 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
         "php": "^8.0"
     },
     "require-dev": {
         "infection/infection": "^0.25",
-=======
-        "php": "^8.0",
-        "stella-maris/clock": "^0.1.4"
-    },
-    "require-dev": {
-        "infection/infection": "^0.26",
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         "lcobucci/coding-standard": "^8.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan": "^0.12",

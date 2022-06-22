@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Doctrine\ORM\Mapping\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-<<<<<<< HEAD
 use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping;
 use Doctrine\ORM\Mapping\Builder\EntityListenerBuilder;
@@ -13,17 +12,6 @@ use Doctrine\ORM\Mapping\ClassMetadataInfo;
 use Doctrine\ORM\Mapping\MappingException;
 use Doctrine\Persistence\Mapping\ClassMetadata;
 use Doctrine\Persistence\Mapping\Driver\AnnotationDriver as AbstractAnnotationDriver;
-=======
-use Doctrine\Common\Annotations\Reader;
-use Doctrine\Deprecations\Deprecation;
-use Doctrine\ORM\Events;
-use Doctrine\ORM\Mapping;
-use Doctrine\ORM\Mapping\Builder\EntityListenerBuilder;
-use Doctrine\ORM\Mapping\ClassMetadata;
-use Doctrine\ORM\Mapping\MappingException;
-use Doctrine\Persistence\Mapping\ClassMetadata as PersistenceClassMetadata;
-use Doctrine\Persistence\Mapping\Driver\ColocatedMappingDriver;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionProperty;
@@ -41,24 +29,8 @@ use function is_numeric;
 /**
  * The AnnotationDriver reads the mapping metadata from docblock annotations.
  */
-<<<<<<< HEAD
 class AnnotationDriver extends AbstractAnnotationDriver
 {
-=======
-class AnnotationDriver extends CompatibilityAnnotationDriver
-{
-    use ColocatedMappingDriver;
-
-    /**
-     * The annotation reader.
-     *
-     * @internal this property will be private in 3.0
-     *
-     * @var Reader
-     */
-    protected $reader;
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     /**
      * @var int[]
      * @psalm-var array<class-string, int>
@@ -69,37 +41,11 @@ class AnnotationDriver extends CompatibilityAnnotationDriver
     ];
 
     /**
-<<<<<<< HEAD
      * {@inheritDoc}
      */
     public function loadMetadataForClass($className, ClassMetadata $metadata)
     {
         assert($metadata instanceof Mapping\ClassMetadata);
-=======
-     * Initializes a new AnnotationDriver that uses the given AnnotationReader for reading
-     * docblock annotations.
-     *
-     * @param Reader               $reader The AnnotationReader to use
-     * @param string|string[]|null $paths  One or multiple paths where mapping classes can be found.
-     */
-    public function __construct($reader, $paths = null)
-    {
-        $this->reader = $reader;
-
-        $this->addPaths((array) $paths);
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * @psalm-param class-string<T> $className
-     * @psalm-param ClassMetadata<T> $metadata
-     *
-     * @template T of object
-     */
-    public function loadMetadataForClass($className, PersistenceClassMetadata $metadata)
-    {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $class = $metadata->getReflectionClass()
             // this happens when running annotation driver in combination with
             // static reflection services. This is not the nicest fix
@@ -325,11 +271,7 @@ class AnnotationDriver extends CompatibilityAnnotationDriver
                 constant('Doctrine\ORM\Mapping\ClassMetadata::INHERITANCE_TYPE_' . $inheritanceTypeAnnot->value)
             );
 
-<<<<<<< HEAD
             if ($metadata->inheritanceType !== ClassMetadataInfo::INHERITANCE_TYPE_NONE) {
-=======
-            if ($metadata->inheritanceType !== ClassMetadata::INHERITANCE_TYPE_NONE) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 // Evaluate DiscriminatorColumn annotation
                 if (isset($classAnnotations[Mapping\DiscriminatorColumn::class])) {
                     $discrColumnAnnot = $classAnnotations[Mapping\DiscriminatorColumn::class];
@@ -574,11 +516,7 @@ class AnnotationDriver extends CompatibilityAnnotationDriver
     private function loadRelationShipMapping(
         ReflectionProperty $property,
         array &$mapping,
-<<<<<<< HEAD
         ClassMetadata $metadata,
-=======
-        PersistenceClassMetadata $metadata,
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         array $joinColumns,
         string $className
     ): void {
@@ -682,11 +620,7 @@ class AnnotationDriver extends CompatibilityAnnotationDriver
     /**
      * Attempts to resolve the fetch mode.
      *
-<<<<<<< HEAD
      * @psalm-return \Doctrine\ORM\Mapping\ClassMetadata::FETCH_* The fetch mode as defined in ClassMetadata.
-=======
-     * @psalm-return ClassMetadata::FETCH_* The fetch mode as defined in ClassMetadata.
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @throws MappingException If the fetch mode is not valid.
      */
@@ -702,11 +636,7 @@ class AnnotationDriver extends CompatibilityAnnotationDriver
     /**
      * Attempts to resolve the generated mode.
      *
-<<<<<<< HEAD
      * @psalm-return ClassMetadataInfo::GENERATED_*
-=======
-     * @psalm-return ClassMetadata::GENERATED_*
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @throws MappingException If the fetch mode is not valid.
      */
@@ -806,11 +736,7 @@ class AnnotationDriver extends CompatibilityAnnotationDriver
      *                   precision: int,
      *                   notInsertable?: bool,
      *                   notUpdateble?: bool,
-<<<<<<< HEAD
      *                   generated?: ClassMetadataInfo::GENERATED_*,
-=======
-     *                   generated?: ClassMetadata::GENERATED_*,
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *                   enumType?: class-string,
      *                   options?: mixed[],
      *                   columnName?: string,
@@ -861,42 +787,6 @@ class AnnotationDriver extends CompatibilityAnnotationDriver
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * Retrieve the current annotation reader
-     *
-     * @return Reader
-     */
-    public function getReader()
-    {
-        Deprecation::trigger(
-            'doctrine/orm',
-            'https://github.com/doctrine/orm/pull/9587',
-            '%s is deprecated with no replacement',
-            __METHOD__
-        );
-
-        return $this->reader;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function isTransient($className)
-    {
-        $classAnnotations = $this->reader->getClassAnnotations(new ReflectionClass($className));
-
-        foreach ($classAnnotations as $annot) {
-            if (isset($this->entityAnnotationClasses[get_class($annot)])) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    /**
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * Factory method for the Annotation Driver.
      *
      * @param mixed[]|string $paths

@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM\Persisters\Entity;
 
-<<<<<<< HEAD
-=======
-use BackedEnum;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\Common\Collections\Expr\Comparison;
 use Doctrine\Common\Util\ClassUtils;
@@ -17,10 +13,6 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Result;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\DBAL\Types\Types;
-<<<<<<< HEAD
-=======
-use Doctrine\Deprecations\Deprecation;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\MappingException;
@@ -55,11 +47,7 @@ use function is_object;
 use function reset;
 use function spl_object_id;
 use function sprintf;
-<<<<<<< HEAD
 use function strpos;
-=======
-use function str_contains;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function strtoupper;
 use function trim;
 
@@ -175,11 +163,7 @@ class BasicEntityPersister implements EntityPersister
      * The INSERT SQL statement used for entities handled by this persister.
      * This SQL is only generated once per request, if at all.
      *
-<<<<<<< HEAD
      * @var string
-=======
-     * @var string|null
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     private $insertSql;
 
@@ -1595,29 +1579,11 @@ class BasicEntityPersister implements EntityPersister
      */
     protected function getLockTablesSql($lockMode)
     {
-<<<<<<< HEAD
-=======
-        if ($lockMode === null) {
-            Deprecation::trigger(
-                'doctrine/orm',
-                'https://github.com/doctrine/orm/pull/9466',
-                'Passing null as argument to %s is deprecated, pass LockMode::NONE instead.',
-                __METHOD__
-            );
-
-            $lockMode = LockMode::NONE;
-        }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         return $this->platform->appendLockHint(
             'FROM '
             . $this->quoteStrategy->getTableName($this->class, $this->platform) . ' '
             . $this->getSQLTableAlias($this->class->name),
-<<<<<<< HEAD
             $lockMode ?? LockMode::NONE
-=======
-            $lockMode
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         );
     }
 
@@ -1766,11 +1732,7 @@ class BasicEntityPersister implements EntityPersister
             return $columns;
         }
 
-<<<<<<< HEAD
         if ($assoc !== null && strpos($field, ' ') === false && strpos($field, '(') === false) {
-=======
-        if ($assoc !== null && ! str_contains($field, ' ') && ! str_contains($field, '(')) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             // very careless developers could potentially open up this normally hidden api for userland attacks,
             // therefore checking for spaces and function calls which are not allowed.
 
@@ -2014,28 +1976,15 @@ class BasicEntityPersister implements EntityPersister
      *
      * @param mixed $value
      *
-<<<<<<< HEAD
      * @return       array<mixed>
      * @psalm-return list<mixed>
      */
     private function getIndividualValue($value)
-=======
-     * @psalm-return list<mixed>
-     */
-    private function getIndividualValue($value): array
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         if (! is_object($value)) {
             return [$value];
         }
 
-<<<<<<< HEAD
-=======
-        if ($value instanceof BackedEnum) {
-            return [$value->value];
-        }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $valueClass = ClassUtils::getClass($value);
 
         if ($this->em->getMetadataFactory()->isTransient($valueClass)) {
@@ -2071,11 +2020,7 @@ class BasicEntityPersister implements EntityPersister
         $alias = $this->getSQLTableAlias($this->class->name);
 
         $sql = 'SELECT 1 '
-<<<<<<< HEAD
              . $this->getLockTablesSql(null)
-=======
-             . $this->getLockTablesSql(LockMode::NONE)
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
              . ' WHERE ' . $this->getSelectConditionSQL($criteria);
 
         [$params, $types] = $this->expandParameters($criteria);

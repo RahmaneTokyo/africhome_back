@@ -694,11 +694,7 @@ final class ClassSourceManipulator
         $paramBuilder->setTypeHint($typeHint);
         $adderNodeBuilder->addParam($paramBuilder->getNode());
 
-<<<<<<< HEAD
         //if (!$this->avatars->contains($avatar))
-=======
-        // if (!$this->avatars->contains($avatar))
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $containsMethodCallNode = new Node\Expr\MethodCall(
             new Node\Expr\PropertyFetch(new Node\Expr\Variable('this'), $relation->getPropertyName()),
             'contains',
@@ -753,11 +749,7 @@ final class ClassSourceManipulator
             // $this->avatars->removeElement($avatar);
             $removerNodeBuilder->addStmt(BuilderHelpers::normalizeStmt($removeElementCall));
         } else {
-<<<<<<< HEAD
             //if ($this->avatars->removeElement($avatar))
-=======
-            // if ($this->avatars->removeElement($avatar))
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             $ifRemoveElementStmt = new Node\Stmt\If_($removeElementCall);
             $removerNodeBuilder->addStmt($ifRemoveElementStmt);
             if ($relation instanceof RelationOneToMany) {

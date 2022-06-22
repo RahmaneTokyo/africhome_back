@@ -27,7 +27,6 @@ PHP;
 
     public static function generateSnippet(Properties $properties, string $instanceName): string
     {
-<<<<<<< HEAD
         return self::generateUnsetAccessiblePropertiesCode($properties, $instanceName)
             . self::generateUnsetPrivatePropertiesCode($properties, $instanceName);
     }
@@ -48,43 +47,11 @@ PHP;
         $groups = $properties->getGroupedPrivateProperties();
 
         if (! $groups) {
-=======
-        $scopedPropertyGroups = [];
-        $nonScopedProperties  = [];
-
-        foreach ($properties->getInstanceProperties() as $propertyInternalName => $property) {
-            if ($property->isPrivate() || (\PHP_VERSION_ID >= 80100 && $property->isReadOnly())) {
-                $scopedPropertyGroups[$property->getDeclaringClass()->getName()][$property->getName()] = $property;
-            } else {
-                $nonScopedProperties[$propertyInternalName] = $property;
-            }
-        }
-
-        return self::generateUnsetNonScopedPropertiesCode($nonScopedProperties, $instanceName)
-            . self::generateUnsetScopedPropertiesCode($scopedPropertyGroups, $instanceName);
-    }
-
-    /** @param array<string, ReflectionProperty> $nonScopedProperties */
-    private static function generateUnsetNonScopedPropertiesCode(array $nonScopedProperties, string $instanceName): string
-    {
-        if (! $nonScopedProperties) {
-            return '';
-        }
-
-        return self::generateUnsetStatement($nonScopedProperties, $instanceName) . "\n\n";
-    }
-
-    /** @param array<class-string, array<string, ReflectionProperty>> $scopedPropertyGroups */
-    private static function generateUnsetScopedPropertiesCode(array $scopedPropertyGroups, string $instanceName): string
-    {
-        if (! $scopedPropertyGroups) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             return '';
         }
 
         $unsetClosureCalls = [];
 
-<<<<<<< HEAD
         foreach ($groups as $privateProperties) {
             $firstProperty = reset($privateProperties);
             assert($firstProperty instanceof ReflectionProperty);
@@ -92,15 +59,6 @@ PHP;
             $unsetClosureCalls[] = self::generateUnsetClassPrivatePropertiesBlock(
                 $firstProperty->getDeclaringClass(),
                 $privateProperties,
-=======
-        foreach ($scopedPropertyGroups as $scopedProperties) {
-            $firstProperty = reset($scopedProperties);
-            assert($firstProperty instanceof ReflectionProperty);
-
-            $unsetClosureCalls[] = self::generateUnsetClassScopedPropertiesBlock(
-                $firstProperty->getDeclaringClass(),
-                $scopedProperties,
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 $instanceName
             );
         }
@@ -109,11 +67,7 @@ PHP;
     }
 
     /** @param array<string, ReflectionProperty> $properties */
-<<<<<<< HEAD
     private static function generateUnsetClassPrivatePropertiesBlock(
-=======
-    private static function generateUnsetClassScopedPropertiesBlock(
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         ReflectionClass $declaringClass,
         array $properties,
         string $instanceName

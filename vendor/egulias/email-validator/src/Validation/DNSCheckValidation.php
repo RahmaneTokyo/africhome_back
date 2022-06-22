@@ -2,10 +2,6 @@
 
 namespace Egulias\EmailValidator\Validation;
 
-<<<<<<< HEAD
-=======
-use Egulias\EmailValidator\Validation\DNSGetRecordWrapper;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Egulias\EmailValidator\EmailLexer;
 use Egulias\EmailValidator\Result\InvalidEmail;
 use Egulias\EmailValidator\Result\Reason\DomainAcceptsNoMail;
@@ -22,32 +18,6 @@ class DNSCheckValidation implements EmailValidation
     protected const DNS_RECORD_TYPES_TO_CHECK = DNS_MX + DNS_A + DNS_AAAA;
 
     /**
-<<<<<<< HEAD
-=======
-     * Reserved Top Level DNS Names (https://tools.ietf.org/html/rfc2606#section-2),
-     * mDNS and private DNS Namespaces (https://tools.ietf.org/html/rfc6762#appendix-G)
-     */
-    const RESERVED_DNS_TOP_LEVEL_NAMES = [
-        // Reserved Top Level DNS Names
-        'test',
-        'example',
-        'invalid',
-        'localhost',
-
-        // mDNS
-        'local',
-
-        // Private DNS Namespaces
-        'intranet',
-        'internal',
-        'private',
-        'corp',
-        'home',
-        'lan',
-    ];
-    
-    /**
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @var array
      */
     private $warnings = [];
@@ -62,30 +32,12 @@ class DNSCheckValidation implements EmailValidation
      */
     private $mxRecords = [];
 
-<<<<<<< HEAD
 
     public function __construct()
-=======
-    /**
-     * @var DNSGetRecordWrapper
-     */
-    private $dnsGetRecord;
-
-    public function __construct(DNSGetRecordWrapper $dnsGetRecord = null)
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         if (!function_exists('idn_to_ascii')) {
             throw new \LogicException(sprintf('The %s class requires the Intl extension.', __CLASS__));
         }
-<<<<<<< HEAD
-=======
-
-        if ($dnsGetRecord == null) {
-            $dnsGetRecord = new DNSGetRecordWrapper();
-        }
-
-        $this->dnsGetRecord = $dnsGetRecord;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     }
 
     public function isValid(string $email, EmailLexer $emailLexer) : bool
@@ -101,7 +53,6 @@ class DNSCheckValidation implements EmailValidation
         // Get the domain parts
         $hostParts = explode('.', $host);
 
-<<<<<<< HEAD
         // Reserved Top Level DNS Names (https://tools.ietf.org/html/rfc2606#section-2),
         // mDNS and private DNS Namespaces (https://tools.ietf.org/html/rfc6762#appendix-G)
         $reservedTopLevelDnsNames = [
@@ -125,10 +76,6 @@ class DNSCheckValidation implements EmailValidation
 
         $isLocalDomain = count($hostParts) <= 1;
         $isReservedTopLevel = in_array($hostParts[(count($hostParts) - 1)], $reservedTopLevelDnsNames, true);
-=======
-        $isLocalDomain = count($hostParts) <= 1;
-        $isReservedTopLevel = in_array($hostParts[(count($hostParts) - 1)], self::RESERVED_DNS_TOP_LEVEL_NAMES, true);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
         // Exclude reserved top level DNS names
         if ($isLocalDomain || $isReservedTopLevel) {
@@ -173,7 +120,6 @@ class DNSCheckValidation implements EmailValidation
      */
     private function validateDnsRecords($host) : bool
     {
-<<<<<<< HEAD
         // A workaround to fix https://bugs.php.net/bug.php?id=73149
         /** @psalm-suppress InvalidArgument */
         set_error_handler(
@@ -195,19 +141,6 @@ class DNSCheckValidation implements EmailValidation
 
         // No MX, A or AAAA DNS records
         if ($dnsRecords === [] || $dnsRecords === false) {
-=======
-        $dnsRecordsResult = $this->dnsGetRecord->getRecords($host, static::DNS_RECORD_TYPES_TO_CHECK);
-
-        if ($dnsRecordsResult->withError()) {
-            $this->error = new InvalidEmail(new UnableToGetDNSRecord(), '');
-            return false;
-        }
-
-        $dnsRecords = $dnsRecordsResult->getRecords();
-
-        // No MX, A or AAAA DNS records
-        if ($dnsRecords === []) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             $this->error = new InvalidEmail(new ReasonNoDNSRecord(), '');
             return false;
         }
@@ -234,14 +167,6 @@ class DNSCheckValidation implements EmailValidation
      */
     private function validateMxRecord($dnsRecord) : bool
     {
-<<<<<<< HEAD
-=======
-        if (!isset($dnsRecord['type'])) {
-            $this->error = new InvalidEmail(new ReasonNoDNSRecord(), '');
-            return false;
-        }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         if ($dnsRecord['type'] !== 'MX') {
             return true;
         }

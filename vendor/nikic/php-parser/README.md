@@ -3,17 +3,10 @@ PHP Parser
 
 [![Coverage Status](https://coveralls.io/repos/github/nikic/PHP-Parser/badge.svg?branch=master)](https://coveralls.io/github/nikic/PHP-Parser?branch=master)
 
-<<<<<<< HEAD
 This is a PHP 5.2 to PHP 8.0 parser written in PHP. Its purpose is to simplify static code analysis and
 manipulation.
 
 [**Documentation for version 4.x**][doc_master] (stable; for running on PHP >= 7.0; for parsing PHP 5.2 to PHP 8.0).
-=======
-This is a PHP 5.2 to PHP 8.1 parser written in PHP. Its purpose is to simplify static code analysis and
-manipulation.
-
-[**Documentation for version 4.x**][doc_master] (stable; for running on PHP >= 7.0; for parsing PHP 5.2 to PHP 8.1).
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
 [Documentation for version 3.x][doc_3_x] (unsupported; for running on PHP >= 5.5; for parsing PHP 5.2 to PHP 7.2).
 

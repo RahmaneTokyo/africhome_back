@@ -90,10 +90,7 @@ EOT
         if ($dumpSql) {
             $ui->text('The following SQL statements will be executed:');
             $ui->newLine();
-<<<<<<< HEAD
 
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             foreach ($sqls as $sql) {
                 $ui->text(sprintf('    %s;', $sql));
             }

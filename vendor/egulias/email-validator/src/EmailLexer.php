@@ -61,11 +61,7 @@ class EmailLexer extends AbstractLexer
      *
      * @var array
      */
-<<<<<<< HEAD
     protected $charValue = array(
-=======
-    protected $charValue = [
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         '{'    => self::S_OPENCURLYBRACES,
         '}'    => self::S_CLOSECURLYBRACES,
         '('    => self::S_OPENPARENTHESIS,
@@ -109,37 +105,11 @@ class EmailLexer extends AbstractLexer
         '?'    => self::QUESTIONMARK,
         '#'    => self::NUMBER_SIGN,
         '¡'    => self::INVERT_EXCLAMATION,
-<<<<<<< HEAD
     );
 
     /**
      * @var bool
      */
-=======
-    ];
-
-    const INVALID_CHARS_REGEX = "/[^\p{S}\p{C}\p{Cc}]+/iu";
-
-    const VALID_UTF8_REGEX = '/\p{Cc}+/u';
-
-    const CATCHABLE_PATTERNS = [
-        '[a-zA-Z]+[46]?', //ASCII and domain literal
-        '[^\x00-\x7F]',  //UTF-8
-        '[0-9]+',
-        '\r\n',
-        '::',
-        '\s+?',
-        '.',
-    ];
-
-    const NON_CATCHABLE_PATTERNS = [
-        '[\xA0-\xff]+',
-    ];
-
-    const MODIFIERS = 'iu';
-
-    /** @var bool */
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     protected $hasInvalidTokens = false;
 
     /**
@@ -163,7 +133,6 @@ class EmailLexer extends AbstractLexer
     /**
      * The next token in the input.
      *
-<<<<<<< HEAD
      * @var array|null
      */
     public $lookahead;
@@ -171,20 +140,12 @@ class EmailLexer extends AbstractLexer
     /**
      * @psalm-var array{value:'', type:null, position:0}
      */
-=======
-     * @var array{position: int, type: int|null|string, value: int|string}|null
-     */
-    public $lookahead;
-
-    /** @psalm-var array{value:'', type:null, position:0} */
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     private static $nullToken = [
         'value' => '',
         'type' => null,
         'position' => 0,
     ];
 
-<<<<<<< HEAD
     /**
      * @var string
      */
@@ -193,12 +154,6 @@ class EmailLexer extends AbstractLexer
     /**
      * @var bool
      */
-=======
-    /** @var string */
-    private $accumulator = '';
-
-    /** @var bool */
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     private $hasToRecord = false;
 
     public function __construct()
@@ -207,14 +162,10 @@ class EmailLexer extends AbstractLexer
         $this->lookahead = null;
     }
 
-<<<<<<< HEAD
     /**
      * @return void
      */
     public function reset()
-=======
-    public function reset() : void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         $this->hasInvalidTokens = false;
         parent::reset();
@@ -222,7 +173,6 @@ class EmailLexer extends AbstractLexer
     }
 
     /**
-<<<<<<< HEAD
      * @return bool
      */
     public function hasInvalidTokens()
@@ -231,19 +181,13 @@ class EmailLexer extends AbstractLexer
     }
 
     /**
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @param int $type
      * @throws \UnexpectedValueException
      * @return boolean
      *
      * @psalm-suppress InvalidScalarArgument
      */
-<<<<<<< HEAD
     public function find($type)
-=======
-    public function find($type) : bool
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         $search = clone $this;
         $search->skipUntil($type);
@@ -255,7 +199,6 @@ class EmailLexer extends AbstractLexer
     }
 
     /**
-<<<<<<< HEAD
      * getPrevious
      *
      * @return array
@@ -266,34 +209,19 @@ class EmailLexer extends AbstractLexer
     }
 
     /**
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * moveNext
      *
      * @return boolean
      */
-<<<<<<< HEAD
     public function moveNext()
-=======
-    public function moveNext() : bool
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         if ($this->hasToRecord && $this->previous === self::$nullToken) {
             $this->accumulator .= $this->token['value'];
         }
 
         $this->previous = $this->token;
-<<<<<<< HEAD
         $hasNext = parent::moveNext();
         $this->token = $this->token ?: self::$nullToken;
-=======
-        
-        if($this->lookahead === null) {
-            $this->lookahead = self::$nullToken;
-        }
-
-        $hasNext = parent::moveNext();
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
         if ($this->hasToRecord) {
             $this->accumulator .= $this->token['value'];
@@ -303,7 +231,6 @@ class EmailLexer extends AbstractLexer
     }
 
     /**
-<<<<<<< HEAD
      * Lexical catchable patterns.
      *
      * @return string[]
@@ -334,8 +261,6 @@ class EmailLexer extends AbstractLexer
     }
 
     /**
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * Retrieve token type. Also processes the token value if necessary.
      *
      * @param string $value
@@ -367,7 +292,6 @@ class EmailLexer extends AbstractLexer
         return  self::GENERIC;
     }
 
-<<<<<<< HEAD
     protected function isInvalidChar(string $value) : bool
     {
         if(preg_match("/[^\p{S}\p{C}\p{Cc}]+/iu", $value) ) {
@@ -396,26 +320,10 @@ class EmailLexer extends AbstractLexer
         }
 
         return false;
-=======
-    protected function isValid(string $value) : bool
-    {
-        return isset($this->charValue[$value]);
-    }
-
-    protected function isNullType(string $value) : bool
-    {
-        return $value === "\0";
-    }
-
-    protected function isInvalidChar(string $value) : bool
-    {
-        return !preg_match(self::INVALID_CHARS_REGEX, $value);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     }
 
     protected function isUTF8Invalid(string $value) : bool
     {
-<<<<<<< HEAD
         if (preg_match('/\p{Cc}+/u', $value)) {
             return true;
         }
@@ -429,49 +337,6 @@ class EmailLexer extends AbstractLexer
     protected function getModifiers()
     {
         return 'iu';
-=======
-        return preg_match(self::VALID_UTF8_REGEX, $value) !== false;
-    }
-
-    public function hasInvalidTokens() : bool
-    {
-        return $this->hasInvalidTokens;
-    }
-
-    /**
-     * getPrevious
-     *
-     * @return array
-     */
-    public function getPrevious() : array
-    {
-        return $this->previous;
-    }
-
-    /**
-     * Lexical catchable patterns.
-     *
-     * @return string[]
-     */
-    protected function getCatchablePatterns() : array
-    {
-        return self::CATCHABLE_PATTERNS;
-    }
-
-    /**
-     * Lexical non-catchable patterns.
-     *
-     * @return string[]
-     */
-    protected function getNonCatchablePatterns() : array
-    {
-        return self::NON_CATCHABLE_PATTERNS;
-    }
-
-    protected function getModifiers() : string
-    {
-        return self::MODIFIERS;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     }
 
     public function getAccumulatedValues() : string

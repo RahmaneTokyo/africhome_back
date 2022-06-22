@@ -25,11 +25,6 @@ class CacheException extends ORMException
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @deprecated This method is not used anymore.
-     *
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @param string $entityName
      *
      * @return CacheException
@@ -50,11 +45,6 @@ class CacheException extends ORMException
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @deprecated This method is not used anymore.
-     *
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @param string $entityName
      * @param string $field
      *

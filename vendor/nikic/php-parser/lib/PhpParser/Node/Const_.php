@@ -11,11 +11,7 @@ class Const_ extends NodeAbstract
     /** @var Expr Value */
     public $value;
 
-<<<<<<< HEAD
     /** @var Name Namespaced name (if using NameResolver) */
-=======
-    /** @var Name|null Namespaced name (if using NameResolver) */
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     public $namespacedName;
 
     /**
@@ -34,11 +30,7 @@ class Const_ extends NodeAbstract
     public function getSubNodeNames() : array {
         return ['name', 'value'];
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     public function getType() : string {
         return 'Const';
     }

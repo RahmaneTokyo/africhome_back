@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM\Utility;
 
-<<<<<<< HEAD
-=======
-use BackedEnum;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\UnitOfWork;
 use Doctrine\Persistence\Mapping\ClassMetadataFactory;
@@ -80,15 +76,7 @@ final class IdentifierFlattener
 
                 $flatId[$field] = implode(' ', $associatedId);
             } else {
-<<<<<<< HEAD
                 $flatId[$field] = $id[$field];
-=======
-                if ($id[$field] instanceof BackedEnum) {
-                    $flatId[$field] = $id[$field]->value;
-                } else {
-                    $flatId[$field] = $id[$field];
-                }
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             }
         }
 

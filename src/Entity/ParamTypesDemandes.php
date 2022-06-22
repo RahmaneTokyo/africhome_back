@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
+use App\Entity\Entite;
+use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ParamTypesDemandesRepository;
-use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()

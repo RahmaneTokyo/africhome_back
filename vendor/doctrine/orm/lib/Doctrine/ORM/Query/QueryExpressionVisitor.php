@@ -13,11 +13,7 @@ use RuntimeException;
 
 use function count;
 use function str_replace;
-<<<<<<< HEAD
 use function strpos;
-=======
-use function str_starts_with;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
 /**
  * Converts Collection expressions to Query expressions.
@@ -118,11 +114,7 @@ class QueryExpressionVisitor extends ExpressionVisitor
         $field = $this->queryAliases[0] . '.' . $comparison->getField();
 
         foreach ($this->queryAliases as $alias) {
-<<<<<<< HEAD
             if (strpos($comparison->getField() . '.', $alias . '.') === 0) {
-=======
-            if (str_starts_with($comparison->getField() . '.', $alias . '.')) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 $field = $comparison->getField();
                 break;
             }

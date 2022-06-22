@@ -15,14 +15,10 @@ use function spl_object_id;
 class ReadWriteCachedCollectionPersister extends AbstractCollectionPersister
 {
     /**
-<<<<<<< HEAD
      * @param CollectionPersister    $persister   The collection persister that will be cached.
      * @param ConcurrentRegion       $region      The collection region.
      * @param EntityManagerInterface $em          The entity manager.
      * @param mixed[]                $association The association mapping.
-=======
-     * @param mixed[] $association The association mapping.
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function __construct(CollectionPersister $persister, ConcurrentRegion $region, EntityManagerInterface $em, array $association)
     {

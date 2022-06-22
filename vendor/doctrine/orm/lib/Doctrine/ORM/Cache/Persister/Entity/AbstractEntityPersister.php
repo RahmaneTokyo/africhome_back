@@ -251,13 +251,8 @@ abstract class AbstractEntityPersister implements CachedEntityPersister
      * @param string            $query
      * @param string[]|Criteria $criteria
      * @param string[]          $orderBy
-<<<<<<< HEAD
      * @param int               $limit
      * @param int               $offset
-=======
-     * @param int|null          $limit
-     * @param int|null          $offset
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return string
      */

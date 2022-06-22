@@ -3,10 +3,7 @@
 namespace Egulias\EmailValidator;
 
 use Egulias\EmailValidator\Parser;
-<<<<<<< HEAD
 use Egulias\EmailValidator\EmailLexer;
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Egulias\EmailValidator\Result\Result;
 use Egulias\EmailValidator\Parser\IDLeftPart;
 use Egulias\EmailValidator\Parser\IDRightPart;

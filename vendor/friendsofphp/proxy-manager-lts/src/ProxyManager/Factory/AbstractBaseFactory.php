@@ -4,15 +4,9 @@ declare(strict_types=1);
 
 namespace ProxyManager\Factory;
 
-<<<<<<< HEAD
 use Laminas\Code\Generator\ClassGenerator;
 use OutOfBoundsException;
 use ProxyManager\Configuration;
-=======
-use OutOfBoundsException;
-use ProxyManager\Configuration;
-use ProxyManager\Generator\ClassGenerator;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use ProxyManager\ProxyGenerator\ProxyGeneratorInterface;
 use ProxyManager\Signature\Exception\InvalidSignatureException;
 use ProxyManager\Signature\Exception\MissingSignatureException;

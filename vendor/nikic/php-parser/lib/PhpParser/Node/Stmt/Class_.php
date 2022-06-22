@@ -68,13 +68,6 @@ class Class_ extends ClassLike
         return (bool) ($this->flags & self::MODIFIER_FINAL);
     }
 
-<<<<<<< HEAD
-=======
-    public function isReadonly() : bool {
-        return (bool) ($this->flags & self::MODIFIER_READONLY);
-    }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     /**
      * Whether the class is anonymous.
      *
@@ -87,30 +80,6 @@ class Class_ extends ClassLike
     /**
      * @internal
      */
-<<<<<<< HEAD
-=======
-    public static function verifyClassModifier($a, $b) {
-        if ($a & self::MODIFIER_ABSTRACT && $b & self::MODIFIER_ABSTRACT) {
-            throw new Error('Multiple abstract modifiers are not allowed');
-        }
-
-        if ($a & self::MODIFIER_FINAL && $b & self::MODIFIER_FINAL) {
-            throw new Error('Multiple final modifiers are not allowed');
-        }
-
-        if ($a & self::MODIFIER_READONLY && $b & self::MODIFIER_READONLY) {
-            throw new Error('Multiple readonly modifiers are not allowed');
-        }
-
-        if ($a & 48 && $b & 48) {
-            throw new Error('Cannot use the final modifier on an abstract class');
-        }
-    }
-
-    /**
-     * @internal
-     */
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     public static function verifyModifier($a, $b) {
         if ($a & self::VISIBILITY_MODIFIER_MASK && $b & self::VISIBILITY_MODIFIER_MASK) {
             throw new Error('Multiple access type modifiers are not allowed');

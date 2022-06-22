@@ -118,6 +118,6 @@ class __TwigTemplate_4b73c56f58a55949eae8f48662da0874602ea7aa0d2c5839813a341e93a
     </ul>
 </div>
 {% endblock %}
-", "parametrage/index.html.twig", "D:\\GSExpertise\\africhome-master\\templates\\parametrage\\index.html.twig");
+", "parametrage/index.html.twig", "D:\\GSExpertise\\africhome-rahmane_back\\templates\\parametrage\\index.html.twig");
     }
 }

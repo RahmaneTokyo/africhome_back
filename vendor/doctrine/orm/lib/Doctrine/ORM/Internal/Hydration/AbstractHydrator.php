@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM\Internal\Hydration;
 
-<<<<<<< HEAD
-=======
-use BackedEnum;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\DBAL\Driver\ResultStatement;
 use Doctrine\DBAL\ForwardCompatibility\Result as ForwardCompatibilityResult;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
@@ -31,10 +27,6 @@ use function count;
 use function end;
 use function get_debug_type;
 use function in_array;
-<<<<<<< HEAD
-=======
-use function is_array;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function sprintf;
 
 /**
@@ -437,24 +429,7 @@ abstract class AbstractHydrator
                     $type  = $cacheKeyInfo['type'];
                     $value = $type->convertToPHPValue($value, $this->_platform);
 
-<<<<<<< HEAD
                     $rowData['scalars'][$fieldName] = $value;
-=======
-                    // Reimplement ReflectionEnumProperty code
-                    if ($value !== null && isset($cacheKeyInfo['enumType'])) {
-                        $enumType = $cacheKeyInfo['enumType'];
-                        if (is_array($value)) {
-                            $value = array_map(static function ($value) use ($enumType): BackedEnum {
-                                return $enumType::from($value);
-                            }, $value);
-                        } else {
-                            $value = $enumType::from($value);
-                        }
-                    }
-
-                    $rowData['scalars'][$fieldName] = $value;
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                     break;
 
                 //case (isset($cacheKeyInfo['isMetaColumn'])):
@@ -597,10 +572,6 @@ abstract class AbstractHydrator
                     'fieldName' => $this->_rsm->scalarMappings[$key],
                     'type'      => Type::getType($this->_rsm->typeMappings[$key]),
                     'dqlAlias'  => '',
-<<<<<<< HEAD
-=======
-                    'enumType'  => $this->_rsm->enumMappings[$key] ?? null,
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 ];
 
             case isset($this->_rsm->scalarMappings[$key]):
@@ -608,10 +579,6 @@ abstract class AbstractHydrator
                     'isScalar'  => true,
                     'fieldName' => $this->_rsm->scalarMappings[$key],
                     'type'      => Type::getType($this->_rsm->typeMappings[$key]),
-<<<<<<< HEAD
-=======
-                    'enumType'  => $this->_rsm->enumMappings[$key] ?? null,
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 ];
 
             case isset($this->_rsm->metaMappings[$key]):

@@ -1,10 +1,6 @@
 # Contributing
 
-<<<<<<< HEAD
 When contributing to this repository make sure to follow the Pull request process below. 
-=======
-When contributing to this repository make sure to follow the Pull request process below.
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 Reduce to the minimum 3rd party dependencies.
 
 Please note we have a [code of conduct](#Code of Conduct), please follow it in all your interactions with the project.
@@ -18,11 +14,7 @@ When doing a PR to v2 remember that you also have to do the PR port to v3, or te
 3. Describe the changes you are proposing
     1. If adding an extra validation state the benefits of adding it and the problem is solving
     2. Document in the readme, by adding it to the list
-<<<<<<< HEAD
 4. Provide appropiate tests for the code you are submitting: aim to keep the existing coverage percentage.
-=======
-4. Provide appropriate tests for the code you are submitting: aim to keep the existing coverage percentage.
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 5. Add your Twitter handle (if you have) so we can thank you there.
 
 ## License
@@ -147,19 +139,11 @@ This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 2.0, available at
 [https://www.contributor-covenant.org/version/2/0/code_of_conduct.html][v2.0].
 
-<<<<<<< HEAD
 Community Impact Guidelines were inspired by 
 [Mozilla's code of conduct enforcement ladder][Mozilla CoC].
 
 For answers to common questions about this code of conduct, see the FAQ at
 [https://www.contributor-covenant.org/faq][FAQ]. Translations are available 
-=======
-Community Impact Guidelines were inspired by
-[Mozilla's code of conduct enforcement ladder][Mozilla CoC].
-
-For answers to common questions about this code of conduct, see the FAQ at
-[https://www.contributor-covenant.org/faq][FAQ]. Translations are available
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 at [https://www.contributor-covenant.org/translations][translations].
 
 [homepage]: https://www.contributor-covenant.org

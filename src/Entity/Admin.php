@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use App\Entity\User;
-use App\Entity\Admin;
 use App\Entity\Entite;
 use App\Enums\TypeAdminEnum;
 use Doctrine\Common\Collections\ArrayCollection;

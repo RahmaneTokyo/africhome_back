@@ -73,11 +73,7 @@ class XmlExporter extends AbstractExporter
             $discriminatorColumnXml->addAttribute('type', $metadata->discriminatorColumn['type']);
 
             if (isset($metadata->discriminatorColumn['length'])) {
-<<<<<<< HEAD
                 $discriminatorColumnXml->addAttribute('length', $metadata->discriminatorColumn['length']);
-=======
-                $discriminatorColumnXml->addAttribute('length', (string) $metadata->discriminatorColumn['length']);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             }
         }
 
@@ -343,11 +339,7 @@ class XmlExporter extends AbstractExporter
                     }
 
                     if (isset($inverseJoinColumn['nullable'])) {
-<<<<<<< HEAD
                         $inverseJoinColumnXml->addAttribute('nullable', $inverseJoinColumn['nullable']);
-=======
-                        $inverseJoinColumnXml->addAttribute('nullable', $inverseJoinColumn['nullable'] ? 'true' : 'false');
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                     }
 
                     if (isset($inverseJoinColumn['orderBy'])) {
@@ -373,11 +365,7 @@ class XmlExporter extends AbstractExporter
                     }
 
                     if (isset($joinColumn['nullable'])) {
-<<<<<<< HEAD
                         $joinColumnXml->addAttribute('nullable', $joinColumn['nullable']);
-=======
-                        $joinColumnXml->addAttribute('nullable', $joinColumn['nullable'] ? 'true' : 'false');
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                     }
                 }
             }

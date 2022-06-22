@@ -320,6 +320,6 @@ class __TwigTemplate_8abb4856904d6061f5d8f3de3065fcaafa435fb113633c08b50f42844d6
         </ul>
     </nav>
 {% endif %}
-", "@KnpPaginator/Pagination/bulma_pagination.html.twig", "D:\\GSExpertise\\africhome-master\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bulma_pagination.html.twig");
+", "@KnpPaginator/Pagination/bulma_pagination.html.twig", "D:\\GSExpertise\\africhome-rahmane_back\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bulma_pagination.html.twig");
     }
 }

@@ -126,6 +126,6 @@ class __TwigTemplate_798c26df06800aea420350eade25671478fc9f0f1fe1f983f0637b74f3f
     </span>
     {{ title }}
 </a>
-", "@KnpPaginator/Pagination/bootstrap_v5_bi_sortable_link.html.twig", "D:\\GSExpertise\\africhome-master\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_bi_sortable_link.html.twig");
+", "@KnpPaginator/Pagination/bootstrap_v5_bi_sortable_link.html.twig", "D:\\GSExpertise\\africhome-rahmane_back\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\bootstrap_v5_bi_sortable_link.html.twig");
     }
 }

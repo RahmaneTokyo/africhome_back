@@ -195,6 +195,6 @@ class __TwigTemplate_71fed58adf2bfdeb36ca91a7b46c6f458ab5dbe8f8fe46932337b9e8562
         </div>
     </div>
 {% endif %}
-", "@KnpPaginator/Pagination/tailwindcss_pagination.html.twig", "D:\\GSExpertise\\africhome-master\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\tailwindcss_pagination.html.twig");
+", "@KnpPaginator/Pagination/tailwindcss_pagination.html.twig", "D:\\GSExpertise\\africhome-rahmane_back\\vendor\\knplabs\\knp-paginator-bundle\\templates\\Pagination\\tailwindcss_pagination.html.twig");
     }
 }

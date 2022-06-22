@@ -18,11 +18,6 @@ interface CacheLogger
      *
      * @param string         $regionName The name of the cache region.
      * @param EntityCacheKey $key        The cache key of the entity.
-<<<<<<< HEAD
-=======
-     *
-     * @return void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function entityCachePut($regionName, EntityCacheKey $key);
 
@@ -31,11 +26,6 @@ interface CacheLogger
      *
      * @param string         $regionName The name of the cache region.
      * @param EntityCacheKey $key        The cache key of the entity.
-<<<<<<< HEAD
-=======
-     *
-     * @return void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function entityCacheHit($regionName, EntityCacheKey $key);
 
@@ -44,11 +34,6 @@ interface CacheLogger
      *
      * @param string         $regionName The name of the cache region.
      * @param EntityCacheKey $key        The cache key of the entity.
-<<<<<<< HEAD
-=======
-     *
-     * @return void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function entityCacheMiss($regionName, EntityCacheKey $key);
 
@@ -57,11 +42,6 @@ interface CacheLogger
      *
      * @param string             $regionName The name of the cache region.
      * @param CollectionCacheKey $key        The cache key of the collection.
-<<<<<<< HEAD
-=======
-     *
-     * @return void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function collectionCachePut($regionName, CollectionCacheKey $key);
 
@@ -70,11 +50,6 @@ interface CacheLogger
      *
      * @param string             $regionName The name of the cache region.
      * @param CollectionCacheKey $key        The cache key of the collection.
-<<<<<<< HEAD
-=======
-     *
-     * @return void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function collectionCacheHit($regionName, CollectionCacheKey $key);
 
@@ -83,11 +58,6 @@ interface CacheLogger
      *
      * @param string             $regionName The name of the cache region.
      * @param CollectionCacheKey $key        The cache key of the collection.
-<<<<<<< HEAD
-=======
-     *
-     * @return void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function collectionCacheMiss($regionName, CollectionCacheKey $key);
 
@@ -96,11 +66,6 @@ interface CacheLogger
      *
      * @param string        $regionName The name of the cache region.
      * @param QueryCacheKey $key        The cache key of the query.
-<<<<<<< HEAD
-=======
-     *
-     * @return void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function queryCachePut($regionName, QueryCacheKey $key);
 
@@ -109,11 +74,6 @@ interface CacheLogger
      *
      * @param string        $regionName The name of the cache region.
      * @param QueryCacheKey $key        The cache key of the query.
-<<<<<<< HEAD
-=======
-     *
-     * @return void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function queryCacheHit($regionName, QueryCacheKey $key);
 
@@ -122,11 +82,6 @@ interface CacheLogger
      *
      * @param string        $regionName The name of the cache region.
      * @param QueryCacheKey $key        The cache key of the query.
-<<<<<<< HEAD
-=======
-     *
-     * @return void
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function queryCacheMiss($regionName, QueryCacheKey $key);
 }

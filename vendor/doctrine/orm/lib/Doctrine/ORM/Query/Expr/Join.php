@@ -19,14 +19,7 @@ class Join
     public const ON   = 'ON';
     public const WITH = 'WITH';
 
-<<<<<<< HEAD
     /** @var string */
-=======
-    /**
-     * @var string
-     * @psalm-var self::INNER_JOIN|self::LEFT_JOIN
-     */
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     protected $joinType;
 
     /** @var string */
@@ -35,14 +28,7 @@ class Join
     /** @var string|null */
     protected $alias;
 
-<<<<<<< HEAD
     /** @var string|null */
-=======
-    /**
-     * @var string|null
-     * @psalm-var self::ON|self::WITH|null
-     */
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     protected $conditionType;
 
     /** @var string|Comparison|Composite|null */
@@ -58,11 +44,6 @@ class Join
      * @param string|null                      $conditionType The condition type constant. Either ON or WITH.
      * @param string|Comparison|Composite|null $condition     The condition for the join.
      * @param string|null                      $indexBy       The index for the join.
-<<<<<<< HEAD
-=======
-     * @psalm-param self::INNER_JOIN|self::LEFT_JOIN $joinType
-     * @psalm-param self::ON|self::WITH|null $conditionType
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function __construct($joinType, $join, $alias = null, $conditionType = null, $condition = null, $indexBy = null)
     {
@@ -76,10 +57,6 @@ class Join
 
     /**
      * @return string
-<<<<<<< HEAD
-=======
-     * @psalm-return self::INNER_JOIN|self::LEFT_JOIN
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function getJoinType()
     {
@@ -104,10 +81,6 @@ class Join
 
     /**
      * @return string|null
-<<<<<<< HEAD
-=======
-     * @psalm-return self::ON|self::WITH|null
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function getConditionType()
     {

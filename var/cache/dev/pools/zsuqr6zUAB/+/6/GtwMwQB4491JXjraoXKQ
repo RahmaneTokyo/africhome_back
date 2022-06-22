@@ -1,3 +1,0 @@
-<?php //route_name_d1758fdcc60e024f0451fd0c4c12238d
-
-return [PHP_INT_MAX, 'api_criteres_get_item'];

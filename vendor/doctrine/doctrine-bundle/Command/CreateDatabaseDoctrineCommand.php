@@ -52,7 +52,6 @@ EOT
 
         $ifNotExists = $input->getOption('if-not-exists');
 
-<<<<<<< HEAD
         $driverOptions = [];
         $params        = $connection->getParams();
 
@@ -69,12 +68,6 @@ EOT
         if (isset($params['master'])) {
             $params                  = $params['master'];
             $params['driverOptions'] = $driverOptions;
-=======
-        $params = $connection->getParams();
-
-        if (isset($params['primary'])) {
-            $params = $params['primary'];
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         }
 
         // Cannot inject `shard` option in parent::getDoctrineConnection

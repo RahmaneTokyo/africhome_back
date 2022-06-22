@@ -25,20 +25,6 @@ class DNumber extends Scalar
     }
 
     /**
-<<<<<<< HEAD
-=======
-     * @param mixed[] $attributes
-     */
-    public static function fromString(string $str, array $attributes = []): DNumber
-    {
-        $attributes['rawValue'] = $str;
-        $float = self::parse($str);
-
-        return new DNumber($float, $attributes);
-    }
-
-    /**
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @internal
      *
      * Parses a DNUMBER token like PHP would.
@@ -77,11 +63,7 @@ class DNumber extends Scalar
         // dec
         return (float) $str;
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     public function getType() : string {
         return 'Scalar_DNumber';
     }

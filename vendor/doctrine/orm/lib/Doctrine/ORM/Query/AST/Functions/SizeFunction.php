@@ -10,11 +10,6 @@ use Doctrine\ORM\Query\Lexer;
 use Doctrine\ORM\Query\Parser;
 use Doctrine\ORM\Query\SqlWalker;
 
-<<<<<<< HEAD
-=======
-use function assert;
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 /**
  * "SIZE" "(" CollectionValuedPathExpression ")"
  *
@@ -32,7 +27,6 @@ class SizeFunction extends FunctionNode
      */
     public function getSql(SqlWalker $sqlWalker)
     {
-<<<<<<< HEAD
         $platform      = $sqlWalker->getEntityManager()->getConnection()->getDatabasePlatform();
         $quoteStrategy = $sqlWalker->getEntityManager()->getConfiguration()->getQuoteStrategy();
         $dqlAlias      = $this->collectionPathExpression->identificationVariable;
@@ -40,25 +34,11 @@ class SizeFunction extends FunctionNode
 
         $qComp = $sqlWalker->getQueryComponent($dqlAlias);
         $class = $qComp['metadata'];
-=======
-        assert($this->collectionPathExpression->field !== null);
-        $entityManager = $sqlWalker->getEntityManager();
-        $platform      = $entityManager->getConnection()->getDatabasePlatform();
-        $quoteStrategy = $entityManager->getConfiguration()->getQuoteStrategy();
-        $dqlAlias      = $this->collectionPathExpression->identificationVariable;
-        $assocField    = $this->collectionPathExpression->field;
-
-        $class = $sqlWalker->getMetadataForDqlAlias($dqlAlias);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $assoc = $class->associationMappings[$assocField];
         $sql   = 'SELECT COUNT(*) FROM ';
 
         if ($assoc['type'] === ClassMetadata::ONE_TO_MANY) {
-<<<<<<< HEAD
             $targetClass      = $sqlWalker->getEntityManager()->getClassMetadata($assoc['targetEntity']);
-=======
-            $targetClass      = $entityManager->getClassMetadata($assoc['targetEntity']);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             $targetTableAlias = $sqlWalker->getSQLTableAlias($targetClass->getTableName());
             $sourceTableAlias = $sqlWalker->getSQLTableAlias($class->getTableName(), $dqlAlias);
 
@@ -80,11 +60,7 @@ class SizeFunction extends FunctionNode
                       . $sourceTableAlias . '.' . $quoteStrategy->getColumnName($class->fieldNames[$targetColumn], $class, $platform);
             }
         } else { // many-to-many
-<<<<<<< HEAD
             $targetClass = $sqlWalker->getEntityManager()->getClassMetadata($assoc['targetEntity']);
-=======
-            $targetClass = $entityManager->getClassMetadata($assoc['targetEntity']);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
             $owningAssoc = $assoc['isOwningSide'] ? $assoc : $targetClass->associationMappings[$assoc['mappedBy']];
             $joinTable   = $owningAssoc['joinTable'];

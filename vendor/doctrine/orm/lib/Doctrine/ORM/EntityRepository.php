@@ -5,40 +5,22 @@ declare(strict_types=1);
 namespace Doctrine\ORM;
 
 use BadMethodCallException;
-<<<<<<< HEAD
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\Common\Collections\Selectable;
-=======
-use Doctrine\Common\Collections\AbstractLazyCollection;
-use Doctrine\Common\Collections\Criteria;
-use Doctrine\Common\Collections\Selectable;
-use Doctrine\Common\Persistence\PersistentObject;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\DBAL\LockMode;
 use Doctrine\Deprecations\Deprecation;
 use Doctrine\Inflector\Inflector;
 use Doctrine\Inflector\InflectorFactory;
-<<<<<<< HEAD
-=======
-use Doctrine\ORM\Exception\NotSupported;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Query\ResultSetMappingBuilder;
 use Doctrine\ORM\Repository\Exception\InvalidMagicMethodCall;
 use Doctrine\Persistence\ObjectRepository;
 
 use function array_slice;
-<<<<<<< HEAD
 use function lcfirst;
 use function sprintf;
 use function strpos;
-=======
-use function class_exists;
-use function lcfirst;
-use function sprintf;
-use function str_starts_with;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function substr;
 
 /**
@@ -48,17 +30,12 @@ use function substr;
  * This class is designed for inheritance and users can subclass this class to
  * write their own repositories with business-specific methods to locate entities.
  *
-<<<<<<< HEAD
  * @template T
-=======
- * @template T of object
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
  * @template-implements Selectable<int,T>
  * @template-implements ObjectRepository<T>
  */
 class EntityRepository implements ObjectRepository, Selectable
 {
-<<<<<<< HEAD
     /** @var string */
     protected $_entityName;
 
@@ -75,38 +52,6 @@ class EntityRepository implements ObjectRepository, Selectable
      * Initializes a new <tt>EntityRepository</tt>.
      */
     public function __construct(EntityManagerInterface $em, Mapping\ClassMetadata $class)
-=======
-    /**
-     * @internal This property will be private in 3.0, call {@see getEntityName()} instead.
-     *
-     * @var string
-     * @psalm-var class-string<T>
-     */
-    protected $_entityName;
-
-    /**
-     * @internal This property will be private in 3.0, call {@see getEntityManager()} instead.
-     *
-     * @var EntityManagerInterface
-     */
-    protected $_em;
-
-    /**
-     * @internal This property will be private in 3.0, call {@see getClassMetadata()} instead.
-     *
-     * @var ClassMetadata
-     * @psalm-var ClassMetadata<T>
-     */
-    protected $_class;
-
-    /** @var Inflector|null */
-    private static $inflector;
-
-    /**
-     * @psalm-param ClassMetadata<T> $class
-     */
-    public function __construct(EntityManagerInterface $em, ClassMetadata $class)
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     {
         $this->_entityName = $class->name;
         $this->_em         = $em;
@@ -116,13 +61,8 @@ class EntityRepository implements ObjectRepository, Selectable
     /**
      * Creates a new QueryBuilder instance that is prepopulated for this entity name.
      *
-<<<<<<< HEAD
      * @param string $alias
      * @param string $indexBy The index for the from.
-=======
-     * @param string      $alias
-     * @param string|null $indexBy The index for the from.
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return QueryBuilder
      */
@@ -214,16 +154,6 @@ class EntityRepository implements ObjectRepository, Selectable
             __METHOD__
         );
 
-<<<<<<< HEAD
-=======
-        if (! class_exists(PersistentObject::class)) {
-            throw NotSupported::createForPersistence3(sprintf(
-                'Partial clearing of entities for class %s',
-                $this->_class->rootEntityName
-            ));
-        }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $this->_em->clear($this->_class->rootEntityName);
     }
 
@@ -316,7 +246,6 @@ class EntityRepository implements ObjectRepository, Selectable
      */
     public function __call($method, $arguments)
     {
-<<<<<<< HEAD
         if (strpos($method, 'findBy') === 0) {
             return $this->resolveMagicCall('findBy', substr($method, 6), $arguments);
         }
@@ -326,17 +255,6 @@ class EntityRepository implements ObjectRepository, Selectable
         }
 
         if (strpos($method, 'countBy') === 0) {
-=======
-        if (str_starts_with($method, 'findBy')) {
-            return $this->resolveMagicCall('findBy', substr($method, 6), $arguments);
-        }
-
-        if (str_starts_with($method, 'findOneBy')) {
-            return $this->resolveMagicCall('findOneBy', substr($method, 9), $arguments);
-        }
-
-        if (str_starts_with($method, 'countBy')) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             return $this->resolveMagicCall('count', substr($method, 7), $arguments);
         }
 
@@ -349,10 +267,6 @@ class EntityRepository implements ObjectRepository, Selectable
 
     /**
      * @return string
-<<<<<<< HEAD
-=======
-     * @psalm-return class-string<T>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     protected function getEntityName()
     {
@@ -360,11 +274,7 @@ class EntityRepository implements ObjectRepository, Selectable
     }
 
     /**
-<<<<<<< HEAD
      * @return string
-=======
-     * {@inheritdoc}
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function getClassName()
     {
@@ -380,12 +290,7 @@ class EntityRepository implements ObjectRepository, Selectable
     }
 
     /**
-<<<<<<< HEAD
      * @return Mapping\ClassMetadata
-=======
-     * @return ClassMetadata
-     * @psalm-return ClassMetadata<T>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     protected function getClassMetadata()
     {
@@ -396,13 +301,8 @@ class EntityRepository implements ObjectRepository, Selectable
      * Select all elements from a selectable that match the expression and
      * return a new collection containing these elements.
      *
-<<<<<<< HEAD
      * @return LazyCriteriaCollection
      * @psalm-return Collection<int, T>
-=======
-     * @return AbstractLazyCollection
-     * @psalm-return AbstractLazyCollection<int, T>&Selectable<int, T>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function matching(Criteria $criteria)
     {

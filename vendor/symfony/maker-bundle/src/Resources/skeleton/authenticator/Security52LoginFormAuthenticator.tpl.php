@@ -51,11 +51,7 @@ class <?= $class_name; ?> extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-<<<<<<< HEAD
         //return new RedirectResponse($this->urlGenerator->generate('some_route'));
-=======
-        // return new RedirectResponse($this->urlGenerator->generate('some_route'));
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 

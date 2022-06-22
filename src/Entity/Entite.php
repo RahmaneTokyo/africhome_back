@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Entity\Entite;
 use App\Entity\Contact;
 use App\Enums\TypeEntiteEnum;
 use DateTime;

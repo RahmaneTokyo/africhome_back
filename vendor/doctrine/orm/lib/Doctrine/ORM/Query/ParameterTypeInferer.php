@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM\Query;
 
-<<<<<<< HEAD
-=======
-use BackedEnum;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use DateInterval;
 use DateTimeImmutable;
 use DateTimeInterface;
@@ -58,24 +54,8 @@ class ParameterTypeInferer
             return Types::DATEINTERVAL;
         }
 
-<<<<<<< HEAD
         if (is_array($value)) {
             return is_int(current($value))
-=======
-        if ($value instanceof BackedEnum) {
-            return is_int($value->value)
-                ? Types::INTEGER
-                : Types::STRING;
-        }
-
-        if (is_array($value)) {
-            $firstValue = current($value);
-            if ($firstValue instanceof BackedEnum) {
-                $firstValue = $firstValue->value;
-            }
-
-            return is_int($firstValue)
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 ? Connection::PARAM_INT_ARRAY
                 : Connection::PARAM_STR_ARRAY;
         }

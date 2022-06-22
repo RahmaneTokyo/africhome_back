@@ -25,11 +25,7 @@
         "doctrine/collections": "^1.0",
         "doctrine/event-manager": "^1.0",
         "psr/cache": "^1.0 || ^2.0 || ^3.0",
-<<<<<<< HEAD
         "doctrine/deprecations": "^0.5.3"
-=======
-        "doctrine/deprecations": "^0.5.3 || ^1"
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     },
     "require-dev": {
         "composer/package-versions-deprecated": "^1.11",

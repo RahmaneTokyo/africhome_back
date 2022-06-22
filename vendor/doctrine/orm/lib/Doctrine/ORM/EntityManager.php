@@ -4,17 +4,9 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM;
 
-<<<<<<< HEAD
 use BadMethodCallException;
 use Doctrine\Common\Cache\Psr6\CacheAdapter;
 use Doctrine\Common\EventManager;
-=======
-use BackedEnum;
-use BadMethodCallException;
-use Doctrine\Common\Cache\Psr6\CacheAdapter;
-use Doctrine\Common\EventManager;
-use Doctrine\Common\Persistence\PersistentObject;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\Common\Util\ClassUtils;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
@@ -25,11 +17,6 @@ use Doctrine\ORM\Exception\InvalidHydrationMode;
 use Doctrine\ORM\Exception\MismatchedEventManager;
 use Doctrine\ORM\Exception\MissingIdentifierField;
 use Doctrine\ORM\Exception\MissingMappingDriverImplementation;
-<<<<<<< HEAD
-=======
-use Doctrine\ORM\Exception\NotSupported;
-use Doctrine\ORM\Exception\ORMException;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\Exception\UnrecognizedIdentifierFields;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\ClassMetadataFactory;
@@ -45,10 +32,6 @@ use Throwable;
 
 use function array_keys;
 use function call_user_func;
-<<<<<<< HEAD
-=======
-use function class_exists;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function get_debug_type;
 use function gettype;
 use function is_array;
@@ -57,10 +40,6 @@ use function is_object;
 use function is_string;
 use function ltrim;
 use function sprintf;
-<<<<<<< HEAD
-=======
-use function strpos;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
 /**
  * The EntityManager is the central access point to ORM functionality.
@@ -80,11 +59,7 @@ use function strpos;
  *     $entityManager = EntityManager::create($dbParams, $config);
  *
  * For more information see
-<<<<<<< HEAD
  * {@link http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/reference/configuration.html}
-=======
- * {@link http://docs.doctrine-project.org/projects/doctrine-orm/en/stable/reference/configuration.html}
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
  *
  * You should never attempt to inherit from the EntityManager: Inheritance
  * is not a valid extension point for the EntityManager. Instead you
@@ -457,22 +432,11 @@ use function strpos;
         }
 
         foreach ($id as $i => $value) {
-<<<<<<< HEAD
             if (is_object($value) && $this->metadataFactory->hasMetadataFor(ClassUtils::getClass($value))) {
                 $id[$i] = $this->unitOfWork->getSingleIdentifierValue($value);
 
                 if ($id[$i] === null) {
                     throw ORMInvalidArgumentException::invalidIdentifierBindingEntity();
-=======
-            if (is_object($value)) {
-                $className = ClassUtils::getClass($value);
-                if ($this->metadataFactory->hasMetadataFor($className)) {
-                    $id[$i] = $this->unitOfWork->getSingleIdentifierValue($value);
-
-                    if ($id[$i] === null) {
-                        throw ORMInvalidArgumentException::invalidIdentifierBindingEntity($className);
-                    }
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 }
             }
         }
@@ -484,16 +448,7 @@ use function strpos;
                 throw MissingIdentifierField::fromFieldAndClass($identifier, $class->name);
             }
 
-<<<<<<< HEAD
             $sortedId[$identifier] = $id[$identifier];
-=======
-            if ($id[$identifier] instanceof BackedEnum) {
-                $sortedId[$identifier] = $id[$identifier]->value;
-            } else {
-                $sortedId[$identifier] = $id[$identifier];
-            }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             unset($id[$identifier]);
         }
 
@@ -823,47 +778,11 @@ use function strpos;
      * @return ObjectRepository|EntityRepository The repository class.
      * @psalm-return EntityRepository<T>
      *
-<<<<<<< HEAD
      * @template T
      */
     public function getRepository($entityName)
     {
         return $this->repositoryFactory->getRepository($this, $entityName);
-=======
-     * @template T of object
-     */
-    public function getRepository($entityName)
-    {
-        if (strpos($entityName, ':') !== false) {
-            if (class_exists(PersistentObject::class)) {
-                Deprecation::trigger(
-                    'doctrine/orm',
-                    'https://github.com/doctrine/orm/issues/8818',
-                    'Short namespace aliases such as "%s" are deprecated and will be removed in Doctrine ORM 3.0.',
-                    $entityName
-                );
-            } else {
-                NotSupported::createForPersistence3(sprintf(
-                    'Using short namespace alias "%s" when calling %s',
-                    $entityName,
-                    __METHOD__
-                ));
-            }
-        }
-
-        $repository = $this->repositoryFactory->getRepository($this, $entityName);
-        if (! $repository instanceof EntityRepository) {
-            Deprecation::trigger(
-                'doctrine/orm',
-                'https://github.com/doctrine/orm/pull/9533',
-                'Not returning an instance of %s from %s::getRepository() is deprecated and will cause a TypeError on 3.0.',
-                EntityRepository::class,
-                get_debug_type($this->repositoryFactory)
-            );
-        }
-
-        return $repository;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     }
 
     /**

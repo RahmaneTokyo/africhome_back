@@ -12,15 +12,8 @@ use Doctrine\ORM\Cache;
 class QueryCacheKey extends CacheKey
 {
     /**
-<<<<<<< HEAD
      * @readonly Public only for performance reasons, it should be considered immutable.
      * @var int Cache key lifetime
-=======
-     * Cache key lifetime
-     *
-     * @readonly Public only for performance reasons, it should be considered immutable.
-     * @var int
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public $lifetime;
 

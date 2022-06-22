@@ -9,10 +9,6 @@ use Doctrine\Deprecations\Deprecation;
 use Doctrine\Persistence\Mapping\Driver\MappingDriver;
 use Doctrine\Persistence\Proxy;
 use Psr\Cache\CacheItemPoolInterface;
-<<<<<<< HEAD
-=======
-use ReflectionClass;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use ReflectionException;
 
 use function array_combine;
@@ -21,10 +17,6 @@ use function array_map;
 use function array_reverse;
 use function array_unshift;
 use function assert;
-<<<<<<< HEAD
-=======
-use function class_exists;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function explode;
 use function is_array;
 use function str_replace;
@@ -232,13 +224,6 @@ abstract class AbstractClassMetadataFactory implements ClassMetadataFactory
             return $this->loadedMetadata[$className];
         }
 
-<<<<<<< HEAD
-=======
-        if (class_exists($className, false) && (new ReflectionClass($className))->isAnonymous()) {
-            throw MappingException::classIsAnonymous($className);
-        }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         // Check for namespace alias
         if (strpos($className, ':') !== false) {
             Deprecation::trigger(
@@ -477,11 +462,7 @@ abstract class AbstractClassMetadataFactory implements ClassMetadataFactory
         }
 
         // Check for namespace alias
-<<<<<<< HEAD
         if (strpos($className, ':') !== false) {
-=======
-        if (! class_exists($className, false) && strpos($className, ':') !== false) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             Deprecation::trigger(
                 'doctrine/persistence',
                 'https://github.com/doctrine/persistence/issues/204',

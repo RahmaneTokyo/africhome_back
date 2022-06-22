@@ -51,10 +51,7 @@ security:
         - { path: ^/api/password/request, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/password/reset/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/param_types_demandes, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-<<<<<<< HEAD
         - { path: ^/api/criteres, roles: IS_AUTHENTICATED_FULLY }
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         - { path: ^/api/*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }

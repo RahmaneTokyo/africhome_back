@@ -16,10 +16,6 @@ use ProxyManager\ProxyGenerator\PropertyGenerator\PublicPropertiesMap;
 use ProxyManager\ProxyGenerator\Util\PublicScopeSimulator;
 use ReflectionClass;
 
-<<<<<<< HEAD
-=======
-use function implode;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function sprintf;
 
 /**
@@ -67,11 +63,7 @@ if (isset(self::$%s[$name])) {
         $accessor = isset($accessorCache[$cacheKey])
             ? $accessorCache[$cacheKey]
             : $accessorCache[$cacheKey] = \Closure::bind(static function & ($instance) use ($name) {
-<<<<<<< HEAD
                 return $instance->$name;
-=======
-                %s
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             }, null, $class);
 
         return $accessor($this);
@@ -83,11 +75,7 @@ if (isset(self::$%s[$name])) {
         $accessor = isset($accessorCache[$cacheKey])
             ? $accessorCache[$cacheKey]
             : $accessorCache[$cacheKey] = \Closure::bind(static function & ($instance) use ($name) {
-<<<<<<< HEAD
                 return $instance->$name;
-=======
-                %s
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             }, null, $tmpClass);
 
         return $accessor($this);
@@ -122,18 +110,6 @@ PHP;
             );
         }
 
-<<<<<<< HEAD
-=======
-        $readOnlyPropertyNames = $privateProperties->getReadOnlyPropertyNames();
-
-        if ($readOnlyPropertyNames) {
-            $privateReturnCode  = sprintf('\in_array($name, [\'%s\'], true) ? $value = $instance->$name : $value = & $instance->$name;', implode("', '", $readOnlyPropertyNames));
-            $privateReturnCode .= "\n\n                return \$value;";
-        } else {
-            $privateReturnCode = 'return $instance->$name;';
-        }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $this->setBody(sprintf(
             $this->callParentTemplate,
             $initializerProperty->getName(),
@@ -145,15 +121,8 @@ PHP;
             $protectedProperties->getName(),
             $privateProperties->getName(),
             $privateProperties->getName(),
-<<<<<<< HEAD
             $initializationTracker->getName(),
             $privateProperties->getName(),
-=======
-            $privateReturnCode,
-            $initializationTracker->getName(),
-            $privateProperties->getName(),
-            $privateReturnCode,
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             $parentAccess
         ));
     }

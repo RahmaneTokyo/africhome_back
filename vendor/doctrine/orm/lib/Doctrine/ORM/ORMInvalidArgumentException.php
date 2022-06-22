@@ -4,20 +4,11 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM;
 
-<<<<<<< HEAD
-=======
-use Doctrine\Deprecations\Deprecation;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\Mapping\ClassMetadata;
 use InvalidArgumentException;
 
 use function array_map;
 use function count;
-<<<<<<< HEAD
-=======
-use function func_get_arg;
-use function func_num_args;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function get_debug_type;
 use function gettype;
 use function implode;
@@ -206,33 +197,9 @@ class ORMInvalidArgumentException extends InvalidArgumentException
     /**
      * @return ORMInvalidArgumentException
      */
-<<<<<<< HEAD
     public static function invalidIdentifierBindingEntity()
     {
         return new self('Binding entities to query parameters only allowed for entities that have an identifier.');
-=======
-    public static function invalidIdentifierBindingEntity(/* string $class */)
-    {
-        if (func_num_args() === 0) {
-            Deprecation::trigger(
-                'doctrine/orm',
-                'https://github.com/doctrine/orm/pull/9642',
-                'Omitting the class name in the exception method %s is deprecated.',
-                __METHOD__
-            );
-
-            return new self('Binding entities to query parameters only allowed for entities that have an identifier.');
-        }
-
-        return new self(sprintf(
-            <<<'EXCEPTION'
-Binding entities to query parameters only allowed for entities that have an identifier.
-Class "%s" does not have an identifier.
-EXCEPTION
-            ,
-            func_get_arg(0)
-        ));
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     }
 
     /**
@@ -257,27 +224,12 @@ EXCEPTION
     /**
      * Used when a given entityName hasn't the good type
      *
-<<<<<<< HEAD
-=======
-     * @deprecated This method will be removed in 3.0.
-     *
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @param mixed $entityName The given entity (which shouldn't be a string)
      *
      * @return self
      */
     public static function invalidEntityName($entityName)
     {
-<<<<<<< HEAD
-=======
-        Deprecation::triggerIfCalledFromOutside(
-            'doctrine/orm',
-            'https://github.com/doctrine/orm/pull/9471',
-            '%s() is deprecated',
-            __METHOD__
-        );
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         return new self(sprintf('Entity name must be a string, %s given', get_debug_type($entityName)));
     }
 

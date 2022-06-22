@@ -224,13 +224,8 @@ class Downloader
                         break;
                     }
 
-<<<<<<< HEAD
                     if (isset($links['recipes_template_relative'])) {
                         $links['recipes_template'] = preg_replace('{[^/\?]*+(?=\?|$)}', $links['recipes_template_relative'], $endpoint, 1);
-=======
-                    if (isset($links['recipe_template_relative'])) {
-                        $links['recipe_template'] = preg_replace('{[^/\?]*+(?=\?|$)}', $links['recipe_template_relative'], $endpoint, 1);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                     }
 
                     $urls[] = strtr($links['recipe_template'], [

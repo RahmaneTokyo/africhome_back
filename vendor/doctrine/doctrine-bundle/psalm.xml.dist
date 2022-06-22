@@ -33,30 +33,18 @@
         <file name="Registry.php"/>
     </projectFiles>
     <issueHandlers>
-<<<<<<< HEAD
         <TooManyTemplateParams>
             <errorLevel type="suppress">
                 <!-- This happens on PHP 7.1 because there is no 7.1 compatible doctrine/orm version having template annotations -->
                 <file name="Repository/ServiceEntityRepository.php"/>
             </errorLevel>
         </TooManyTemplateParams>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         <InvalidArrayOffset>
             <errorLevel type="suppress">
                 <!-- requires a release of https://github.com/doctrine/dbal/pull/5261 -->
                 <file name="Tests/ConnectionFactoryTest.php"/>
             </errorLevel>
         </InvalidArrayOffset>
-<<<<<<< HEAD
-=======
-        <UndefinedClass>
-            <errorLevel type="suppress">
-                <!-- We use the "Foo" namespace in unit tests. We are aware that those classes don't exist. -->
-                <referencedClass name="Foo\*"/>
-            </errorLevel>
-        </UndefinedClass>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         <UndefinedDocblockClass>
             <errorLevel type="suppress">
                 <!-- https://github.com/symfony/symfony/issues/45609 -->

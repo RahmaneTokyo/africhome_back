@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-<<<<<<< HEAD
-    <parameter key="kernel.project_dir">D:\GSExpertise\africhome-master</parameter>
+    <parameter key="kernel.project_dir">D:\GSExpertise\africhome-rahmane_back</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">D:\GSExpertise\africhome-master\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">D:\GSExpertise\africhome-master\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">D:\GSExpertise\africhome-master\var\log</parameter>
-=======
-    <parameter key="kernel.project_dir">D:\GSExpertise\Africhrome\Africhome-back</parameter>
-    <parameter key="kernel.environment">dev</parameter>
-    <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
-    <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev</parameter>
-    <parameter key="kernel.logs_dir">D:\GSExpertise\Africhrome\Africhome-back\var\log</parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <parameter key="kernel.build_dir">D:\GSExpertise\africhome-rahmane_back\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">D:\GSExpertise\africhome-rahmane_back\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">D:\GSExpertise\africhome-rahmane_back\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="TwigBundle">Symfony\Bundle\TwigBundle\TwigBundle</parameter>
@@ -30,106 +20,52 @@
       <parameter key="LexikJWTAuthenticationBundle">Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle</parameter>
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
-<<<<<<< HEAD
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\symfony\framework-bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\symfony\framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\symfony\twig-bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\symfony\security-bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-migrations-bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-migrations-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
       </parameter>
       <parameter key="NelmioCorsBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\nelmio\cors-bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\nelmio\cors-bundle</parameter>
         <parameter key="namespace">Nelmio\CorsBundle</parameter>
       </parameter>
       <parameter key="ApiPlatformBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\api-platform\core\src\Bridge\Symfony\Bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\api-platform\core\src\Bridge\Symfony\Bundle</parameter>
         <parameter key="namespace">ApiPlatform\Core\Bridge\Symfony\Bundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\symfony\maker-bundle\src</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\symfony\maker-bundle\src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
       <parameter key="LexikJWTAuthenticationBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\lexik\jwt-authentication-bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\lexik\jwt-authentication-bundle</parameter>
         <parameter key="namespace">Lexik\Bundle\JWTAuthenticationBundle</parameter>
       </parameter>
       <parameter key="SwiftmailerBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\symfony\swiftmailer-bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\symfony\swiftmailer-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\SwiftmailerBundle</parameter>
       </parameter>
       <parameter key="KnpPaginatorBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle</parameter>
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
-=======
-      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
-    </parameter>
-    <parameter key="kernel.bundles_metadata" type="collection">
-      <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\framework-bundle</parameter>
-        <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
-      </parameter>
-      <parameter key="TwigBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\twig-bundle</parameter>
-        <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
-      </parameter>
-      <parameter key="SecurityBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-bundle</parameter>
-        <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
-      </parameter>
-      <parameter key="DoctrineBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-bundle</parameter>
-        <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
-      </parameter>
-      <parameter key="DoctrineMigrationsBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-migrations-bundle</parameter>
-        <parameter key="namespace">Doctrine\Bundle\MigrationsBundle</parameter>
-      </parameter>
-      <parameter key="NelmioCorsBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\nelmio\cors-bundle</parameter>
-        <parameter key="namespace">Nelmio\CorsBundle</parameter>
-      </parameter>
-      <parameter key="ApiPlatformBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\api-platform\core\src\Bridge\Symfony\Bundle</parameter>
-        <parameter key="namespace">ApiPlatform\Core\Bridge\Symfony\Bundle</parameter>
-      </parameter>
-      <parameter key="MakerBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\maker-bundle\src</parameter>
-        <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
-      </parameter>
-      <parameter key="LexikJWTAuthenticationBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\lexik\jwt-authentication-bundle</parameter>
-        <parameter key="namespace">Lexik\Bundle\JWTAuthenticationBundle</parameter>
-      </parameter>
-      <parameter key="SwiftmailerBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\swiftmailer-bundle</parameter>
-        <parameter key="namespace">Symfony\Bundle\SwiftmailerBundle</parameter>
-      </parameter>
-      <parameter key="KnpPaginatorBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle</parameter>
-        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
-      </parameter>
-      <parameter key="DoctrineFixturesBundle" type="collection">
-        <parameter key="path">D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-fixtures-bundle</parameter>
-        <parameter key="namespace">Doctrine\Bundle\FixturesBundle</parameter>
-      </parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
@@ -162,28 +98,17 @@
     <parameter key="asset.request_context.base_path">null</parameter>
     <parameter key="asset.request_context.secure">null</parameter>
     <parameter key="translator.logging">false</parameter>
-<<<<<<< HEAD
-    <parameter key="translator.default_path">D:\GSExpertise\africhome-master/translations</parameter>
+    <parameter key="translator.default_path">D:\GSExpertise\africhome-rahmane_back/translations</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">D:\GSExpertise\africhome-master\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
-=======
-    <parameter key="translator.default_path">D:\GSExpertise\Africhrome\Africhome-back/translations</parameter>
-    <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <parameter key="debug.container.dump">D:\GSExpertise\africhome-rahmane_back\var\cache\dev/App_KernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-<<<<<<< HEAD
-    <parameter key="serializer.mapping.cache.file">D:\GSExpertise\africhome-master\var\cache\dev/serialization.php</parameter>
-    <parameter key="cache.prefix.seed">_D:\GSExpertise\africhome-master.App_KernelDevDebugContainer</parameter>
-=======
-    <parameter key="serializer.mapping.cache.file">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/serialization.php</parameter>
-    <parameter key="cache.prefix.seed">_D:\GSExpertise\Africhrome\Africhome-back.App_KernelDevDebugContainer</parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <parameter key="serializer.mapping.cache.file">D:\GSExpertise\africhome-rahmane_back\var\cache\dev/serialization.php</parameter>
+    <parameter key="cache.prefix.seed">_D:\GSExpertise\africhome-rahmane_back.App_KernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -192,25 +117,15 @@
       <parameter key="cookie_samesite">lax</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-<<<<<<< HEAD
-    <parameter key="session.save_path">D:\GSExpertise\africhome-master\var\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">D:\GSExpertise\africhome-rahmane_back\var\cache\dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
-    <parameter key="validator.mapping.cache.file">D:\GSExpertise\africhome-master\var\cache\dev/validation.php</parameter>
-=======
-    <parameter key="session.save_path">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/sessions</parameter>
-    <parameter key="session.metadata.update_threshold">0</parameter>
-    <parameter key="validator.mapping.cache.file">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/validation.php</parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <parameter key="validator.mapping.cache.file">D:\GSExpertise\africhome-rahmane_back\var\cache\dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-<<<<<<< HEAD
-    <parameter key="twig.default_path">D:\GSExpertise\africhome-master/templates</parameter>
-=======
-    <parameter key="twig.default_path">D:\GSExpertise\Africhrome\Africhome-back/templates</parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <parameter key="twig.default_path">D:\GSExpertise\africhome-rahmane_back/templates</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection"/>
     <parameter key="security.access.denied_url">null</parameter>
     <parameter key="security.authentication.manager.erase_credentials">true</parameter>
@@ -289,11 +204,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-<<<<<<< HEAD
-    <parameter key="doctrine.orm.proxy_dir">D:\GSExpertise\africhome-master\var\cache\dev/doctrine/orm/Proxies</parameter>
-=======
-    <parameter key="doctrine.orm.proxy_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/doctrine/orm/Proxies</parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <parameter key="doctrine.orm.proxy_dir">D:\GSExpertise\africhome-rahmane_back\var\cache\dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="doctrine.migrations.preferred_em">null</parameter>
     <parameter key="doctrine.migrations.preferred_connection">null</parameter>
@@ -369,11 +280,7 @@
     <parameter key="api_platform.eager_loading.enabled">true</parameter>
     <parameter key="api_platform.eager_loading.max_joins">30</parameter>
     <parameter key="api_platform.eager_loading.fetch_partial">false</parameter>
-<<<<<<< HEAD
     <parameter key="api_platform.eager_loading.force_eager">false</parameter>
-=======
-    <parameter key="api_platform.eager_loading.force_eager">true</parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <parameter key="api_platform.collection.exists_parameter_name">exists</parameter>
     <parameter key="api_platform.collection.order">ASC</parameter>
     <parameter key="api_platform.collection.order_parameter_name">order</parameter>
@@ -414,11 +321,7 @@
       <parameter key="attributes" type="collection"/>
     </parameter>
     <parameter key="api_platform.resource_class_directories" type="collection">
-<<<<<<< HEAD
-      <parameter>D:\GSExpertise\africhome-master/src/Entity</parameter>
-=======
-      <parameter>D:\GSExpertise\Africhrome\Africhome-back/src/Entity</parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <parameter>D:\GSExpertise\africhome-rahmane_back/src/Entity</parameter>
     </parameter>
     <parameter key="api_platform.oauth.enabled">false</parameter>
     <parameter key="api_platform.oauth.clientId"></parameter>
@@ -457,11 +360,7 @@
     <parameter key="lexik_jwt_authentication.encoder.signature_algorithm">RS256</parameter>
     <parameter key="lexik_jwt_authentication.encoder.crypto_engine">openssl</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">dynamic</parameter>
-<<<<<<< HEAD
-    <parameter key="swiftmailer.spool.default.memory.path">D:\GSExpertise\africhome-master\var\cache\dev/swiftmailer/spool/default</parameter>
-=======
-    <parameter key="swiftmailer.spool.default.memory.path">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/swiftmailer/spool/default</parameter>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <parameter key="swiftmailer.spool.default.memory.path">D:\GSExpertise\africhome-rahmane_back\var\cache\dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -494,7 +393,6 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\BatimentController"/>
       </call>
     </service>
-<<<<<<< HEAD
     <service id="App\Controller\BatimentCritereController" class="App\Controller\BatimentCritereController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -502,8 +400,6 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\BatimentCritereController"/>
       </call>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="App\Controller\EmployesController" class="App\Controller\EmployesController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -521,7 +417,6 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\EntiteController"/>
       </call>
     </service>
-<<<<<<< HEAD
     <service id="App\Controller\IncidentController" class="App\Controller\IncidentController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -529,8 +424,6 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\IncidentController"/>
       </call>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="App\Controller\ParametrageController" class="App\Controller\ParametrageController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -547,25 +440,17 @@
         <argument type="service" id=".service_locator.W9y3dzm.App\Controller\UserCommonController"/>
       </call>
     </service>
-<<<<<<< HEAD
-=======
-    <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
-      <tag name="doctrine.fixture.orm"/>
-    </service>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true"/>
     <service id="App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" autoconfigure="true">
       <tag name="api_platform.data_persister"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="request_stack"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
     </service>
-<<<<<<< HEAD
     <service id="App\DataPersister\BatimentCriterePersister" class="App\DataPersister\BatimentCriterePersister" autowire="true" autoconfigure="true">
       <tag name="api_platform.data_persister"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="App\DataPersister\BatimentPersister" class="App\DataPersister\BatimentPersister" autowire="true" autoconfigure="true">
       <tag name="api_platform.data_persister"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
@@ -592,15 +477,12 @@
       <argument type="service" id="security.user_password_encoder.generic"/>
       <argument type="service" id="App\Repository\EntiteRepository"/>
     </service>
-<<<<<<< HEAD
     <service id="App\DataPersister\IncidentPersister" class="App\DataPersister\IncidentPersister" autowire="true" autoconfigure="true">
       <tag name="api_platform.data_persister"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="request_stack"/>
       <argument type="service" id="App\Repository\EntiteRepository"/>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="App\DataPersister\LocalisationPersister" class="App\DataPersister\LocalisationPersister" autowire="true" autoconfigure="true">
       <tag name="api_platform.data_persister"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
@@ -623,10 +505,7 @@
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="request_stack"/>
     </service>
-<<<<<<< HEAD
     <service id="App\Enums\EtatIncidentEnum" class="App\Enums\EtatIncidentEnum" autowire="true" autoconfigure="true"/>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="App\Enums\TypeAdminEnum" class="App\Enums\TypeAdminEnum" autowire="true" autoconfigure="true"/>
     <service id="App\Enums\TypeEntiteEnum" class="App\Enums\TypeEntiteEnum" autowire="true" autoconfigure="true"/>
     <service id="App\Enums\TypeGestionnaireEnum" class="App\Enums\TypeGestionnaireEnum" autowire="true" autoconfigure="true"/>
@@ -642,13 +521,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-<<<<<<< HEAD
     <service id="App\Repository\BatimentCritereRepository" class="App\Repository\BatimentCritereRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="App\Repository\BatimentOwnerRepository" class="App\Repository\BatimentOwnerRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -661,11 +537,11 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-<<<<<<< HEAD
-    <service id="App\Repository\CritereRepository" class="App\Repository\CritereRepository" autowire="true" autoconfigure="true">
-=======
     <service id="App\Repository\CoordonneesRepository" class="App\Repository\CoordonneesRepository" autowire="true" autoconfigure="true">
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\CritereRepository" class="App\Repository\CritereRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -673,13 +549,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-<<<<<<< HEAD
-=======
     <service id="App\Repository\FormateurRepository" class="App\Repository\FormateurRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="App\Repository\GestionnaireRepository" class="App\Repository\GestionnaireRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -692,13 +565,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-<<<<<<< HEAD
     <service id="App\Repository\MontantRepository" class="App\Repository\MontantRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="App\Repository\ParamTypesAgentsRepository" class="App\Repository\ParamTypesAgentsRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -712,6 +582,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\SuperAdminRepository" class="App\Repository\SuperAdminRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TaxeRepository" class="App\Repository\TaxeRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -739,13 +613,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-<<<<<<< HEAD
-=======
     <service id="App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="acme_api.event.jwt_created_listener" class="App\EventListener\JWTCreatedListener" autowire="true" autoconfigure="true">
       <tag name="kernel.event_listener" event="lexik_jwt_authentication.on_jwt_created" method="onJWTCreated"/>
       <argument type="service" id="request_stack"/>
@@ -816,11 +687,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/http_cache</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/http_cache</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -830,11 +697,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/App_KernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -1006,11 +869,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -1043,11 +902,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -1231,25 +1086,14 @@
       <argument type="service" id="translator.default"/>
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master/translations</argument>
-      <argument>D:\GSExpertise\africhome-master/templates</argument>
+      <argument>D:\GSExpertise\africhome-rahmane_back/translations</argument>
+      <argument>D:\GSExpertise\africhome-rahmane_back/templates</argument>
       <argument type="collection">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations</argument>
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back/translations</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back/templates</argument>
-      <argument type="collection">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations</argument>
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations</argument>
-      </argument>
-      <argument type="collection">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\twig-bridge/Resources/views/Email</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bridge/Resources/views/Email</argument>
       </argument>
       <call method="setName">
         <argument>debug:translation</argument>
@@ -1265,25 +1109,14 @@
       <argument type="service" id="translation.reader"/>
       <argument type="service" id="translation.extractor"/>
       <argument>en</argument>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master/translations</argument>
-      <argument>D:\GSExpertise\africhome-master/templates</argument>
+      <argument>D:\GSExpertise\africhome-rahmane_back/translations</argument>
+      <argument>D:\GSExpertise\africhome-rahmane_back/templates</argument>
       <argument type="collection">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations</argument>
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations</argument>
       </argument>
       <argument type="collection">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back/translations</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back/templates</argument>
-      <argument type="collection">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations</argument>
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations</argument>
-      </argument>
-      <argument type="collection">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\twig-bridge/Resources/views/Email</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bridge/Resources/views/Email</argument>
       </argument>
       <call method="setName">
         <argument>translation:update</argument>
@@ -1428,15 +1261,9 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>TvldnpYSVg</argument>
+      <argument>ag88Id6aJr</argument>
       <argument>0</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>s9rc61MuT-</argument>
-      <argument>0</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1448,85 +1275,50 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>oY4LjLE0z-</argument>
+      <argument>49a5GkeFEc</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>Wp3F+Ct9Ul</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>bxEJW3Ss+k</argument>
+      <argument>oMnxxEmr2Y</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>6DgGdS-7lN</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>fNf3HbrSr0</argument>
+      <argument>BPaRcbkYZN</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>QMLoWNKcKg</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>PwklrlfbxK</argument>
+      <argument>QooVM4l58B</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>0zPHg8XiE+</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>nP5agK9JBR</argument>
+      <argument>05E-cymgux</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>UiB5BR1wTM</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1536,11 +1328,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1569,11 +1357,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1778,585 +1562,293 @@
         </argument>
       </argument>
       <argument type="collection">
-<<<<<<< HEAD
-        <argument key="cache_dir">D:\GSExpertise\africhome-master\var\cache\dev/translations</argument>
+        <argument key="cache_dir">D:\GSExpertise\africhome-rahmane_back\var\cache\dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
           </argument>
           <argument key="ar" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
           </argument>
           <argument key="az" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
           </argument>
           <argument key="be" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
           </argument>
           <argument key="bg" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
           </argument>
           <argument key="bs" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
           </argument>
           <argument key="ca" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
           </argument>
           <argument key="cs" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
           </argument>
           <argument key="cy" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
           </argument>
           <argument key="da" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
           </argument>
           <argument key="de" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
           </argument>
           <argument key="el" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
           </argument>
           <argument key="en" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
           </argument>
           <argument key="es" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
           </argument>
           <argument key="et" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
           </argument>
           <argument key="eu" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
           </argument>
           <argument key="fa" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
           </argument>
           <argument key="fi" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
           </argument>
           <argument key="fr" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
           </argument>
           <argument key="gl" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
           </argument>
           <argument key="he" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
           </argument>
           <argument key="hr" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
           </argument>
           <argument key="hu" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
           </argument>
           <argument key="hy" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
           </argument>
           <argument key="id" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
           </argument>
           <argument key="it" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
           </argument>
           <argument key="ja" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
           </argument>
           <argument key="lb" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
           </argument>
           <argument key="lt" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
           </argument>
           <argument key="lv" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
           </argument>
           <argument key="mn" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
           </argument>
           <argument key="my" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
           </argument>
           <argument key="nb" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
           </argument>
           <argument key="nl" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
           </argument>
           <argument key="nn" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
           </argument>
           <argument key="no" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
           </argument>
           <argument key="pl" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
           </argument>
           <argument key="pt" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
           </argument>
           <argument key="pt_BR" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
           </argument>
           <argument key="ro" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
           </argument>
           <argument key="ru" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
           </argument>
           <argument key="sk" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
           </argument>
           <argument key="sl" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
           </argument>
           <argument key="sq" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
           </argument>
           <argument key="sr_Cyrl" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
           </argument>
           <argument key="sr_Latn" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
           </argument>
           <argument key="sv" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
           </argument>
           <argument key="th" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
           </argument>
           <argument key="tl" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
           </argument>
           <argument key="tr" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
           </argument>
           <argument key="uk" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
           </argument>
           <argument key="uz" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
           </argument>
           <argument key="vi" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
           </argument>
           <argument key="zh_CN" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
           </argument>
           <argument key="zh_TW" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
           </argument>
           <argument key="ky" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
           </argument>
           <argument key="sw" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
           </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
-          <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations</argument>
-          <argument>D:\GSExpertise\africhome-master/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\symfony\framework-bundle/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\symfony\twig-bundle/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-bundle/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-bundle/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\nelmio\cors-bundle/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\api-platform\core\src\Bridge\Symfony\Bundle/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\symfony\maker-bundle\src/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\lexik\jwt-authentication-bundle/translations</argument>
-          <argument>D:\GSExpertise\africhome-master\vendor\symfony\swiftmailer-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\framework-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\nelmio\cors-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\api-platform\core\src\Bridge\Symfony\Bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\maker-bundle\src/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\lexik\jwt-authentication-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\swiftmailer-bundle/translations</argument>
         </argument>
         <argument key="cache_vary" type="collection">
           <argument key="scanned_directories" type="collection">
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\validator/Resources/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-core/Resources/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations</argument>
             <argument>translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\framework-bundle/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\twig-bundle/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-bundle/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-bundle/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\nelmio\cors-bundle/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\api-platform\core\src\Bridge\Symfony\Bundle/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\maker-bundle\src/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\lexik\jwt-authentication-bundle/translations</argument>
-            <argument>D:\GSExpertise\africhome-master\vendor\symfony\swiftmailer-bundle/translations</argument>
-=======
-        <argument key="cache_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/translations</argument>
-        <argument key="debug">true</argument>
-        <argument key="resource_files" type="collection">
-          <argument key="af" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.af.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.af.xlf</argument>
-          </argument>
-          <argument key="ar" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
-          </argument>
-          <argument key="az" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.az.xlf</argument>
-          </argument>
-          <argument key="be" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.be.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.be.xlf</argument>
-          </argument>
-          <argument key="bg" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
-          </argument>
-          <argument key="bs" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.bs.xlf</argument>
-          </argument>
-          <argument key="ca" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
-          </argument>
-          <argument key="cs" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
-          </argument>
-          <argument key="cy" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
-          </argument>
-          <argument key="da" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.da.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.da.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.da.xliff</argument>
-          </argument>
-          <argument key="de" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
-          </argument>
-          <argument key="el" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.el.xlf</argument>
-          </argument>
-          <argument key="en" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
-          </argument>
-          <argument key="es" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
-          </argument>
-          <argument key="et" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.et.xlf</argument>
-          </argument>
-          <argument key="eu" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.eu.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.eu.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.eu.xliff</argument>
-          </argument>
-          <argument key="fa" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.fa.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.fa.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fa.xliff</argument>
-          </argument>
-          <argument key="fi" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
-          </argument>
-          <argument key="fr" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
-          </argument>
-          <argument key="gl" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.gl.xlf</argument>
-          </argument>
-          <argument key="he" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.he.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.he.xlf</argument>
-          </argument>
-          <argument key="hr" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.hr.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.hr.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hr.xliff</argument>
-          </argument>
-          <argument key="hu" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
-          </argument>
-          <argument key="hy" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.hy.xlf</argument>
-          </argument>
-          <argument key="id" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.id.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.id.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.id.xliff</argument>
-          </argument>
-          <argument key="it" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
-          </argument>
-          <argument key="ja" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.ja.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ja.xliff</argument>
-          </argument>
-          <argument key="lb" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.lb.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.lb.xlf</argument>
-          </argument>
-          <argument key="lt" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
-          </argument>
-          <argument key="lv" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.lv.xlf</argument>
-          </argument>
-          <argument key="mn" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.mn.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.mn.xlf</argument>
-          </argument>
-          <argument key="my" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.my.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.my.xlf</argument>
-          </argument>
-          <argument key="nb" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.nb.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.nb.xlf</argument>
-          </argument>
-          <argument key="nl" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
-          </argument>
-          <argument key="nn" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.nn.xlf</argument>
-          </argument>
-          <argument key="no" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
-          </argument>
-          <argument key="pl" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
-          </argument>
-          <argument key="pt" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
-          </argument>
-          <argument key="pt_BR" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
-          </argument>
-          <argument key="ro" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.ro.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.ro.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ro.xliff</argument>
-          </argument>
-          <argument key="ru" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
-          </argument>
-          <argument key="sk" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.sk.xlf</argument>
-          </argument>
-          <argument key="sl" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
-          </argument>
-          <argument key="sq" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.sq.xlf</argument>
-          </argument>
-          <argument key="sr_Cyrl" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.sr_Cyrl.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.sr_Cyrl.xlf</argument>
-          </argument>
-          <argument key="sr_Latn" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.sr_Latn.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.sr_Latn.xlf</argument>
-          </argument>
-          <argument key="sv" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.sv.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.sv.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sv.xliff</argument>
-          </argument>
-          <argument key="th" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.th.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.th.xlf</argument>
-          </argument>
-          <argument key="tl" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.tl.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.tl.xlf</argument>
-          </argument>
-          <argument key="tr" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
-          </argument>
-          <argument key="uk" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
-          </argument>
-          <argument key="uz" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.uz.xlf</argument>
-          </argument>
-          <argument key="vi" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.vi.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.vi.xlf</argument>
-          </argument>
-          <argument key="zh_CN" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.zh_CN.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.zh_CN.xlf</argument>
-          </argument>
-          <argument key="zh_TW" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations\validators.zh_TW.xlf</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations\security.zh_TW.xlf</argument>
-          </argument>
-          <argument key="ky" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ky.xliff</argument>
-          </argument>
-          <argument key="sw" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
-          </argument>
-        </argument>
-        <argument key="scanned_directories" type="collection">
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\framework-bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\twig-bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\nelmio\cors-bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\api-platform\core\src\Bridge\Symfony\Bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\maker-bundle\src/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\lexik\jwt-authentication-bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\swiftmailer-bundle/translations</argument>
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
-        </argument>
-        <argument key="cache_vary" type="collection">
-          <argument key="scanned_directories" type="collection">
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\validator/Resources/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-core/Resources/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/translations</argument>
-            <argument>translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\framework-bundle/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\twig-bundle/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-bundle/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-bundle/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\nelmio\cors-bundle/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\api-platform\core\src\Bridge\Symfony\Bundle/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\maker-bundle\src/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\lexik\jwt-authentication-bundle/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\swiftmailer-bundle/translations</argument>
-            <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-fixtures-bundle/translations</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\framework-bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-migrations-bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\nelmio\cors-bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\api-platform\core\src\Bridge\Symfony\Bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\maker-bundle\src/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\lexik\jwt-authentication-bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\swiftmailer-bundle/translations</argument>
           </argument>
         </argument>
       </argument>
@@ -3232,11 +2724,7 @@
       <argument type="service" id=".service_locator.WOytlHA.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-<<<<<<< HEAD
-        <argument key="cache_dir">D:\GSExpertise\africhome-master\var\cache\dev</argument>
-=======
-        <argument key="cache_dir">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument key="cache_dir">D:\GSExpertise\africhome-rahmane_back\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -3286,11 +2774,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -3346,21 +2830,13 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/annotations.php</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/annotations.php</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/annotations.php</argument>
       <argument>#^Symfony\\(?:Component\\HttpKernel\\|Bundle\\FrameworkBundle\\Controller\\(?!.*Controller$))#</argument>
       <argument>true</argument>
     </service>
     <service id="annotations.cache_adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
       <tag name="container.hot_path"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/annotations.php</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/annotations.php</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3386,11 +2862,7 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString">
@@ -3399,11 +2871,7 @@
       <factory class="Symfony\Component\String\LazyString" method="fromCallable"/>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master/.env.dev.local</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back/.env.dev.local</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back/.env.dev.local</argument>
     </service>
     <service id="serializer" class="Symfony\Component\Serializer\Serializer" public="true">
       <tag name="container.private" package="symfony/framework-bundle" version="5.2"/>
@@ -3521,17 +2989,10 @@
           </service>
         </argument>
       </argument>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/serialization.php</argument>
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/serialization.php</argument>
     </service>
     <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/serialization.php</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/serialization.php</argument>
-    </service>
-    <service id="serializer.mapping.cache.symfony" class="Psr\Cache\CacheItemPoolInterface">
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/serialization.php</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/serialization.php</argument>
       <argument type="service" id="cache.serializer"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3659,11 +3120,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/sessions</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/sessions</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -3695,11 +3152,7 @@
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler">
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-<<<<<<< HEAD
-          <argument>D:\GSExpertise\africhome-master\var\cache\dev/sessions</argument>
-=======
-          <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/sessions</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+          <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/sessions</argument>
         </service>
       </argument>
     </service>
@@ -3772,17 +3225,10 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/validation.php</argument>
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/validation.php</argument>
     </service>
     <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/validation.php</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/validation.php</argument>
-    </service>
-    <service id="validator.mapping.cache.adapter" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter">
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/validation.php</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -3799,17 +3245,10 @@
     <service id="cache.validator_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>W0Z2jcsNh-</argument>
+      <argument>25Y-RzusYZ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>jULrWT8w00</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3844,11 +3283,7 @@
       <argument type="service" id="twig.loader.native_filesystem"/>
       <argument type="collection">
         <argument key="autoescape">name</argument>
-<<<<<<< HEAD
-        <argument key="cache">D:\GSExpertise\africhome-master\var\cache\dev/twig</argument>
-=======
-        <argument key="cache">D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/twig</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument key="cache">D:\GSExpertise\africhome-rahmane_back\var\cache\dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
@@ -3933,15 +3368,9 @@
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator">
       <argument type="service" id="kernel"/>
       <argument type="collection">
-<<<<<<< HEAD
-        <argument key="D:\GSExpertise\africhome-master\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
+        <argument key="D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
       </argument>
-      <argument>D:\GSExpertise\africhome-master/templates</argument>
-=======
-        <argument key="D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\twig-bridge/Resources/views/Email">email</argument>
-      </argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back/templates</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer">
       <tag name="kernel.cache_warmer"/>
@@ -3952,125 +3381,64 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master</argument>
+      <argument>D:\GSExpertise\africhome-rahmane_back</argument>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>Security</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\security-bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-bundle/Resources/views</argument>
         <argument>!Security</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-bundle/Resources/views</argument>
         <argument>!Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
         <argument>!DoctrineMigrations</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\api-platform\core\src\Bridge\Symfony\Bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\api-platform\core\src\Bridge\Symfony\Bundle/Resources/views</argument>
         <argument>ApiPlatform</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\api-platform\core\src\Bridge\Symfony\Bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\api-platform\core\src\Bridge\Symfony\Bundle/Resources/views</argument>
         <argument>!ApiPlatform</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
         <argument>!Swiftmailer</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/templates</argument>
         <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\knplabs\knp-paginator-bundle/templates</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/templates</argument>
         <argument>!KnpPaginator</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master/templates</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back/templates</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\twig-bridge/Resources/views/Email</argument>
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>email</argument>
       </call>
       <call method="addPath">
-        <argument>D:\GSExpertise\africhome-master\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back</argument>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-bundle/Resources/views</argument>
-        <argument>Security</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\security-bundle/Resources/views</argument>
-        <argument>!Security</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-bundle/Resources/views</argument>
-        <argument>Doctrine</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-bundle/Resources/views</argument>
-        <argument>!Doctrine</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
-        <argument>DoctrineMigrations</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\doctrine\doctrine-migrations-bundle/Resources/views</argument>
-        <argument>!DoctrineMigrations</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\api-platform\core\src\Bridge\Symfony\Bundle/Resources/views</argument>
-        <argument>ApiPlatform</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\api-platform\core\src\Bridge\Symfony\Bundle/Resources/views</argument>
-        <argument>!ApiPlatform</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
-        <argument>Swiftmailer</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
-        <argument>!Swiftmailer</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/templates</argument>
-        <argument>KnpPaginator</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\knplabs\knp-paginator-bundle/templates</argument>
-        <argument>!KnpPaginator</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back/templates</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\twig-bridge/Resources/views/Email</argument>
-        <argument>email</argument>
-      </call>
-      <call method="addPath">
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\vendor\symfony\twig-bridge/Resources/views/Email</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bridge/Resources/views/Email</argument>
         <argument>!email</argument>
       </call>
     </service>
@@ -4097,11 +3465,7 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension">
@@ -4175,15 +3539,9 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="twig"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master</argument>
+      <argument>D:\GSExpertise\africhome-rahmane_back</argument>
       <argument>%kernel.bundles_metadata%</argument>
-      <argument>D:\GSExpertise\africhome-master/templates</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back</argument>
-      <argument>%kernel.bundles_metadata%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back/templates</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back/templates</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
       <call method="setName">
         <argument>debug:twig</argument>
@@ -4366,17 +3724,10 @@
     <service id="cache.security_expression_language" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>28UUSBbyJZ</argument>
+      <argument>q2NS5Q6y1l</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>+AkZKgXty1</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -4467,7 +3818,6 @@
         <argument>null</argument>
       </call>
       <call method="add">
-<<<<<<< HEAD
         <argument type="service" id=".security.request_matcher.0xQTaNT"/>
         <argument type="collection">
           <argument>IS_AUTHENTICATED_FULLY</argument>
@@ -4475,8 +3825,6 @@
         <argument>null</argument>
       </call>
       <call method="add">
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         <argument type="service" id=".security.request_matcher.SWxVOXb"/>
         <argument type="collection">
           <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
@@ -5319,12 +4667,9 @@
     <service id=".security.request_matcher.kPoRcrR" class="Symfony\Component\HttpFoundation\RequestMatcher">
       <argument>^/api/param_types_demandes</argument>
     </service>
-<<<<<<< HEAD
     <service id=".security.request_matcher.0xQTaNT" class="Symfony\Component\HttpFoundation\RequestMatcher">
       <argument>^/api/criteres</argument>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".security.request_matcher.SWxVOXb" class="Symfony\Component\HttpFoundation\RequestMatcher">
       <argument>^/api/*</argument>
     </service>
@@ -5494,11 +4839,7 @@
         </service>
       </argument>
     </service>
-<<<<<<< HEAD
-    <service id=".1_ServiceLocator~MRkm2Oo" class="Symfony\Component\DependencyInjection\ServiceLocator">
-=======
-    <service id=".1_ServiceLocator~lc40MA." class="Symfony\Component\DependencyInjection\ServiceLocator">
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <service id=".1_ServiceLocator~FOaFyoc" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <argument type="collection"/>
     </service>
     <service id="doctrine.orm.proxy_cache_warmer" class="Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer">
@@ -5518,11 +4859,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-<<<<<<< HEAD
-      <argument type="service" id=".service_locator.PqACGp_"/>
-=======
-      <argument type="service" id=".service_locator.bFWh30N"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument type="service" id=".service_locator.CG_ev.T"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5691,11 +5028,7 @@
         <argument type="service" id=".doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
-<<<<<<< HEAD
-        <argument>D:\GSExpertise\africhome-master\var\cache\dev/doctrine/orm/Proxies</argument>
-=======
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/doctrine/orm/Proxies</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/doctrine/orm/Proxies</argument>
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -5725,11 +5058,7 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
-<<<<<<< HEAD
-        <argument>D:\GSExpertise\africhome-master\src\Entity</argument>
-=======
-        <argument>D:\GSExpertise\Africhrome\Africhome-back\src\Entity</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument>D:\GSExpertise\africhome-rahmane_back\src\Entity</argument>
       </argument>
     </service>
     <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
@@ -5793,11 +5122,7 @@
     <service id="doctrine.migrations.configuration" class="Doctrine\Migrations\Configuration\Configuration">
       <call method="addMigrationsDirectory">
         <argument>DoctrineMigrations</argument>
-<<<<<<< HEAD
-        <argument>D:\GSExpertise\africhome-master/migrations</argument>
-=======
-        <argument>D:\GSExpertise\Africhrome\Africhome-back/migrations</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument>D:\GSExpertise\africhome-rahmane_back/migrations</argument>
       </call>
       <call method="setAllOrNothing">
         <argument>false</argument>
@@ -6161,51 +5486,30 @@
     <service id="api_platform.cache.route_name_resolver" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>zsuqr6zUAB</argument>
+      <argument>X+ANnVllBK</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>8KWXvPD2Sh</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="api_platform.cache.identifiers_extractor" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>gSEOyCz8hf</argument>
+      <argument>1CxoTFkWD3</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>T-hKnvRHSb</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="api_platform.cache.subresource_operation_factory" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>2ePSE2A8o9</argument>
+      <argument>izAX96t8nV</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>XstuAf+MU2</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6306,34 +5610,20 @@
     <service id="api_platform.cache.metadata.resource" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>gCtEhlQuqn</argument>
+      <argument>bBMB40Tr2T</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>U6ul3YkPv7</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="api_platform.cache.metadata.property" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-<<<<<<< HEAD
-      <argument>9gC5DAdpjb</argument>
+      <argument>3KwQ6cJfTW</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\africhome-master\var\cache\dev/pools</argument>
-=======
-      <argument>aMHRXawEkP</argument>
-      <argument>0</argument>
-      <argument>%container.build_id%</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back\var\cache\dev/pools</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -6415,25 +5705,15 @@
         <argument>api:json-schema:generate</argument>
       </call>
     </service>
-<<<<<<< HEAD
-    <service id=".2_ObjectNormalizer~cZSSc5P" class="Symfony\Component\Serializer\Normalizer\ObjectNormalizer">
-=======
-    <service id=".2_ObjectNormalizer~p1g0keV" class="Symfony\Component\Serializer\Normalizer\ObjectNormalizer">
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <service id=".2_ObjectNormalizer~n5fgcf_" class="Symfony\Component\Serializer\Normalizer\ObjectNormalizer">
       <argument>null</argument>
       <argument>null</argument>
       <argument type="service" id="property_accessor"/>
       <argument type="service" id="property_info"/>
     </service>
-<<<<<<< HEAD
-    <service id=".1_Serializer~cZSSc5P" class="Symfony\Component\Serializer\Serializer">
+    <service id=".1_Serializer~n5fgcf_" class="Symfony\Component\Serializer\Serializer">
       <argument type="collection">
-        <argument type="service" id=".2_ObjectNormalizer~cZSSc5P"/>
-=======
-    <service id=".1_Serializer~p1g0keV" class="Symfony\Component\Serializer\Serializer">
-      <argument type="collection">
-        <argument type="service" id=".2_ObjectNormalizer~p1g0keV"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument type="service" id=".2_ObjectNormalizer~n5fgcf_"/>
       </argument>
       <argument type="collection">
         <argument type="service" id="serializer.encoder.json"/>
@@ -6759,11 +6039,7 @@
       <argument type="service" id="api_platform.metadata.property.metadata_factory.cached"/>
       <argument type="service" id="api_platform.metadata.resource.metadata_factory.cached"/>
       <argument>30</argument>
-<<<<<<< HEAD
       <argument>false</argument>
-=======
-      <argument>true</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
       <argument>null</argument>
       <argument>null</argument>
       <argument>false</argument>
@@ -6777,11 +6053,7 @@
     <service id="api_platform.doctrine.orm.query_extension.filter_eager_loading" class="ApiPlatform\Core\Bridge\Doctrine\Orm\Extension\FilterEagerLoadingExtension">
       <tag name="api_platform.doctrine.orm.query_extension.collection" priority="-17"/>
       <argument type="service" id="api_platform.metadata.resource.metadata_factory.cached"/>
-<<<<<<< HEAD
       <argument>false</argument>
-=======
-      <argument>true</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
       <argument type="service" id="api_platform.resource_class_resolver"/>
     </service>
     <service id="api_platform.doctrine.orm.query_extension.pagination" class="ApiPlatform\Core\Bridge\Doctrine\Orm\Extension\PaginationExtension">
@@ -6885,13 +6157,8 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master</argument>
-      <argument>D:\GSExpertise\africhome-master/templates</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back</argument>
-      <argument>D:\GSExpertise\Africhrome\Africhome-back/templates</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back</argument>
+      <argument>D:\GSExpertise\africhome-rahmane_back/templates</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
       <argument>App</argument>
@@ -6983,11 +6250,7 @@
       <tag name="maker.command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.doctrine_helper"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back</argument>
       <argument type="service" id="maker.generator"/>
       <argument type="service" id="maker.entity_class_generator"/>
     </service>
@@ -7059,11 +6322,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-<<<<<<< HEAD
-      <argument>D:\GSExpertise\africhome-master</argument>
-=======
-      <argument>D:\GSExpertise\Africhrome\Africhome-back</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument>D:\GSExpertise\africhome-rahmane_back</argument>
     </service>
     <service id="lexik_jwt_authentication.security.authentication.provider" class="Lexik\Bundle\JWTAuthenticationBundle\Security\Authentication\Provider\JWTProvider">
       <argument></argument>
@@ -7175,20 +6434,12 @@
     <service id="lexik_jwt_authentication.security.jwt_user_provider" class="Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUserProvider">
       <argument></argument>
     </service>
-<<<<<<< HEAD
-    <service id=".1_TokenStorage~ZuYTpFo" class="Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage"/>
-=======
-    <service id=".1_TokenStorage~cvSovKb" class="Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <service id=".1_TokenStorage~mOO488v" class="Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage"/>
     <service id="lexik_jwt_authentication.security.guard.jwt_token_authenticator" class="Lexik\Bundle\JWTAuthenticationBundle\Security\Guard\JWTTokenAuthenticator">
       <argument type="service" id="lexik_jwt_authentication.jwt_manager"/>
       <argument type="service" id="debug.event_dispatcher"/>
       <argument type="service" id="lexik_jwt_authentication.extractor.chain_extractor"/>
-<<<<<<< HEAD
-      <argument type="service" id=".1_TokenStorage~ZuYTpFo"/>
-=======
-      <argument type="service" id=".1_TokenStorage~cvSovKb"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument type="service" id=".1_TokenStorage~mOO488v"/>
       <argument type="service" id="translator.default" on-invalid="null"/>
     </service>
     <service id="lexik_jwt_authentication.check_config_command" class="Lexik\Bundle\JWTAuthenticationBundle\Command\CheckConfigCommand">
@@ -7223,17 +6474,10 @@
         <argument>lexik:jwt:generate-keypair</argument>
       </call>
     </service>
-<<<<<<< HEAD
-    <service id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~gkOqMBY" class="Swift_Transport_Esmtp_Auth_NTLMAuthenticator"/>
-    <service id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~gkOqMBY" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator"/>
-    <service id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~gkOqMBY" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator"/>
-    <service id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~gkOqMBY" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator"/>
-=======
-    <service id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~c2NPg2P" class="Swift_Transport_Esmtp_Auth_NTLMAuthenticator"/>
-    <service id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~c2NPg2P" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator"/>
-    <service id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~c2NPg2P" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator"/>
-    <service id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~c2NPg2P" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <service id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~otF8EZA" class="Swift_Transport_Esmtp_Auth_NTLMAuthenticator"/>
+    <service id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~otF8EZA" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator"/>
+    <service id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~otF8EZA" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator"/>
+    <service id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~otF8EZA" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator"/>
     <service id="swiftmailer.mailer.abstract" class="Swift_Mailer" public="true" abstract="true">
       <argument type="service" id="swiftmailer.mailer.default.transport.spool"/>
     </service>
@@ -7246,17 +6490,10 @@
     </service>
     <service id="swiftmailer.transport.authhandler.abstract" class="Swift_Transport_Esmtp_AuthHandler" abstract="true">
       <argument type="collection">
-<<<<<<< HEAD
-        <argument type="service" id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~gkOqMBY"/>
-        <argument type="service" id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~gkOqMBY"/>
-        <argument type="service" id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~gkOqMBY"/>
-        <argument type="service" id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~gkOqMBY"/>
-=======
-        <argument type="service" id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~c2NPg2P"/>
-        <argument type="service" id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~c2NPg2P"/>
-        <argument type="service" id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~c2NPg2P"/>
-        <argument type="service" id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~c2NPg2P"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument type="service" id=".1_Swift_Transport_Esmtp_Auth_CramMd5Authenticator~otF8EZA"/>
+        <argument type="service" id=".2_Swift_Transport_Esmtp_Auth_LoginAuthenticator~otF8EZA"/>
+        <argument type="service" id=".3_Swift_Transport_Esmtp_Auth_PlainAuthenticator~otF8EZA"/>
+        <argument type="service" id=".4_Swift_Transport_Esmtp_Auth_NTLMAuthenticator~otF8EZA"/>
       </argument>
     </service>
     <service id="swiftmailer.transport.eventdispatcher.abstract" class="Swift_Events_SimpleEventDispatcher" abstract="true"/>
@@ -7383,35 +6620,6 @@
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
-<<<<<<< HEAD
-=======
-    <service id="doctrine.fixtures_load_command" class="Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand">
-      <tag name="console.command" command="doctrine:fixtures:load"/>
-      <tag name="container.no_preload"/>
-      <argument type="service" id="doctrine.fixtures.loader"/>
-      <argument type="service" id="doctrine"/>
-      <argument type="collection">
-        <argument key="default" type="service" id="doctrine.fixtures.purger.orm_purger_factory"/>
-      </argument>
-      <call method="setName">
-        <argument>doctrine:fixtures:load</argument>
-      </call>
-    </service>
-    <service id="doctrine.fixtures.loader" class="Doctrine\Bundle\FixturesBundle\Loader\SymfonyFixturesLoader">
-      <argument type="service" id="service_container"/>
-      <call method="addFixtures">
-        <argument type="collection">
-          <argument type="collection">
-            <argument key="fixture" type="service" id="App\DataFixtures\AppFixtures"/>
-            <argument key="groups" type="collection"/>
-          </argument>
-        </argument>
-      </call>
-    </service>
-    <service id="doctrine.fixtures.purger.orm_purger_factory" class="Doctrine\Bundle\FixturesBundle\Purger\ORMPurgerFactory">
-      <tag name="doctrine.fixtures.purger_factory" alias="default"/>
-    </service>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="annotated_app_entity_localisation_api_platform_core_bridge_doctrine_orm_filter_search_filter" class="ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter" autowire="true">
       <tag name="api_platform.filter"/>
       <argument type="service" id="doctrine"/>
@@ -7428,52 +6636,36 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" autoconfigure="true" abstract="true"/>
-<<<<<<< HEAD
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BatimentCritereController" class="App\Controller\BatimentCritereController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BatimentCritereController" class="App\Controller\BatimentCritereController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BatimentCritereController" class="App\Controller\BatimentCritereController" autowire="true" autoconfigure="true" abstract="true"/>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EmployesController" class="App\Controller\EmployesController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EmployesController" class="App\Controller\EmployesController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\EmployesController" class="App\Controller\EmployesController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EntiteController" class="App\Controller\EntiteController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EntiteController" class="App\Controller\EntiteController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\EntiteController" class="App\Controller\EntiteController" autowire="true" autoconfigure="true" abstract="true"/>
-<<<<<<< HEAD
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\IncidentController" class="App\Controller\IncidentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\IncidentController" class="App\Controller\IncidentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\IncidentController" class="App\Controller\IncidentController" autowire="true" autoconfigure="true" abstract="true"/>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ParametrageController" class="App\Controller\ParametrageController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ParametrageController" class="App\Controller\ParametrageController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ParametrageController" class="App\Controller\ParametrageController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserCommonController" class="App\Controller\UserCommonController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserCommonController" class="App\Controller\UserCommonController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserCommonController" class="App\Controller\UserCommonController" autowire="true" autoconfigure="true" abstract="true"/>
-<<<<<<< HEAD
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\BatimentCriterePersister" class="App\DataPersister\BatimentCriterePersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\BatimentCriterePersister" class="App\DataPersister\BatimentCriterePersister" autowire="true" autoconfigure="true" abstract="true"/>
-=======
-    <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" autoconfigure="true" abstract="true"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\BatimentPersister" class="App\DataPersister\BatimentPersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\BatimentPersister" class="App\DataPersister\BatimentPersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\EntitePersister" class="App\DataPersister\EntitePersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\EntitePersister" class="App\DataPersister\EntitePersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\GestionnairePersister" class="App\DataPersister\GestionnairePersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\GestionnairePersister" class="App\DataPersister\GestionnairePersister" autowire="true" autoconfigure="true" abstract="true"/>
-<<<<<<< HEAD
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\IncidentPersister" class="App\DataPersister\IncidentPersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\IncidentPersister" class="App\DataPersister\IncidentPersister" autowire="true" autoconfigure="true" abstract="true"/>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\LocalisationPersister" class="App\DataPersister\LocalisationPersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\LocalisationPersister" class="App\DataPersister\LocalisationPersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\SuperAdminPersister" class="App\DataPersister\SuperAdminPersister" autowire="true" abstract="true"/>
@@ -7486,41 +6678,30 @@
     <service id=".abstract.instanceof.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AgentRepository" class="App\Repository\AgentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AgentRepository" class="App\Repository\AgentRepository" autowire="true" autoconfigure="true" abstract="true"/>
-<<<<<<< HEAD
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BatimentCritereRepository" class="App\Repository\BatimentCritereRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BatimentCritereRepository" class="App\Repository\BatimentCritereRepository" autowire="true" autoconfigure="true" abstract="true"/>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BatimentOwnerRepository" class="App\Repository\BatimentOwnerRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BatimentOwnerRepository" class="App\Repository\BatimentOwnerRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BatimentRepository" class="App\Repository\BatimentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BatimentRepository" class="App\Repository\BatimentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContactRepository" class="App\Repository\ContactRepository" autowire="true" autoconfigure="true" abstract="true"/>
-<<<<<<< HEAD
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CoordonneesRepository" class="App\Repository\CoordonneesRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CoordonneesRepository" class="App\Repository\CoordonneesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CritereRepository" class="App\Repository\CritereRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CritereRepository" class="App\Repository\CritereRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EntiteRepository" class="App\Repository\EntiteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EntiteRepository" class="App\Repository\EntiteRepository" autowire="true" autoconfigure="true" abstract="true"/>
-=======
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CoordonneesRepository" class="App\Repository\CoordonneesRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\CoordonneesRepository" class="App\Repository\CoordonneesRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EntiteRepository" class="App\Repository\EntiteRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\EntiteRepository" class="App\Repository\EntiteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\FormateurRepository" class="App\Repository\FormateurRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\FormateurRepository" class="App\Repository\FormateurRepository" autowire="true" autoconfigure="true" abstract="true"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GestionnaireRepository" class="App\Repository\GestionnaireRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\GestionnaireRepository" class="App\Repository\GestionnaireRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\IncidentRepository" class="App\Repository\IncidentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\IncidentRepository" class="App\Repository\IncidentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LocalisationRepository" class="App\Repository\LocalisationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\LocalisationRepository" class="App\Repository\LocalisationRepository" autowire="true" autoconfigure="true" abstract="true"/>
-<<<<<<< HEAD
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MontantRepository" class="App\Repository\MontantRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\MontantRepository" class="App\Repository\MontantRepository" autowire="true" autoconfigure="true" abstract="true"/>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ParamTypesAgentsRepository" class="App\Repository\ParamTypesAgentsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ParamTypesAgentsRepository" class="App\Repository\ParamTypesAgentsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ParamTypesDemandesRepository" class="App\Repository\ParamTypesDemandesRepository" autowire="true" abstract="true"/>
@@ -7529,6 +6710,8 @@
     <service id=".abstract.instanceof.App\Repository\ProprietaireRepository" class="App\Repository\ProprietaireRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SuperAdminRepository" class="App\Repository\SuperAdminRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SuperAdminRepository" class="App\Repository\SuperAdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TaxeRepository" class="App\Repository\TaxeRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TaxeRepository" class="App\Repository\TaxeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TypeAgentRepository" class="App\Repository\TypeAgentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\TypeAgentRepository" class="App\Repository\TypeAgentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TypeBatimentRepository" class="App\Repository\TypeBatimentRepository" autowire="true" abstract="true"/>
@@ -7541,11 +6724,8 @@
     <service id=".abstract.instanceof.App\Repository\TypeLocalisationRepository" class="App\Repository\TypeLocalisationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
-<<<<<<< HEAD
-=======
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\VilleRepository" class="App\Repository\VilleRepository" autowire="true" autoconfigure="true" abstract="true"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".service_locator.0GV1BZZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7888,7 +7068,6 @@
         <argument key="requestStack" type="service_closure" id="request_stack"/>
       </argument>
     </service>
-<<<<<<< HEAD
     <service id=".service_locator.EkhKBXP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7897,8 +7076,6 @@
         <argument key="requestStack" type="service_closure" id="request_stack"/>
       </argument>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".service_locator.oiABibH" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7947,11 +7124,7 @@
         <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-<<<<<<< HEAD
     <service id=".service_locator.O5OHPZ4" class="Symfony\Component\DependencyInjection\ServiceLocator">
-=======
-    <service id=".service_locator.jtGLV6i" class="Symfony\Component\DependencyInjection\ServiceLocator">
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\BatimentController::addLocalisation" type="service_closure" id=".service_locator.62LO1d0"/>
@@ -7960,10 +7133,7 @@
         <argument key="App\Controller\BatimentController::getBatimentOwnerEntite" type="service_closure" id=".service_locator.iuEkddy"/>
         <argument key="App\Controller\BatimentController::getBatimentOwnerUser" type="service_closure" id=".service_locator.iuEkddy"/>
         <argument key="App\Controller\BatimentController::unblockPropUser" type="service_closure" id=".service_locator.rJDOf44"/>
-<<<<<<< HEAD
         <argument key="App\Controller\BatimentCritereController::putBatimentCritere" type="service_closure" id=".service_locator.EkhKBXP"/>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         <argument key="App\Controller\EntiteController::addLocalisationEntite" type="service_closure" id=".service_locator.oSD7j_4"/>
         <argument key="App\Controller\EntiteController::blockEntite" type="service_closure" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\EntiteController::getEntiteFatherByType" type="service_closure" id=".service_locator.M9PMcRV"/>
@@ -7989,10 +7159,7 @@
         <argument key="App\Controller\BatimentController:getBatimentOwnerEntite" type="service_closure" id=".service_locator.iuEkddy"/>
         <argument key="App\Controller\BatimentController:getBatimentOwnerUser" type="service_closure" id=".service_locator.iuEkddy"/>
         <argument key="App\Controller\BatimentController:unblockPropUser" type="service_closure" id=".service_locator.rJDOf44"/>
-<<<<<<< HEAD
         <argument key="App\Controller\BatimentCritereController:putBatimentCritere" type="service_closure" id=".service_locator.EkhKBXP"/>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         <argument key="App\Controller\EntiteController:addLocalisationEntite" type="service_closure" id=".service_locator.oSD7j_4"/>
         <argument key="App\Controller\EntiteController:blockEntite" type="service_closure" id=".service_locator.oiABibH"/>
         <argument key="App\Controller\EntiteController:getEntiteFatherByType" type="service_closure" id=".service_locator.M9PMcRV"/>
@@ -8101,51 +7268,35 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-<<<<<<< HEAD
-    <service id=".service_locator.PqACGp_" class="Symfony\Component\DependencyInjection\ServiceLocator">
-=======
-    <service id=".service_locator.bFWh30N" class="Symfony\Component\DependencyInjection\ServiceLocator">
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+    <service id=".service_locator.CG_ev.T" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
         <argument key="App\Repository\AgentRepository" type="service_closure" id="App\Repository\AgentRepository"/>
-<<<<<<< HEAD
         <argument key="App\Repository\BatimentCritereRepository" type="service_closure" id="App\Repository\BatimentCritereRepository"/>
         <argument key="App\Repository\BatimentOwnerRepository" type="service_closure" id="App\Repository\BatimentOwnerRepository"/>
         <argument key="App\Repository\BatimentRepository" type="service_closure" id="App\Repository\BatimentRepository"/>
         <argument key="App\Repository\ContactRepository" type="service_closure" id="App\Repository\ContactRepository"/>
-        <argument key="App\Repository\CritereRepository" type="service_closure" id="App\Repository\CritereRepository"/>
-        <argument key="App\Repository\EntiteRepository" type="service_closure" id="App\Repository\EntiteRepository"/>
-        <argument key="App\Repository\GestionnaireRepository" type="service_closure" id="App\Repository\GestionnaireRepository"/>
-        <argument key="App\Repository\IncidentRepository" type="service_closure" id="App\Repository\IncidentRepository"/>
-        <argument key="App\Repository\LocalisationRepository" type="service_closure" id="App\Repository\LocalisationRepository"/>
-        <argument key="App\Repository\MontantRepository" type="service_closure" id="App\Repository\MontantRepository"/>
-=======
-        <argument key="App\Repository\BatimentOwnerRepository" type="service_closure" id="App\Repository\BatimentOwnerRepository"/>
-        <argument key="App\Repository\BatimentRepository" type="service_closure" id="App\Repository\BatimentRepository"/>
-        <argument key="App\Repository\ContactRepository" type="service_closure" id="App\Repository\ContactRepository"/>
         <argument key="App\Repository\CoordonneesRepository" type="service_closure" id="App\Repository\CoordonneesRepository"/>
+        <argument key="App\Repository\CritereRepository" type="service_closure" id="App\Repository\CritereRepository"/>
         <argument key="App\Repository\EntiteRepository" type="service_closure" id="App\Repository\EntiteRepository"/>
         <argument key="App\Repository\FormateurRepository" type="service_closure" id="App\Repository\FormateurRepository"/>
         <argument key="App\Repository\GestionnaireRepository" type="service_closure" id="App\Repository\GestionnaireRepository"/>
         <argument key="App\Repository\IncidentRepository" type="service_closure" id="App\Repository\IncidentRepository"/>
         <argument key="App\Repository\LocalisationRepository" type="service_closure" id="App\Repository\LocalisationRepository"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+        <argument key="App\Repository\MontantRepository" type="service_closure" id="App\Repository\MontantRepository"/>
         <argument key="App\Repository\ParamTypesAgentsRepository" type="service_closure" id="App\Repository\ParamTypesAgentsRepository"/>
         <argument key="App\Repository\ParamTypesDemandesRepository" type="service_closure" id="App\Repository\ParamTypesDemandesRepository"/>
         <argument key="App\Repository\ProprietaireRepository" type="service_closure" id="App\Repository\ProprietaireRepository"/>
         <argument key="App\Repository\SuperAdminRepository" type="service_closure" id="App\Repository\SuperAdminRepository"/>
+        <argument key="App\Repository\TaxeRepository" type="service_closure" id="App\Repository\TaxeRepository"/>
         <argument key="App\Repository\TypeAgentRepository" type="service_closure" id="App\Repository\TypeAgentRepository"/>
         <argument key="App\Repository\TypeBatimentRepository" type="service_closure" id="App\Repository\TypeBatimentRepository"/>
         <argument key="App\Repository\TypeEntiteRepository" type="service_closure" id="App\Repository\TypeEntiteRepository"/>
         <argument key="App\Repository\TypeIncidentRepository" type="service_closure" id="App\Repository\TypeIncidentRepository"/>
         <argument key="App\Repository\TypeLocalisationRepository" type="service_closure" id="App\Repository\TypeLocalisationRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
-<<<<<<< HEAD
-=======
         <argument key="App\Repository\VilleRepository" type="service_closure" id="App\Repository\VilleRepository"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
       </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8198,15 +7349,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
-<<<<<<< HEAD
     <service id=".service_locator.W9y3dzm.App\Controller\BatimentCritereController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\BatimentCritereController"/>
       <argument>App\Controller\BatimentCritereController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".service_locator.W9y3dzm.App\Controller\EmployesController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\EmployesController"/>
       <argument>App\Controller\EmployesController</argument>
@@ -8219,15 +7367,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
-<<<<<<< HEAD
     <service id=".service_locator.W9y3dzm.App\Controller\IncidentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\IncidentController"/>
       <argument>App\Controller\IncidentController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".service_locator.W9y3dzm.App\Controller\ParametrageController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\ParametrageController"/>
       <argument>App\Controller\ParametrageController</argument>
@@ -8408,20 +7553,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-<<<<<<< HEAD
       <argument type="service" id=".service_locator.O5OHPZ4"/>
-=======
-      <argument type="service" id=".service_locator.jtGLV6i"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-<<<<<<< HEAD
       <argument type="service" id=".service_locator.O5OHPZ4"/>
-=======
-      <argument type="service" id=".service_locator.jtGLV6i"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -8433,11 +7570,7 @@
       <argument type="service" id="serializer.mapping.chain_loader"/>
     </service>
     <service id="api_platform.openapi.normalizer.api_gateway.inner" class="ApiPlatform\Core\OpenApi\Serializer\OpenApiNormalizer">
-<<<<<<< HEAD
-      <argument type="service" id=".1_Serializer~cZSSc5P"/>
-=======
-      <argument type="service" id=".1_Serializer~p1g0keV"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+      <argument type="service" id=".1_Serializer~n5fgcf_"/>
     </service>
     <service id="api_platform.swagger.normalizer.api_gateway.inner" class="ApiPlatform\Core\Swagger\Serializer\DocumentationNormalizer">
       <argument type="service" id="api_platform.metadata.resource.metadata_factory.cached"/>
@@ -8469,11 +7602,7 @@
       <argument type="service" id="api_platform.identifiers_extractor.cached"/>
       <argument type="service">
         <service class="ApiPlatform\Core\OpenApi\Serializer\OpenApiNormalizer">
-<<<<<<< HEAD
-          <argument type="service" id=".1_Serializer~cZSSc5P"/>
-=======
-          <argument type="service" id=".1_Serializer~p1g0keV"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
+          <argument type="service" id=".1_Serializer~n5fgcf_"/>
         </service>
       </argument>
     </service>
@@ -8879,11 +8008,7 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-<<<<<<< HEAD
       <argument type="service" id=".service_locator.a8ZWUEc"/>
-=======
-      <argument type="service" id=".service_locator.F78UcXG"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -8960,10 +8085,6 @@
         <argument key="debug:swiftmailer">swiftmailer.command.debug</argument>
         <argument key="swiftmailer:email:send">swiftmailer.command.new_email</argument>
         <argument key="swiftmailer:spool:send">swiftmailer.command.send_email</argument>
-<<<<<<< HEAD
-=======
-        <argument key="doctrine:fixtures:load">doctrine.fixtures_load_command</argument>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -8989,11 +8110,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-<<<<<<< HEAD
     <service id=".service_locator.a8ZWUEc" class="Symfony\Component\DependencyInjection\ServiceLocator">
-=======
-    <service id=".service_locator.F78UcXG" class="Symfony\Component\DependencyInjection\ServiceLocator">
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand" type="service_closure" id="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand"/>
@@ -9038,10 +8155,6 @@
         <argument key="doctrine.database_create_command" type="service_closure" id="doctrine.database_create_command"/>
         <argument key="doctrine.database_drop_command" type="service_closure" id="doctrine.database_drop_command"/>
         <argument key="doctrine.ensure_production_settings_command" type="service_closure" id="doctrine.ensure_production_settings_command"/>
-<<<<<<< HEAD
-=======
-        <argument key="doctrine.fixtures_load_command" type="service_closure" id="doctrine.fixtures_load_command"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         <argument key="doctrine.mapping_convert_command" type="service_closure" id="doctrine.mapping_convert_command"/>
         <argument key="doctrine.mapping_import_command" type="service_closure" id="doctrine.mapping_import_command"/>
         <argument key="doctrine.mapping_info_command" type="service_closure" id="doctrine.mapping_info_command"/>
@@ -9328,11 +8441,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-<<<<<<< HEAD
     <service id="argument_resolver.controller_locator" alias=".service_locator.O5OHPZ4"/>
-=======
-    <service id="argument_resolver.controller_locator" alias=".service_locator.jtGLV6i"/>
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9405,10 +8514,7 @@
     <service id=".service_locator.gqb6ZaC" alias=".service_locator.iuEkddy"/>
     <service id=".service_locator.VhyyoZo" alias=".service_locator.rJDOf44"/>
     <service id=".service_locator.2sZq97J" alias=".service_locator.62LO1d0"/>
-<<<<<<< HEAD
     <service id=".service_locator.V7mo34k" alias=".service_locator.EkhKBXP"/>
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     <service id=".service_locator.fyH.VEA" alias=".service_locator.oiABibH"/>
     <service id=".service_locator.Q4xyEdE" alias=".service_locator.CMsR.AP"/>
     <service id=".service_locator.tF0tk8K" alias=".service_locator.M9PMcRV"/>

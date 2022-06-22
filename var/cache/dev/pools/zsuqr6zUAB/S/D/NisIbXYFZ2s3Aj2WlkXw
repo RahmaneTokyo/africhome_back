@@ -1,3 +1,0 @@
-<?php //route_name_212498577fc3557858f0108eecebfb2d
-
-return [PHP_INT_MAX, 'api_batiments_get_item'];

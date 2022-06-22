@@ -92,10 +92,16 @@ class Batiment
      */
     private $batimentCriteres;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Taxe::class, mappedBy="batiment")
+     */
+    private $taxes;
+
     public function __construct()
     {
         $this->batimentOwners = new ArrayCollection();
         $this->batimentCriteres = new ArrayCollection();
+        $this->taxes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -265,6 +271,36 @@ class Batiment
             // set the owning side to null (unless already changed)
             if ($batimentCritere->getBatiment() === $this) {
                 $batimentCritere->setBatiment(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Taxe>
+     */
+    public function getTaxes(): Collection
+    {
+        return $this->taxes;
+    }
+
+    public function addTax(Taxe $tax): self
+    {
+        if (!$this->taxes->contains($tax)) {
+            $this->taxes[] = $tax;
+            $tax->setBatiment($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTax(Taxe $tax): self
+    {
+        if ($this->taxes->removeElement($tax)) {
+            // set the owning side to null (unless already changed)
+            if ($tax->getBatiment() === $this) {
+                $tax->setBatiment(null);
             }
         }
 

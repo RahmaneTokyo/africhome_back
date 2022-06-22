@@ -8,10 +8,6 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Platforms\SQLServerPlatform;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\Query\AST\SelectStatement;
-<<<<<<< HEAD
-=======
-use Doctrine\ORM\Query\Parser;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\Query\ParserResult;
 use Doctrine\ORM\Query\ResultSetMapping;
 use Doctrine\ORM\Query\SqlWalker;
@@ -32,11 +28,6 @@ use function sprintf;
  *
  * Works with composite keys but cannot deal with queries that have multiple
  * root entities (e.g. `SELECT f, b from Foo, Bar`)
-<<<<<<< HEAD
-=======
- *
- * @psalm-import-type QueryComponent from Parser
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
  */
 class CountOutputWalker extends SqlWalker
 {
@@ -46,12 +37,9 @@ class CountOutputWalker extends SqlWalker
     /** @var ResultSetMapping */
     private $rsm;
 
-<<<<<<< HEAD
     /** @var mixed[] */
     private $queryComponents;
 
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     /**
      * Stores various parameters that are otherwise unavailable
      * because Doctrine\ORM\Query\SqlWalker keeps everything private without
@@ -60,21 +48,12 @@ class CountOutputWalker extends SqlWalker
      * @param Query        $query
      * @param ParserResult $parserResult
      * @param mixed[]      $queryComponents
-<<<<<<< HEAD
      */
     public function __construct($query, $parserResult, array $queryComponents)
     {
         $this->platform        = $query->getEntityManager()->getConnection()->getDatabasePlatform();
         $this->rsm             = $parserResult->getResultSetMapping();
         $this->queryComponents = $queryComponents;
-=======
-     * @psalm-param array<string, QueryComponent> $queryComponents
-     */
-    public function __construct($query, $parserResult, array $queryComponents)
-    {
-        $this->platform = $query->getEntityManager()->getConnection()->getDatabasePlatform();
-        $this->rsm      = $parserResult->getResultSetMapping();
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
         parent::__construct($query, $parserResult, $queryComponents);
     }
@@ -118,11 +97,7 @@ class CountOutputWalker extends SqlWalker
 
         $fromRoot       = reset($from);
         $rootAlias      = $fromRoot->rangeVariableDeclaration->aliasIdentificationVariable;
-<<<<<<< HEAD
         $rootClass      = $this->queryComponents[$rootAlias]['metadata'];
-=======
-        $rootClass      = $this->getMetadataForDqlAlias($rootAlias);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $rootIdentifier = $rootClass->identifier;
 
         // For every identifier, find out the SQL alias by combing through the ResultSetMapping

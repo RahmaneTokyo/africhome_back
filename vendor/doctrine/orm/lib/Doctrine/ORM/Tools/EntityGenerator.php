@@ -42,17 +42,10 @@ use function ltrim;
 use function max;
 use function mkdir;
 use function sprintf;
-<<<<<<< HEAD
 use function str_repeat;
 use function str_replace;
 use function strlen;
 use function strpos;
-=======
-use function str_contains;
-use function str_repeat;
-use function str_replace;
-use function strlen;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use function strrpos;
 use function strtolower;
 use function substr;
@@ -967,11 +960,7 @@ public function __construct(<params>)
      */
     protected function hasNamespace(ClassMetadataInfo $metadata)
     {
-<<<<<<< HEAD
         return (bool) strpos($metadata->name, '\\');
-=======
-        return str_contains($metadata->name, '\\');
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     }
 
     /**

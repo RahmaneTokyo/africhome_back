@@ -1,3 +1,0 @@
-<?php //route_name_232b326c0d153d4389f3bbb1344da304
-
-return [PHP_INT_MAX, 'api_localisations_get_item'];

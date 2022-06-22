@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Doctrine\ORM\Mapping\Driver;
 
-<<<<<<< HEAD
 use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping;
 use Doctrine\ORM\Mapping\Builder\EntityListenerBuilder;
@@ -12,16 +11,6 @@ use Doctrine\ORM\Mapping\ClassMetadataInfo;
 use Doctrine\ORM\Mapping\MappingException;
 use Doctrine\Persistence\Mapping\ClassMetadata;
 use Doctrine\Persistence\Mapping\Driver\AnnotationDriver;
-=======
-use Doctrine\Deprecations\Deprecation;
-use Doctrine\ORM\Events;
-use Doctrine\ORM\Mapping;
-use Doctrine\ORM\Mapping\Builder\EntityListenerBuilder;
-use Doctrine\ORM\Mapping\ClassMetadata;
-use Doctrine\ORM\Mapping\MappingException;
-use Doctrine\Persistence\Mapping\ClassMetadata as PersistenceClassMetadata;
-use Doctrine\Persistence\Mapping\Driver\ColocatedMappingDriver;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use LogicException;
 use ReflectionClass;
 use ReflectionMethod;
@@ -36,15 +25,8 @@ use function sprintf;
 
 use const PHP_VERSION_ID;
 
-<<<<<<< HEAD
 class AttributeDriver extends AnnotationDriver
 {
-=======
-class AttributeDriver extends CompatibilityAnnotationDriver
-{
-    use ColocatedMappingDriver;
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     /** @var array<string,int> */
     // @phpcs:ignore
     protected $entityAnnotationClasses = [
@@ -53,18 +35,6 @@ class AttributeDriver extends CompatibilityAnnotationDriver
     ];
 
     /**
-<<<<<<< HEAD
-=======
-     * The annotation reader.
-     *
-     * @internal this property will be private in 3.0
-     *
-     * @var AttributeReader
-     */
-    protected $reader;
-
-    /**
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @param array<string> $paths
      */
     public function __construct(array $paths)
@@ -76,31 +46,7 @@ class AttributeDriver extends CompatibilityAnnotationDriver
             ));
         }
 
-<<<<<<< HEAD
         parent::__construct(new AttributeReader(), $paths);
-=======
-        $this->reader = new AttributeReader();
-        $this->addPaths($paths);
-    }
-
-    /**
-     * Retrieve the current annotation reader
-     *
-     * @deprecated no replacement planned.
-     *
-     * @return AttributeReader
-     */
-    public function getReader()
-    {
-        Deprecation::trigger(
-            'doctrine/orm',
-            'https://github.com/doctrine/orm/pull/9587',
-            '%s is deprecated with no replacement',
-            __METHOD__
-        );
-
-        return $this->reader;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
     }
 
     /**
@@ -120,23 +66,10 @@ class AttributeDriver extends CompatibilityAnnotationDriver
         return true;
     }
 
-<<<<<<< HEAD
     public function loadMetadataForClass($className, ClassMetadata $metadata): void
     {
         assert($metadata instanceof ClassMetadataInfo);
 
-=======
-    /**
-     * {@inheritDoc}
-     *
-     * @psalm-param class-string<T> $className
-     * @psalm-param ClassMetadata<T> $metadata
-     *
-     * @template T of object
-     */
-    public function loadMetadataForClass($className, PersistenceClassMetadata $metadata): void
-    {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $reflectionClass = $metadata->getReflectionClass();
 
         $classAttributes = $this->reader->getClassAnnotations($reflectionClass);
@@ -273,11 +206,7 @@ class AttributeDriver extends CompatibilityAnnotationDriver
                 constant('Doctrine\ORM\Mapping\ClassMetadata::INHERITANCE_TYPE_' . $inheritanceTypeAttribute->value)
             );
 
-<<<<<<< HEAD
             if ($metadata->inheritanceType !== Mapping\ClassMetadata::INHERITANCE_TYPE_NONE) {
-=======
-            if ($metadata->inheritanceType !== ClassMetadata::INHERITANCE_TYPE_NONE) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 // Evaluate DiscriminatorColumn annotation
                 if (isset($classAttributes[Mapping\DiscriminatorColumn::class])) {
                     $discrColumnAttribute = $classAttributes[Mapping\DiscriminatorColumn::class];
@@ -342,11 +271,7 @@ class AttributeDriver extends CompatibilityAnnotationDriver
             // Check for JoinColumn/JoinColumns annotations
             $joinColumns = [];
 
-<<<<<<< HEAD
             $joinColumnAttributes = $this->reader->getPropertyAnnotation($property, Mapping\JoinColumn::class);
-=======
-            $joinColumnAttributes = $this->reader->getPropertyAnnotationCollection($property, Mapping\JoinColumn::class);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 
             foreach ($joinColumnAttributes as $joinColumnAttribute) {
                 $joinColumns[] = $this->joinColumnToArray($joinColumnAttribute);
@@ -451,19 +376,11 @@ class AttributeDriver extends CompatibilityAnnotationDriver
                     ];
                 }
 
-<<<<<<< HEAD
                 foreach ($this->reader->getPropertyAnnotation($property, Mapping\JoinColumn::class) as $joinColumn) {
                     $joinTable['joinColumns'][] = $this->joinColumnToArray($joinColumn);
                 }
 
                 foreach ($this->reader->getPropertyAnnotation($property, Mapping\InverseJoinColumn::class) as $joinColumn) {
-=======
-                foreach ($this->reader->getPropertyAnnotationCollection($property, Mapping\JoinColumn::class) as $joinColumn) {
-                    $joinTable['joinColumns'][] = $this->joinColumnToArray($joinColumn);
-                }
-
-                foreach ($this->reader->getPropertyAnnotationCollection($property, Mapping\InverseJoinColumn::class) as $joinColumn) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                     $joinTable['inverseJoinColumns'][] = $this->joinColumnToArray($joinColumn);
                 }
 
@@ -542,11 +459,7 @@ class AttributeDriver extends CompatibilityAnnotationDriver
 
                 // Check for `fetch`
                 if ($associationOverride->fetch) {
-<<<<<<< HEAD
                     $override['fetch'] = constant(Mapping\ClassMetadata::class . '::FETCH_' . $associationOverride->fetch);
-=======
-                    $override['fetch'] = constant(ClassMetadata::class . '::FETCH_' . $associationOverride->fetch);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                 }
 
                 $metadata->setAssociationOverride($fieldName, $override);
@@ -613,11 +526,7 @@ class AttributeDriver extends CompatibilityAnnotationDriver
      * @param string $className The class name.
      * @param string $fetchMode The fetch mode.
      *
-<<<<<<< HEAD
      * @return int The fetch mode as defined in ClassMetadata.
-=======
-     * @return ClassMetadata::FETCH_* The fetch mode as defined in ClassMetadata.
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @throws MappingException If the fetch mode is not valid.
      */

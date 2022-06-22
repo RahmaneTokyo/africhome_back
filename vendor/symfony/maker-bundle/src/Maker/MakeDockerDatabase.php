@@ -108,11 +108,7 @@ final class MakeDockerDatabase extends AbstractMaker
 
             $io->text($serviceNameMsg);
 
-<<<<<<< HEAD
             $this->serviceName = $io->ask(sprintf('What name should we call the new %s service? e.g. database', $this->serviceName), null, [Validator::class, 'notBlank']);
-=======
-            $this->serviceName = $io->ask(sprintf('What name should we call the new %s service? (e.g. <fg=yellow>database</>)', $this->serviceName), null, [Validator::class, 'notBlank']);
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         }
 
         $this->checkForPDOSupport($this->databaseChoice, $io);

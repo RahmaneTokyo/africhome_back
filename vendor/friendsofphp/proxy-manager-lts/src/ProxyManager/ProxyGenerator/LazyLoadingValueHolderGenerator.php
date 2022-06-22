@@ -53,20 +53,12 @@ class LazyLoadingValueHolderGenerator implements ProxyGeneratorInterface
     /**
      * {@inheritDoc}
      *
-<<<<<<< HEAD
-=======
-     * @psalm-param array{skipDestructor?: bool, fluentSafe?: bool} $proxyOptions
-     *
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      * @return void
      *
      * @throws InvalidProxiedClassException
      * @throws InvalidArgumentException
-<<<<<<< HEAD
      *
      * @psalm-param array{skipDestructor?: bool, fluentSafe?: bool} $proxyOptions
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public function generate(ReflectionClass $originalClass, ClassGenerator $classGenerator/*, array $proxyOptions = []*/)
     {

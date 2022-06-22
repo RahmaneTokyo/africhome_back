@@ -182,7 +182,6 @@ class Connection
         $this->_driver = $driver;
         $this->params  = $params;
 
-<<<<<<< HEAD
         if (isset($params['platform'])) {
             if (! $params['platform'] instanceof Platforms\AbstractPlatform) {
                 throw Exception::invalidPlatformType($params['platform']);
@@ -191,8 +190,6 @@ class Connection
             $this->platform = $params['platform'];
         }
 
-=======
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         // Create default config and event manager if none given
         if ($config === null) {
             $config = new Configuration();
@@ -205,18 +202,6 @@ class Connection
         $this->_config       = $config;
         $this->_eventManager = $eventManager;
 
-<<<<<<< HEAD
-=======
-        if (isset($params['platform'])) {
-            if (! $params['platform'] instanceof Platforms\AbstractPlatform) {
-                throw Exception::invalidPlatformType($params['platform']);
-            }
-
-            $this->platform = $params['platform'];
-            $this->platform->setEventManager($this->_eventManager);
-        }
-
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
         $this->_expr = $this->createExpressionBuilder();
 
         $this->autoCommit = $config->getAutoCommit();

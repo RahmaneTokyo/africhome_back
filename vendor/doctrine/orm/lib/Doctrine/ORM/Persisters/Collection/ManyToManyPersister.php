@@ -501,11 +501,7 @@ class ManyToManyPersister extends AbstractCollectionPersister
      *
      * Internal note: Order of the parameters must be the same as the order of the columns in getInsertRowSql.
      *
-<<<<<<< HEAD
      * @param mixed $element
-=======
-     * @param object $element
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      *
      * @return mixed[]
      * @psalm-return list<mixed>

@@ -19,10 +19,6 @@ use Doctrine\ORM\Event\OnFlushEventArgs;
 use Doctrine\ORM\Event\PostFlushEventArgs;
 use Doctrine\ORM\Event\PreFlushEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
-<<<<<<< HEAD
-=======
-use Doctrine\ORM\Exception\ORMException;
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
 use Doctrine\ORM\Exception\UnexpectedAssociationValue;
 use Doctrine\ORM\Id\AssignedGenerator;
 use Doctrine\ORM\Internal\CommitOrderCalculator;
@@ -107,11 +103,7 @@ class UnitOfWork implements PropertyChangedListener
      * Hint used to collect all primary keys of associated entities during hydration
      * and execute it in a dedicated query afterwards
      *
-<<<<<<< HEAD
      * @see https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/dql-doctrine-query-language.html#temporarily-change-fetch-mode-in-dql
-=======
-     * @see https://www.doctrine-project.org/projects/doctrine-orm/en/stable/reference/dql-doctrine-query-language.html#temporarily-change-fetch-mode-in-dql
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
      */
     public const HINT_DEFEREAGERLOAD = 'deferEagerLoad';
 
@@ -1611,11 +1603,7 @@ class UnitOfWork implements PropertyChangedListener
             return self::STATE_NEW;
         }
 
-<<<<<<< HEAD
         if ($class->containsForeignIdentifier) {
-=======
-        if ($class->containsForeignIdentifier || $class->containsEnumIdentifier) {
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
             $id = $this->identifierFlattener->flattenIdentifier($class, $id);
         }
 
@@ -1996,11 +1984,7 @@ class UnitOfWork implements PropertyChangedListener
                 $this->mergeEntityStateIntoManagedCopy($entity, $managedCopy);
                 $this->persistNew($class, $managedCopy);
             } else {
-<<<<<<< HEAD
                 $flatId = $class->containsForeignIdentifier
-=======
-                $flatId = $class->containsForeignIdentifier || $class->containsEnumIdentifier
->>>>>>> 0beb9d49fd45fc71e2c614d0f2109f5dc1ab0029
                     ? $this->identifierFlattener->flattenIdentifier($class, $id)
                     : $id;
 
