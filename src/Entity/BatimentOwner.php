@@ -18,7 +18,7 @@ class BatimentOwner
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"UserOwner","EntiteOwner"})
+     * @Groups({"UserOwner","EntiteOwner", "user:read"})
      */
     private $id;
 
@@ -50,6 +50,7 @@ class BatimentOwner
 
     /**
      * @ORM\ManyToOne(targetEntity=Batiment::class, inversedBy="batimentOwners")
+     * @Groups({"user:read"})
      */
     private $batiment;
 

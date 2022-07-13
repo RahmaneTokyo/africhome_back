@@ -22,32 +22,32 @@ class Batiment
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"batiment:read", "BatimentGest"})
+     * @Groups({"batiment:read", "BatimentGest", "user:read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"batiment:read", "batiment:write","BatimentGest", "entites:read"})
+     * @Groups({"batiment:read", "batiment:write","BatimentGest", "entites:read", "user:read"})
      */
     private $titre;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"batiment:read", "batiment:write", "BatimentGest", "entites:read"})
+     * @Groups({"batiment:read", "batiment:write", "BatimentGest", "entites:read", "user:read"})
      */
     private $description;
 
     /**
      * @ORM\OneToOne(targetEntity=Contact::class, inversedBy="batiment", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=true)
-     * @Groups({"batiment:read", "BatimentGest", "entites:read"})
+     * @Groups({"batiment:read", "BatimentGest", "entites:read", "user:read"})
      */
     private $contact;
 
     /**
      * @ORM\ManyToOne(targetEntity=Localisation::class, inversedBy="batiments")
-     * @Groups({"batiment:read", "batiment:write", "BatimentGest"})
+     * @Groups({"batiment:read", "batiment:write", "BatimentGest", "user:read"})
      */
     private $localisation;
 
@@ -59,7 +59,7 @@ class Batiment
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"batiment:read", "batiment:write", "BatimentGest", "entites:read"})
+     * @Groups({"batiment:read", "batiment:write", "BatimentGest", "entites:read", "user:read"})
      */
     private $numeroParcelle;
 
@@ -71,7 +71,7 @@ class Batiment
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"batiment:read", "batiment:write", "BatimentGest", "entites:read"})
+     * @Groups({"batiment:read", "batiment:write", "BatimentGest", "entites:read", "user:read"})
      */
     private $titreFoncier;
 
@@ -94,14 +94,22 @@ class Batiment
 
     /**
      * @ORM\OneToMany(targetEntity=Taxe::class, mappedBy="batiment")
+     * @Groups({"batiment:read", "user:read"})
      */
     private $taxes;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Paiement::class, mappedBy="batiment")
+     * @Groups({"batiment:read", "user:read"})
+     */
+    private $paiements;
 
     public function __construct()
     {
         $this->batimentOwners = new ArrayCollection();
         $this->batimentCriteres = new ArrayCollection();
         $this->taxes = new ArrayCollection();
+        $this->paiements = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -301,6 +309,36 @@ class Batiment
             // set the owning side to null (unless already changed)
             if ($tax->getBatiment() === $this) {
                 $tax->setBatiment(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Paiement>
+     */
+    public function getPaiements(): Collection
+    {
+        return $this->paiements;
+    }
+
+    public function addPaiement(Paiement $paiement): self
+    {
+        if (!$this->paiements->contains($paiement)) {
+            $this->paiements[] = $paiement;
+            $paiement->setBatiment($this);
+        }
+
+        return $this;
+    }
+
+    public function removePaiement(Paiement $paiement): self
+    {
+        if ($this->paiements->removeElement($paiement)) {
+            // set the owning side to null (unless already changed)
+            if ($paiement->getBatiment() === $this) {
+                $paiement->setBatiment(null);
             }
         }
 

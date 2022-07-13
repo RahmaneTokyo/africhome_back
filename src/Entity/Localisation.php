@@ -33,7 +33,7 @@ class Localisation
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"local:read","localByType:read", "BatimentGest", "batiment:read"})
+     * @Groups({"local:read","localByType:read", "BatimentGest", "batiment:read", "user:read"})
      */
     private $nom;
 

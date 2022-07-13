@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -116,12 +118,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\OneToOne(targetEntity=Proprietaire::class, mappedBy="user", cascade={"persist", "remove"})
+     * @Groups({"user:read"})
      */
     private $proprietaire;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Paiement::class, mappedBy="user")
+     */
+    private $paiements;
 
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
+        $this->paiements = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -408,6 +417,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         $this->proprietaire = $proprietaire;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Paiement>
+     */
+    public function getPaiements(): Collection
+    {
+        return $this->paiements;
+    }
+
+    public function addPaiement(Paiement $paiement): self
+    {
+        if (!$this->paiements->contains($paiement)) {
+            $this->paiements[] = $paiement;
+            $paiement->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePaiement(Paiement $paiement): self
+    {
+        if ($this->paiements->removeElement($paiement)) {
+            // set the owning side to null (unless already changed)
+            if ($paiement->getUser() === $this) {
+                $paiement->setUser(null);
+            }
+        }
 
         return $this;
     }

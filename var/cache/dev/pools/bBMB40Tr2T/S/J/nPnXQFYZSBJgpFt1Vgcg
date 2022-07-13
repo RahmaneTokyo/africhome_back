@@ -1,0 +1,43 @@
+<?php //resource_name_collection
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['ApiPlatform\\Core\\Metadata\\Resource\\ResourceNameCollection'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Metadata\\Resource\\ResourceNameCollection')),
+    ],
+    null,
+    [
+        'ApiPlatform\\Core\\Metadata\\Resource\\ResourceNameCollection' => [
+            'classes' => [
+                [
+                    'App\\Entity\\User',
+                    'App\\Entity\\Admin',
+                    'App\\Entity\\Agent',
+                    'App\\Entity\\Batiment',
+                    'App\\Entity\\BatimentCritere',
+                    'App\\Entity\\Contact',
+                    'App\\Entity\\Coordonnees',
+                    'App\\Entity\\Critere',
+                    'App\\Entity\\Entite',
+                    'App\\Entity\\Formateur',
+                    'App\\Entity\\Gestionnaire',
+                    'App\\Entity\\Incident',
+                    'App\\Entity\\Localisation',
+                    'App\\Entity\\Montant',
+                    'App\\Entity\\Paiement',
+                    'App\\Entity\\ParamTypesAgents',
+                    'App\\Entity\\ParamTypesDemandes',
+                    'App\\Entity\\SuperAdmin',
+                    'App\\Entity\\Taxe',
+                    'App\\Entity\\TypeAgent',
+                    'App\\Entity\\TypeBatiment',
+                    'App\\Entity\\TypeEntite',
+                    'App\\Entity\\TypeIncident',
+                    'App\\Entity\\TypeLocalisation',
+                    'App\\Entity\\Ville',
+                ],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

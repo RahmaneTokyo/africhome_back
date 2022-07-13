@@ -24,13 +24,13 @@ class Contact
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read", "entiteSon", "BatimentGest", "batiment:read", "gestionEntite:read"})
+     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read", "entiteSon", "BatimentGest", "batiment:read", "gestionEntite:read", "user:read"})
      */
     private $latitude;
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read", "entiteSon", "BatimentGest", "batiment:read", "gestionEntite:read"})
+     * @Groups({"entites:read","entites:write", "employes:read", "adminEntite:read", "entiteSon", "BatimentGest", "batiment:read", "gestionEntite:read", "user:read"})
      */
     private $longitude;
 

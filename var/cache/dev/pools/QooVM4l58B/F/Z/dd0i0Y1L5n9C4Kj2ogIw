@@ -28,6 +28,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                     'localByType:read',
                     'BatimentGest',
                     'batiment:read',
+                    'user:read',
                 ],
             ],
         ],

@@ -109,7 +109,7 @@ class Entite
 
     /**
      * @ORM\Column(type="boolean")
-     * @Groups({"entiteSon", "entites:write", "entites:read"})
+     * @Groups({"entiteSon", "entites:write", "entites:read", "gestionEntite:read"})
      */
     private $isEntreprise = false;
 

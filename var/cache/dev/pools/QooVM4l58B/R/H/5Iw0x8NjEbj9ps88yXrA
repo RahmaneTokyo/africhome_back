@@ -1,0 +1,3 @@
+<?php //App%255CEntity%255CPaiement%2523getPaiementType
+
+return [PHP_INT_MAX, []];

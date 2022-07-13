@@ -28,12 +28,8 @@ class UserCommonController extends AbstractController
             if ($user->getGestionnaire())
             {
                 return $this->json($user->getGestionnaire(), 200, [], ['groups' => 'gestionnaire:read']);
-            // return $this->json($user, 200, [], ['groups' => 'user:read']);
             }
         }
-        // if ($security->isGranted('ROLE_SUPERADMIN') || $security->isGranted('ROLE_ADMIN') || $security->isGranted('ROLE_GESTIONNAIRE') || $security->isGranted('ROLE_USER')) {
-        //     return $this->json($user, 200, [], ['groups' => ['user:read']]);
-        // }
         return $this->json(['message' => 'Vous n\'avez pas les droits nécessaires'], Response::HTTP_FORBIDDEN);
     }
 
