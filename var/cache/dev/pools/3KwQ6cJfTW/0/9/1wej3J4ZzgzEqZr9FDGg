@@ -28,6 +28,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                     'tokenUpdatedAt',
                     'proprietaire',
                     'paiements',
+                    'activites',
                     'userIdentifier',
                     'username',
                     'salt',

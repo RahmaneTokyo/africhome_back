@@ -46,19 +46,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"user:read","superadmin:write", "superadmin:read", "admin:write", "admin:read","gestionnaire:write", "gestionnaire:read", "employe_entite", "entites:write", "employes:read", "BatimentOwner", "UserOwner"})
+     * @Groups({"user:read","superadmin:write", "superadmin:read", "admin:write", "admin:read","gestionnaire:write", "gestionnaire:read", "employe_entite", "entites:write", "employes:read", "BatimentOwner", "UserOwner", "activites"})
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"user:read","superadmin:write", "superadmin:read", "admin:write", "admin:read","gestionnaire:write", "gestionnaire:read", "employe_entite", "entites:write", "employes:read", "BatimentOwner", "UserOwner"})
+     * @Groups({"user:read","superadmin:write", "superadmin:read", "admin:write", "admin:read","gestionnaire:write", "gestionnaire:read", "employe_entite", "entites:write", "employes:read", "BatimentOwner", "UserOwner", "activites"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="date", nullable=true)
-     * @Groups({"user:read","superadmin:write", "superadmin:read", "admin:write", "admin:read","gestionnaire:write", "gestionnaire:read", "employe_entite", "entites:write", "employes:read", "BatimentOwner", "UserOwner"})
+     * @Groups({"user:read","superadmin:write", "superadmin:read", "admin:write", "admin:read","gestionnaire:write", "gestionnaire:read", "employe_entite", "entites:write", "employes:read", "BatimentOwner", "UserOwner", "activites"})
      */
     private $dateDeNaissance;
 
@@ -127,10 +127,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $paiements;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Activite::class, mappedBy="auteur")
+     */
+    private $activites;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
         $this->paiements = new ArrayCollection();
+        $this->activites = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -445,6 +451,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             // set the owning side to null (unless already changed)
             if ($paiement->getUser() === $this) {
                 $paiement->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Activite>
+     */
+    public function getActivites(): Collection
+    {
+        return $this->activites;
+    }
+
+    public function addActivite(Activite $activite): self
+    {
+        if (!$this->activites->contains($activite)) {
+            $this->activites[] = $activite;
+            $activite->setAuteur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActivite(Activite $activite): self
+    {
+        if ($this->activites->removeElement($activite)) {
+            // set the owning side to null (unless already changed)
+            if ($activite->getAuteur() === $this) {
+                $activite->setAuteur(null);
             }
         }
 

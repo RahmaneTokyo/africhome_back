@@ -20,6 +20,7 @@
       <parameter key="LexikJWTAuthenticationBundle">Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle</parameter>
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
+      <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -66,9 +67,14 @@
         <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
       </parameter>
+      <parameter key="VichUploaderBundle" type="collection">
+        <parameter key="path">D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle</parameter>
+        <parameter key="namespace">Vich\UploaderBundle</parameter>
+      </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">App_KernelDevDebugContainer</parameter>
+    <parameter key="dossiers_directory">D:\GSExpertise\africhome-rahmane_back/public/uploads</parameter>
     <parameter key="event_dispatcher.event_aliases" type="collection">
       <parameter key="Symfony\Component\Console\Event\ConsoleCommandEvent">console.command</parameter>
       <parameter key="Symfony\Component\Console\Event\ConsoleErrorEvent">console.error</parameter>
@@ -123,6 +129,7 @@
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="twig.form.resources" type="collection">
+      <parameter>@VichUploader/Form/fields.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">D:\GSExpertise\africhome-rahmane_back/templates</parameter>
@@ -377,6 +384,26 @@
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
     <parameter key="knp_paginator.page_limit">null</parameter>
+    <parameter key="vich_uploader.default_filename_attribute_suffix">_name</parameter>
+    <parameter key="vich_uploader.mappings" type="collection">
+      <parameter key="products" type="collection">
+        <parameter key="uri_prefix">/images</parameter>
+        <parameter key="upload_destination">D:\GSExpertise\africhome-rahmane_back/public/images</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">Vich\UploaderBundle\Naming\OrignameNamer.products</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
     <parameter key="maker.compatible_check.doctrine.supports_attributes">true</parameter>
     <parameter key="console.command.ids" type="collection"/>
   </parameters>
@@ -385,6 +412,13 @@
     <service id="kernel" class="App\Kernel" public="true" synthetic="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
+    </service>
+    <service id="App\Controller\ActiviteController" class="App\Controller\ActiviteController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\ActiviteController"/>
+      </call>
     </service>
     <service id="App\Controller\BatimentController" class="App\Controller\BatimentController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -448,6 +482,12 @@
       </call>
     </service>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true"/>
+    <service id="App\DataPersister\ActivitePersister" class="App\DataPersister\ActivitePersister" autowire="true" autoconfigure="true">
+      <tag name="api_platform.data_persister"/>
+      <argument type="service" id="doctrine.orm.default_entity_manager"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="security.helper"/>
+    </service>
     <service id="App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" autoconfigure="true">
       <tag name="api_platform.data_persister"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
@@ -532,6 +572,10 @@
     <service id="App\EventListener\JWTCreatedListener" class="App\EventListener\JWTCreatedListener" autowire="true" autoconfigure="true">
       <argument type="service" id="request_stack"/>
       <argument type="service" id="App\Repository\UserRepository"/>
+    </service>
+    <service id="App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -1597,6 +1641,7 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.ar.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.ar.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ar.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.ar.yaml</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.az.xlf</argument>
@@ -1610,6 +1655,7 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.bg.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.bg.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.bg.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.bg.yaml</argument>
           </argument>
           <argument key="bs" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.bs.xlf</argument>
@@ -1618,11 +1664,13 @@
           <argument key="ca" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.ca.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.ca.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.ca.yaml</argument>
           </argument>
           <argument key="cs" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.cs.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.cs.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.cs.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.cs.yaml</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.cy.xlf</argument>
@@ -1636,6 +1684,7 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.de.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.de.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.de.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.de.yaml</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.el.xlf</argument>
@@ -1645,11 +1694,13 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.en.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.en.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.en.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.en.yaml</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.es.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.es.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.es.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.es.yaml</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.et.xlf</argument>
@@ -1669,11 +1720,13 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.fi.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.fi.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fi.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.fi.yaml</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.fr.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.fr.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.fr.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.fr.yaml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.gl.xlf</argument>
@@ -1692,6 +1745,7 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.hu.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.hu.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.hu.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.hu.yaml</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.hy.xlf</argument>
@@ -1706,6 +1760,7 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.it.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.it.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.it.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.it.yaml</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.ja.xlf</argument>
@@ -1720,6 +1775,7 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.lt.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.lt.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.lt.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.lt.yaml</argument>
           </argument>
           <argument key="lv" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.lv.xlf</argument>
@@ -1741,6 +1797,7 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.nl.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.nl.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.nl.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.nl.yaml</argument>
           </argument>
           <argument key="nn" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.nn.xlf</argument>
@@ -1755,10 +1812,12 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.pl.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.pl.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pl.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.pl.yaml</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.pt.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.pt.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.pt.yaml</argument>
           </argument>
           <argument key="pt_BR" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
@@ -1774,6 +1833,7 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.ru.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.ru.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.ru.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.ru.yaml</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.sk.xlf</argument>
@@ -1782,6 +1842,7 @@
           <argument key="sl" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.sl.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.sl.xlf</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.sl.yaml</argument>
           </argument>
           <argument key="sq" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.sq.xlf</argument>
@@ -1812,11 +1873,13 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.tr.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.tr.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.tr.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.tr.yaml</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.uk.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations\security.uk.xlf</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.uk.xliff</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.uk.yaml</argument>
           </argument>
           <argument key="uz" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations\validators.uz.xlf</argument>
@@ -1840,11 +1903,15 @@
           <argument key="sw" type="collection">
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.sw.xliff</argument>
           </argument>
+          <argument key="vn" type="collection">
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations\messages.vn.yaml</argument>
+          </argument>
         </argument>
         <argument key="scanned_directories" type="collection">
           <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations</argument>
           <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations</argument>
           <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations</argument>
+          <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations</argument>
           <argument>D:\GSExpertise\africhome-rahmane_back/translations</argument>
           <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\framework-bundle/translations</argument>
           <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bundle/translations</argument>
@@ -1862,6 +1929,7 @@
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\validator/Resources/translations</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\security-core/Resources/translations</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/translations</argument>
+            <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/translations</argument>
             <argument>translations</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\framework-bundle/translations</argument>
             <argument>D:\GSExpertise\africhome-rahmane_back\vendor\symfony\twig-bundle/translations</argument>
@@ -2918,6 +2986,7 @@
         <argument type="service" id="serializer.normalizer.json_serializable"/>
         <argument type="service" id="serializer.normalizer.datetime"/>
         <argument type="service" id="serializer.normalizer.constraint_violation_list"/>
+        <argument type="service" id="serializer.normalizer.mime_message"/>
         <argument type="service" id="serializer.normalizer.datetimezone"/>
         <argument type="service" id="serializer.normalizer.dateinterval"/>
         <argument type="service" id="serializer.normalizer.form_error"/>
@@ -2944,6 +3013,10 @@
       <argument type="collection"/>
       <argument type="service" id="serializer.name_converter.metadata_aware"/>
     </service>
+    <service id="serializer.normalizer.mime_message" class="Symfony\Component\Serializer\Normalizer\MimeMessageNormalizer">
+      <tag name="serializer.normalizer" priority="-915"/>
+      <argument type="service" id="serializer.normalizer.property"/>
+    </service>
     <service id="serializer.normalizer.datetimezone" class="Symfony\Component\Serializer\Normalizer\DateTimeZoneNormalizer">
       <tag name="serializer.normalizer" priority="-915"/>
     </service>
@@ -2952,7 +3025,7 @@
     </service>
     <service id="serializer.normalizer.data_uri" class="Symfony\Component\Serializer\Normalizer\DataUriNormalizer">
       <tag name="serializer.normalizer" priority="-920"/>
-      <argument>null</argument>
+      <argument type="service" id="mime_types" on-invalid="null"/>
     </service>
     <service id="serializer.normalizer.datetime" class="Symfony\Component\Serializer\Normalizer\DateTimeNormalizer">
       <tag name="serializer.normalizer" priority="-910"/>
@@ -3294,6 +3367,11 @@
       <argument type="service" id="property_info"/>
       <argument>null</argument>
     </service>
+    <service id="mime_types" class="Symfony\Component\Mime\MimeTypes">
+      <call method="setDefault">
+        <argument type="service" id="mime_types"/>
+      </call>
+    </service>
     <service id="twig" class="Twig\Environment" public="true">
       <tag name="container.preload" class="Twig\Cache\FilesystemCache"/>
       <tag name="container.preload" class="Twig\Extension\CoreExtension"/>
@@ -3365,6 +3443,9 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="Vich\UploaderBundle\Twig\Extension\UploaderExtension"/>
       </call>
       <call method="addGlobal">
         <argument>app</argument>
@@ -3453,6 +3534,14 @@
       <call method="addPath">
         <argument>D:\GSExpertise\africhome-rahmane_back\vendor\knplabs\knp-paginator-bundle/templates</argument>
         <argument>!KnpPaginator</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/templates</argument>
+        <argument>VichUploader</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle/templates</argument>
+        <argument>!VichUploader</argument>
       </call>
       <call method="addPath">
         <argument>D:\GSExpertise\africhome-rahmane_back/templates</argument>
@@ -3850,6 +3939,13 @@
       </call>
       <call method="add">
         <argument type="service" id=".security.request_matcher.SWxVOXb"/>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.LjozXHX"/>
         <argument type="collection">
           <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
         </argument>
@@ -4697,6 +4793,9 @@
     <service id=".security.request_matcher.SWxVOXb" class="Symfony\Component\HttpFoundation\RequestMatcher">
       <argument>^/api/*</argument>
     </service>
+    <service id=".security.request_matcher.LjozXHX" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/api/activites</argument>
+    </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand">
       <tag name="console.command" command="security:encode-password"/>
       <tag name="container.no_preload"/>
@@ -4823,10 +4922,13 @@
       </argument>
     </service>
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager">
-      <argument type="service" id=".service_locator.VPhYdBw"/>
+      <argument type="service" id=".service_locator.smO4UTM"/>
       <argument type="collection">
+        <argument>vich_uploader.listener.clean.products</argument>
         <argument>doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber</argument>
         <argument>doctrine.orm.listeners.doctrine_token_provider_schema_subscriber</argument>
+        <argument>vich_uploader.listener.remove.products</argument>
+        <argument>vich_uploader.listener.upload.products</argument>
         <argument type="collection">
           <argument type="collection">
             <argument>loadClassMetadata</argument>
@@ -4883,7 +4985,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.tFVfFRr"/>
+      <argument type="service" id=".service_locator.qmlR7mP"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5037,6 +5139,7 @@
       <call method="setEntityNamespaces">
         <argument type="collection">
           <argument key="App">App\Entity</argument>
+          <argument key="VichUploaderBundle">Vich\UploaderBundle\Entity</argument>
         </argument>
       </call>
       <call method="setMetadataCache">
@@ -5084,6 +5187,14 @@
       <argument type="collection">
         <argument>D:\GSExpertise\africhome-rahmane_back\src\Entity</argument>
       </argument>
+    </service>
+    <service id="doctrine.orm.default_xml_metadata_driver" class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver">
+      <argument type="collection">
+        <argument key="D:\GSExpertise\africhome-rahmane_back\vendor\vich\uploader-bundle\src\Resources\config\doctrine">Vich\UploaderBundle\Entity</argument>
+      </argument>
+      <call method="setGlobalBasename">
+        <argument>mapping</argument>
+      </call>
     </service>
     <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\ArrayAdapter"/>
     <service id="cache.doctrine.orm.default.result" class="Symfony\Component\Cache\Adapter\ArrayAdapter">
@@ -6211,6 +6322,10 @@
             <argument>App\Entity</argument>
             <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
           </argument>
+          <argument type="collection">
+            <argument>Vich\UploaderBundle\Entity</argument>
+            <argument type="service" id="doctrine.orm.default_xml_metadata_driver"/>
+          </argument>
         </argument>
       </argument>
     </service>
@@ -6644,6 +6759,253 @@
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
+    <service id="Vich\UploaderBundle\Naming\OrignameNamer.products" class="Vich\UploaderBundle\Naming\OrignameNamer" public="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
+    <service id="vich_uploader.adapter.mongodb" class="Vich\UploaderBundle\Adapter\ODM\MongoDB\MongoDBAdapter"/>
+    <service id="vich_uploader.adapter.orm" class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter"/>
+    <service id="vich_uploader.adapter.phpcr" class="Vich\UploaderBundle\Adapter\PHPCR\PHPCRAdapter"/>
+    <service id="vich_uploader.listener.doctrine.base" abstract="true">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.orm" class="Vich\UploaderBundle\EventListener\Doctrine\InjectListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.orm" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.orm" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.orm" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\InjectListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\InjectListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.storage.file_system" class="Vich\UploaderBundle\Storage\FileSystemStorage">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+    </service>
+    <service id="vich_uploader.file_injector" class="Vich\UploaderBundle\Injector\FileInjector">
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+    </service>
+    <service id="vich_uploader.metadata.file_locator" class="Metadata\Driver\FileLocator">
+      <argument type="collection"/>
+    </service>
+    <service id="vich_uploader.metadata.attribute_reader" class="Vich\UploaderBundle\Metadata\Driver\AttributeReader"/>
+    <service id="vich_uploader.metadata_driver.annotation" class="Vich\UploaderBundle\Metadata\Driver\AnnotationDriver">
+      <argument type="service" id="vich_uploader.metadata.reader"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.xml" class="Vich\UploaderBundle\Metadata\Driver\XmlDriver">
+      <argument type="service" id="vich_uploader.metadata.file_locator"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.yml" class="Vich\UploaderBundle\Metadata\Driver\YmlDriver">
+      <argument type="service" id="vich_uploader.metadata.file_locator"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.yaml" class="Vich\UploaderBundle\Metadata\Driver\YamlDriver">
+      <argument type="service" id="vich_uploader.metadata.file_locator"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.chain" class="Metadata\Driver\DriverChain">
+      <argument type="collection">
+        <argument type="service" id="vich_uploader.metadata_driver.xml"/>
+        <argument type="service" id="vich_uploader.metadata_driver.annotation"/>
+        <argument type="service" id="vich_uploader.metadata_driver.yaml"/>
+        <argument type="service" id="vich_uploader.metadata_driver.yml"/>
+      </argument>
+    </service>
+    <service id="vich_uploader.metadata.cache.file_cache" class="Metadata\Cache\FileCache">
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/vich_uploader</argument>
+    </service>
+    <service id="vich_uploader.metadata_factory" class="Metadata\MetadataFactory">
+      <argument type="service" id="vich_uploader.metadata_driver.chain"/>
+      <argument>Metadata\ClassHierarchyMetadata</argument>
+      <argument>true</argument>
+      <call method="setCache">
+        <argument type="service" id="vich_uploader.metadata.cache.file_cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="vich_uploader.metadata_reader" class="Vich\UploaderBundle\Metadata\MetadataReader">
+      <argument type="service" id="vich_uploader.metadata_factory"/>
+    </service>
+    <service id="Vich\UploaderBundle\Metadata\CacheWarmer" class="Vich\UploaderBundle\Metadata\CacheWarmer">
+      <tag name="kernel.cache_warmer"/>
+      <argument>D:\GSExpertise\africhome-rahmane_back\var\cache\dev/vich_uploader</argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+    </service>
+    <service id="vich_uploader.property_mapping_factory" class="Vich\UploaderBundle\Mapping\PropertyMappingFactory">
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument>%vich_uploader.mappings%</argument>
+      <argument>_name</argument>
+    </service>
+    <service id="Vich\UploaderBundle\Naming\UniqidNamer" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\PropertyNamer" class="Vich\UploaderBundle\Naming\PropertyNamer" public="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
+    <service id="Vich\UploaderBundle\Naming\OrignameNamer" class="Vich\UploaderBundle\Naming\OrignameNamer" public="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
+    <service id="Vich\UploaderBundle\Naming\HashNamer" class="Vich\UploaderBundle\Naming\HashNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\Base64Namer" class="Vich\UploaderBundle\Naming\Base64Namer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\SubdirDirectoryNamer" class="Vich\UploaderBundle\Naming\SubdirDirectoryNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\PropertyDirectoryNamer" class="Vich\UploaderBundle\Naming\PropertyDirectoryNamer" public="true">
+      <argument type="service" id="property_accessor" on-invalid="null"/>
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
+    <service id="vich_uploader.current_date_time_helper" class="Vich\UploaderBundle\Naming\CurrentDateTimeHelper"/>
+    <service id="Vich\UploaderBundle\Naming\CurrentDateTimeDirectoryNamer" class="Vich\UploaderBundle\Naming\CurrentDateTimeDirectoryNamer" public="true">
+      <argument type="service" id="vich_uploader.current_date_time_helper" on-invalid="null"/>
+      <argument type="service" id="property_accessor" on-invalid="null"/>
+    </service>
+    <service id="Vich\UploaderBundle\Naming\SmartUniqueNamer" class="Vich\UploaderBundle\Naming\SmartUniqueNamer" public="true">
+      <argument type="service" id="Vich\UploaderBundle\Util\Transliterator"/>
+    </service>
+    <service id="Vich\UploaderBundle\Util\Transliterator" class="Vich\UploaderBundle\Util\Transliterator">
+      <argument type="service" id="slugger"/>
+    </service>
+    <service id="vich_uploader.download_handler" class="Vich\UploaderBundle\Handler\DownloadHandler" public="true">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+    </service>
+    <service id="vich_uploader.upload_handler" class="Vich\UploaderBundle\Handler\UploadHandler" public="true">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+      <argument type="service" id="vich_uploader.file_injector"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="vich_uploader.command.mapping_debug_class" class="Vich\UploaderBundle\Command\MappingDebugClassCommand">
+      <tag name="console.command" command="vich:mapping:debug-class"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <call method="setName">
+        <argument>vich:mapping:debug-class</argument>
+      </call>
+    </service>
+    <service id="vich_uploader.command.mapping_debug" class="Vich\UploaderBundle\Command\MappingDebugCommand">
+      <tag name="console.command" command="vich:mapping:debug"/>
+      <tag name="container.no_preload"/>
+      <argument>%vich_uploader.mappings%</argument>
+      <call method="setName">
+        <argument>vich:mapping:debug</argument>
+      </call>
+    </service>
+    <service id="vich_uploader.command.mapping_list_classes" class="Vich\UploaderBundle\Command\MappingListClassesCommand">
+      <tag name="console.command" command="vich:mapping:list-classes"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <call method="setName">
+        <argument>vich:mapping:list-classes</argument>
+      </call>
+    </service>
+    <service id="Vich\UploaderBundle\DataCollector\MappingCollector" class="Vich\UploaderBundle\DataCollector\MappingCollector">
+      <tag name="data_collector" template="@VichUploader/Collector/mapping_collector.html.twig" id="vich_uploader.mapping_collector"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+    </service>
+    <service id="vich_uploader.form.type.file" class="Vich\UploaderBundle\Form\Type\VichFileType" public="true">
+      <tag name="form.type" alias="vich_file"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="property_accessor"/>
+    </service>
+    <service id="vich_uploader.form.type.image" class="Vich\UploaderBundle\Form\Type\VichImageType" public="true">
+      <tag name="form.type" alias="vich_image"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="property_accessor"/>
+      <argument>null</argument>
+    </service>
+    <service id="Vich\UploaderBundle\Templating\Helper\UploaderHelper" class="Vich\UploaderBundle\Templating\Helper\UploaderHelper">
+      <tag name="templating.helper" alias="vich_uploader"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+    </service>
+    <service id="Vich\UploaderBundle\Twig\Extension\UploaderExtension" class="Vich\UploaderBundle\Twig\Extension\UploaderExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="Vich\UploaderBundle\Templating\Helper\UploaderHelper"/>
+    </service>
+    <service id="vich_uploader.metadata.reader" class="Doctrine\Common\Annotations\AnnotationReader"/>
+    <service id="vich_uploader.listener.clean.products" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
+      <tag name="doctrine.event_subscriber" priority="50"/>
+      <argument>products</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.products" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>products</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.products" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>products</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
     <service id="annotated_app_entity_localisation_api_platform_core_bridge_doctrine_orm_filter_search_filter" class="ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter" autowire="true">
       <tag name="api_platform.filter"/>
       <argument type="service" id="doctrine"/>
@@ -6657,6 +7019,9 @@
       <argument type="service" id="api_platform.identifiers_extractor.cached" on-invalid="ignore"/>
       <argument type="service" id="serializer.name_converter.metadata_aware" on-invalid="ignore"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ActiviteController" class="App\Controller\ActiviteController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ActiviteController" class="App\Controller\ActiviteController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ActiviteController" class="App\Controller\ActiviteController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6681,6 +7046,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserCommonController" class="App\Controller\UserCommonController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserCommonController" class="App\Controller\UserCommonController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserCommonController" class="App\Controller\UserCommonController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\ActivitePersister" class="App\DataPersister\ActivitePersister" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\DataPersister\ActivitePersister" class="App\DataPersister\ActivitePersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\BatimentCriterePersister" class="App\DataPersister\BatimentCriterePersister" autowire="true" abstract="true"/>
@@ -6705,6 +7072,8 @@
     <service id=".abstract.instanceof.App\DataPersister\TypeEntityPersister" class="App\DataPersister\TypeEntityPersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\UserPersister" class="App\DataPersister\UserPersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\UserPersister" class="App\DataPersister\UserPersister" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AgentRepository" class="App\Repository\AgentRepository" autowire="true" abstract="true"/>
@@ -7074,6 +7443,20 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
+    <service id=".service_locator.DWESbKc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="serializer" type="service_closure" id="serializer"/>
+        <argument key="slugger" type="service_closure" id="slugger"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ieSzeIT" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="activiteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.muwzajQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7165,9 +7548,11 @@
         <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.qmpVfMv" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.YWR8XXa" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\ActiviteController::addActivite" type="service_closure" id=".service_locator.DWESbKc"/>
+        <argument key="App\Controller\ActiviteController::getActivites" type="service_closure" id=".service_locator.ieSzeIT"/>
         <argument key="App\Controller\BatimentController::addLocalisation" type="service_closure" id=".service_locator.62LO1d0"/>
         <argument key="App\Controller\BatimentController::blockPropUser" type="service_closure" id=".service_locator.rJDOf44"/>
         <argument key="App\Controller\BatimentController::getBatiment" type="service_closure" id=".service_locator.muwzajQ"/>
@@ -7195,6 +7580,8 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
+        <argument key="App\Controller\ActiviteController:addActivite" type="service_closure" id=".service_locator.DWESbKc"/>
+        <argument key="App\Controller\ActiviteController:getActivites" type="service_closure" id=".service_locator.ieSzeIT"/>
         <argument key="App\Controller\BatimentController:addLocalisation" type="service_closure" id=".service_locator.62LO1d0"/>
         <argument key="App\Controller\BatimentController:blockPropUser" type="service_closure" id=".service_locator.rJDOf44"/>
         <argument key="App\Controller\BatimentController:getBatiment" type="service_closure" id=".service_locator.muwzajQ"/>
@@ -7303,17 +7690,21 @@
     <service id="security.ldap_locator" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <argument type="collection"/>
     </service>
-    <service id=".service_locator.VPhYdBw" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.smO4UTM" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service_closure" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
         <argument key="doctrine.orm.listeners.doctrine_token_provider_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.doctrine_token_provider_schema_subscriber"/>
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
+        <argument key="vich_uploader.listener.clean.products" type="service_closure" id="vich_uploader.listener.clean.products"/>
+        <argument key="vich_uploader.listener.remove.products" type="service_closure" id="vich_uploader.listener.remove.products"/>
+        <argument key="vich_uploader.listener.upload.products" type="service_closure" id="vich_uploader.listener.upload.products"/>
       </argument>
     </service>
-    <service id=".service_locator.tFVfFRr" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.qmlR7mP" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\ActiviteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
         <argument key="App\Repository\AdminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
         <argument key="App\Repository\AgentRepository" type="service_closure" id="App\Repository\AgentRepository"/>
         <argument key="App\Repository\BatimentCritereRepository" type="service_closure" id="App\Repository\BatimentCritereRepository"/>
@@ -7386,6 +7777,12 @@
         <argument key="session" type="service_closure" id=".session.deprecated" on-invalid="ignore"/>
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
+    </service>
+    <service id=".service_locator.W9y3dzm.App\Controller\ActiviteController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ActiviteController"/>
+      <argument>App\Controller\ActiviteController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
     <service id=".service_locator.W9y3dzm.App\Controller\BatimentController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\BatimentController"/>
@@ -7603,17 +8000,21 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.qmpVfMv"/>
+      <argument type="service" id=".service_locator.YWR8XXa"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.qmpVfMv"/>
+      <argument type="service" id=".service_locator.YWR8XXa"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>App\Entity</argument>
+      </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_xml_metadata_driver"/>
+        <argument>Vich\UploaderBundle\Entity</argument>
       </call>
     </service>
     <service id="api_platform.serializer.mapping.class_metadata_factory.inner" class="Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory">
@@ -8058,7 +8459,7 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.a8ZWUEc"/>
+      <argument type="service" id=".service_locator.MMPG7bx"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -8135,6 +8536,9 @@
         <argument key="debug:swiftmailer">swiftmailer.command.debug</argument>
         <argument key="swiftmailer:email:send">swiftmailer.command.new_email</argument>
         <argument key="swiftmailer:spool:send">swiftmailer.command.send_email</argument>
+        <argument key="vich:mapping:debug-class">vich_uploader.command.mapping_debug_class</argument>
+        <argument key="vich:mapping:debug">vich_uploader.command.mapping_debug</argument>
+        <argument key="vich:mapping:list-classes">vich_uploader.command.mapping_list_classes</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -8160,7 +8564,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.a8ZWUEc" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.MMPG7bx" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand" type="service_closure" id="Doctrine\DBAL\Tools\Console\Command\RunSqlCommand"/>
@@ -8259,6 +8663,9 @@
         <argument key="swiftmailer.command.send_email" type="service_closure" id="swiftmailer.command.send_email"/>
         <argument key="twig.command.debug" type="service_closure" id=".twig.command.debug.lazy"/>
         <argument key="twig.command.lint" type="service_closure" id=".twig.command.lint.lazy"/>
+        <argument key="vich_uploader.command.mapping_debug" type="service_closure" id="vich_uploader.command.mapping_debug"/>
+        <argument key="vich_uploader.command.mapping_debug_class" type="service_closure" id="vich_uploader.command.mapping_debug_class"/>
+        <argument key="vich_uploader.command.mapping_list_classes" type="service_closure" id="vich_uploader.command.mapping_list_classes"/>
       </argument>
     </service>
     <service id=".service_locator.VMK2iOS" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -8351,6 +8758,8 @@
     <service id="Symfony\Component\Security\Csrf\CsrfTokenManagerInterface" alias="security.csrf.token_manager"/>
     <service id="Symfony\Component\Validator\Validator\ValidatorInterface" alias="validator"/>
     <service id="validator.mapping.class_metadata_factory" alias="validator"/>
+    <service id="Symfony\Component\Mime\MimeTypesInterface" alias="mime_types"/>
+    <service id="Symfony\Component\Mime\MimeTypeGuesserInterface" alias="mime_types"/>
     <service id="Twig_Environment" alias="twig"/>
     <service id="Twig\Environment" alias="twig"/>
     <service id="Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface" alias="security.authorization_checker"/>
@@ -8489,9 +8898,28 @@
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool"/>
     <service id="mailer" alias="swiftmailer.mailer.default" public="true"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
+    <service id="vich_uploader.storage" alias="vich_uploader.storage.file_system"/>
+    <service id="Vich\UploaderBundle\Storage\StorageInterface" alias="vich_uploader.storage.file_system"/>
+    <service id="Vich\UploaderBundle\Storage\FileSystemStorage" alias="vich_uploader.storage.file_system"/>
+    <service id="vich_uploader.metadata_driver" alias="vich_uploader.metadata_driver.chain"/>
+    <service id="vich_uploader.metadata.cache" alias="vich_uploader.metadata.cache.file_cache"/>
+    <service id="Vich\UploaderBundle\Mapping\PropertyMappingFactory" alias="vich_uploader.property_mapping_factory"/>
+    <service id="vich_uploader.namer_uniqid" alias="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="vich_uploader.namer_property" alias="Vich\UploaderBundle\Naming\PropertyNamer" public="true"/>
+    <service id="vich_uploader.namer_origname" alias="Vich\UploaderBundle\Naming\OrignameNamer" public="true"/>
+    <service id="vich_uploader.namer_hash" alias="Vich\UploaderBundle\Naming\HashNamer" public="true"/>
+    <service id="vich_uploader.namer_base64" alias="Vich\UploaderBundle\Naming\Base64Namer" public="true"/>
+    <service id="vich_uploader.directory_namer_subdir" alias="Vich\UploaderBundle\Naming\SubdirDirectoryNamer" public="true"/>
+    <service id="vich_uploader.namer_directory_property" alias="Vich\UploaderBundle\Naming\PropertyDirectoryNamer" public="true"/>
+    <service id="vich_uploader.namer_directory_current_date_time" alias="Vich\UploaderBundle\Naming\CurrentDateTimeDirectoryNamer" public="true"/>
+    <service id="vich_uploader.namer_smart_unique" alias="Vich\UploaderBundle\Naming\SmartUniqueNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Handler\DownloadHandler" alias="vich_uploader.download_handler"/>
+    <service id="Vich\UploaderBundle\Handler\UploadHandler" alias="vich_uploader.upload_handler"/>
+    <service id="Vich\UploaderBundle\Form\Type\VichFileType" alias="vich_uploader.form.type.file"/>
+    <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.qmpVfMv"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.YWR8XXa"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8560,6 +8988,8 @@
     <service id="api_platform.metadata.property.metadata_factory.cached.inner" alias="api_platform.metadata.property.metadata_factory.validator"/>
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
+    <service id=".service_locator.MWpVtPT" alias=".service_locator.DWESbKc"/>
+    <service id=".service_locator.uuYKR5O" alias=".service_locator.ieSzeIT"/>
     <service id=".service_locator.5muGY7N" alias=".service_locator.muwzajQ"/>
     <service id=".service_locator.gqb6ZaC" alias=".service_locator.iuEkddy"/>
     <service id=".service_locator.VhyyoZo" alias=".service_locator.rJDOf44"/>

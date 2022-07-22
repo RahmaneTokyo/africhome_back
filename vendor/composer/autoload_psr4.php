@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
+    'Vich\\UploaderBundle\\' => array($vendorDir . '/vich/uploader-bundle/src'),
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
     'Symfony\\Runtime\\Symfony\\Component\\' => array($vendorDir . '/symfony/runtime/Internal'),
     'Symfony\\Polyfill\\Php81\\' => array($vendorDir . '/symfony/polyfill-php81'),
@@ -41,6 +42,7 @@ return array(
     'Symfony\\Component\\PropertyInfo\\' => array($vendorDir . '/symfony/property-info'),
     'Symfony\\Component\\PropertyAccess\\' => array($vendorDir . '/symfony/property-access'),
     'Symfony\\Component\\PasswordHasher\\' => array($vendorDir . '/symfony/password-hasher'),
+    'Symfony\\Component\\Mime\\' => array($vendorDir . '/symfony/mime'),
     'Symfony\\Component\\HttpKernel\\' => array($vendorDir . '/symfony/http-kernel'),
     'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
     'Symfony\\Component\\Finder\\' => array($vendorDir . '/symfony/finder'),
@@ -72,6 +74,7 @@ return array(
     'Nelmio\\CorsBundle\\' => array($vendorDir . '/nelmio/cors-bundle'),
     'Negotiation\\' => array($vendorDir . '/willdurand/negotiation/src/Negotiation'),
     'Namshi\\JOSE\\' => array($vendorDir . '/namshi/jose/src/Namshi/JOSE'),
+    'Metadata\\' => array($vendorDir . '/jms/metadata/src'),
     'Lexik\\Bundle\\JWTAuthenticationBundle\\' => array($vendorDir . '/lexik/jwt-authentication-bundle'),
     'Lcobucci\\JWT\\' => array($vendorDir . '/lcobucci/jwt/src'),
     'Lcobucci\\Clock\\' => array($vendorDir . '/lcobucci/clock/src'),
