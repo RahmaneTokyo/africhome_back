@@ -1,0 +1,3 @@
+<?php //route_name_b0982048ffa377b751b7ee91a1abf010
+
+return [PHP_INT_MAX, 'api_type_incidents_get_collection'];

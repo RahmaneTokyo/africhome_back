@@ -7,3 +7,7 @@ api_login_check:
 api_platform:
     path: /api
     methods: ['GET']
+
+activites:
+    path: /api/activites
+    methods: ['GET']

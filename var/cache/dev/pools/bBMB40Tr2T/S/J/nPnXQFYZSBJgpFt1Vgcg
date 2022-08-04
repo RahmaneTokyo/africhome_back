@@ -9,9 +9,10 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
         'ApiPlatform\\Core\\Metadata\\Resource\\ResourceNameCollection' => [
             'classes' => [
                 [
-                    'App\\Entity\\Activite',
+                    'App\\Entity\\User',
                     'App\\Entity\\Admin',
                     'App\\Entity\\Agent',
+                    'App\\Entity\\Article',
                     'App\\Entity\\Batiment',
                     'App\\Entity\\BatimentCritere',
                     'App\\Entity\\Contact',
@@ -33,7 +34,6 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                     'App\\Entity\\TypeEntite',
                     'App\\Entity\\TypeIncident',
                     'App\\Entity\\TypeLocalisation',
-                    'App\\Entity\\User',
                     'App\\Entity\\Ville',
                 ],
             ],

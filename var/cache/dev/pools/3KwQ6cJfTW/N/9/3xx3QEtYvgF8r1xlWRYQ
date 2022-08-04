@@ -48,7 +48,7 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             ],
             'class' => [
                 1 => 'Doctrine\\Common\\Collections\\Collection',
-                3 => 'App\\Entity\\Activite',
+                3 => 'App\\Entity\\Article',
             ],
             'collection' => [
                 1 => true,

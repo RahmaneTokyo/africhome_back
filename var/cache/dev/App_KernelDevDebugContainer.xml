@@ -413,11 +413,11 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Controller\ActiviteController" class="App\Controller\ActiviteController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\ArticleController" class="App\Controller\ArticleController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\ActiviteController"/>
+        <argument type="service" id=".service_locator.W9y3dzm.App\Controller\ArticleController"/>
       </call>
     </service>
     <service id="App\Controller\BatimentController" class="App\Controller\BatimentController" public="true" autowire="true" autoconfigure="true">
@@ -482,12 +482,6 @@
       </call>
     </service>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true"/>
-    <service id="App\DataPersister\ActivitePersister" class="App\DataPersister\ActivitePersister" autowire="true" autoconfigure="true">
-      <tag name="api_platform.data_persister"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
-      <argument type="service" id="request_stack"/>
-      <argument type="service" id="security.helper"/>
-    </service>
     <service id="App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" autoconfigure="true">
       <tag name="api_platform.data_persister"/>
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
@@ -573,15 +567,15 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="App\Repository\UserRepository"/>
     </service>
-    <service id="App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true">
-      <tag name="doctrine.repository_service"/>
-      <argument type="service" id="doctrine"/>
-    </service>
     <service id="App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\AgentRepository" class="App\Repository\AgentRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -4985,7 +4979,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.qmlR7mP"/>
+      <argument type="service" id=".service_locator.0lRhiHK"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -7019,9 +7013,9 @@
       <argument type="service" id="api_platform.identifiers_extractor.cached" on-invalid="ignore"/>
       <argument type="service" id="serializer.name_converter.metadata_aware" on-invalid="ignore"/>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ActiviteController" class="App\Controller\ActiviteController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ActiviteController" class="App\Controller\ActiviteController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\ActiviteController" class="App\Controller\ActiviteController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\ArticleController" class="App\Controller\ArticleController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BatimentController" class="App\Controller\BatimentController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -7046,8 +7040,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\UserCommonController" class="App\Controller\UserCommonController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\UserCommonController" class="App\Controller\UserCommonController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\UserCommonController" class="App\Controller\UserCommonController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\ActivitePersister" class="App\DataPersister\ActivitePersister" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\DataPersister\ActivitePersister" class="App\DataPersister\ActivitePersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\AdminPersister" class="App\DataPersister\AdminPersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\BatimentCriterePersister" class="App\DataPersister\BatimentCriterePersister" autowire="true" abstract="true"/>
@@ -7072,12 +7064,12 @@
     <service id=".abstract.instanceof.App\DataPersister\TypeEntityPersister" class="App\DataPersister\TypeEntityPersister" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.ApiPlatform\Core\DataPersister\DataPersisterInterface.0.App\DataPersister\UserPersister" class="App\DataPersister\UserPersister" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataPersister\UserPersister" class="App\DataPersister\UserPersister" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\ActiviteRepository" class="App\Repository\ActiviteRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AgentRepository" class="App\Repository\AgentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AgentRepository" class="App\Repository\AgentRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ArticleRepository" class="App\Repository\ArticleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BatimentCritereRepository" class="App\Repository\BatimentCritereRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\BatimentCritereRepository" class="App\Repository\BatimentCritereRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\BatimentOwnerRepository" class="App\Repository\BatimentOwnerRepository" autowire="true" abstract="true"/>
@@ -7451,12 +7443,6 @@
         <argument key="slugger" type="service_closure" id="slugger"/>
       </argument>
     </service>
-    <service id=".service_locator.ieSzeIT" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="activiteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
-      </argument>
-    </service>
     <service id=".service_locator.muwzajQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7548,11 +7534,10 @@
         <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.YWR8XXa" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.p8OSUlb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\ActiviteController::addActivite" type="service_closure" id=".service_locator.DWESbKc"/>
-        <argument key="App\Controller\ActiviteController::getActivites" type="service_closure" id=".service_locator.ieSzeIT"/>
+        <argument key="App\Controller\ArticleController::addArticle" type="service_closure" id=".service_locator.DWESbKc"/>
         <argument key="App\Controller\BatimentController::addLocalisation" type="service_closure" id=".service_locator.62LO1d0"/>
         <argument key="App\Controller\BatimentController::blockPropUser" type="service_closure" id=".service_locator.rJDOf44"/>
         <argument key="App\Controller\BatimentController::getBatiment" type="service_closure" id=".service_locator.muwzajQ"/>
@@ -7580,8 +7565,7 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.KfwZsne"/>
-        <argument key="App\Controller\ActiviteController:addActivite" type="service_closure" id=".service_locator.DWESbKc"/>
-        <argument key="App\Controller\ActiviteController:getActivites" type="service_closure" id=".service_locator.ieSzeIT"/>
+        <argument key="App\Controller\ArticleController:addArticle" type="service_closure" id=".service_locator.DWESbKc"/>
         <argument key="App\Controller\BatimentController:addLocalisation" type="service_closure" id=".service_locator.62LO1d0"/>
         <argument key="App\Controller\BatimentController:blockPropUser" type="service_closure" id=".service_locator.rJDOf44"/>
         <argument key="App\Controller\BatimentController:getBatiment" type="service_closure" id=".service_locator.muwzajQ"/>
@@ -7701,12 +7685,12 @@
         <argument key="vich_uploader.listener.upload.products" type="service_closure" id="vich_uploader.listener.upload.products"/>
       </argument>
     </service>
-    <service id=".service_locator.qmlR7mP" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.0lRhiHK" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Repository\ActiviteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
         <argument key="App\Repository\AdminRepository" type="service_closure" id="App\Repository\AdminRepository"/>
         <argument key="App\Repository\AgentRepository" type="service_closure" id="App\Repository\AgentRepository"/>
+        <argument key="App\Repository\ArticleRepository" type="service_closure" id="App\Repository\ArticleRepository"/>
         <argument key="App\Repository\BatimentCritereRepository" type="service_closure" id="App\Repository\BatimentCritereRepository"/>
         <argument key="App\Repository\BatimentOwnerRepository" type="service_closure" id="App\Repository\BatimentOwnerRepository"/>
         <argument key="App\Repository\BatimentRepository" type="service_closure" id="App\Repository\BatimentRepository"/>
@@ -7778,9 +7762,9 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.W9y3dzm.App\Controller\ActiviteController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\ActiviteController"/>
-      <argument>App\Controller\ActiviteController</argument>
+    <service id=".service_locator.W9y3dzm.App\Controller\ArticleController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\ArticleController"/>
+      <argument>App\Controller\ArticleController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.W9y3dzm" method="withContext"/>
     </service>
@@ -8000,12 +7984,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.YWR8XXa"/>
+      <argument type="service" id=".service_locator.p8OSUlb"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.YWR8XXa"/>
+      <argument type="service" id=".service_locator.p8OSUlb"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -8919,7 +8903,7 @@
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.0GV1BZZ" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.YWR8XXa"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.p8OSUlb"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8989,7 +8973,6 @@
     <service id=".service_locator._5g_Wvc" alias=".service_locator.KfwZsne"/>
     <service id=".service_locator.JBAFp66" alias=".service_locator.KfbR3DY"/>
     <service id=".service_locator.MWpVtPT" alias=".service_locator.DWESbKc"/>
-    <service id=".service_locator.uuYKR5O" alias=".service_locator.ieSzeIT"/>
     <service id=".service_locator.5muGY7N" alias=".service_locator.muwzajQ"/>
     <service id=".service_locator.gqb6ZaC" alias=".service_locator.iuEkddy"/>
     <service id=".service_locator.VhyyoZo" alias=".service_locator.rJDOf44"/>

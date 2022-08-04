@@ -128,15 +128,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $paiements;
 
     /**
-     * @ORM\OneToMany(targetEntity=Activite::class, mappedBy="auteur")
+     * @ORM\OneToMany(targetEntity=Article::class, mappedBy="auteur")
      */
-    private $activites;
+    private $articles;
 
     public function __construct()
     {
         $this->createdAt = new \DateTime('now');
         $this->paiements = new ArrayCollection();
         $this->activites = new ArrayCollection();
+        $this->articles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -458,14 +459,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, Activite>
+     * @return Collection<int, Article>
      */
     public function getActivites(): Collection
     {
         return $this->activites;
     }
 
-    public function addActivite(Activite $activite): self
+    public function addActivite(Article $activite): self
     {
         if (!$this->activites->contains($activite)) {
             $this->activites[] = $activite;
@@ -475,12 +476,42 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function removeActivite(Activite $activite): self
+    public function removeActivite(Article $activite): self
     {
         if ($this->activites->removeElement($activite)) {
             // set the owning side to null (unless already changed)
             if ($activite->getAuteur() === $this) {
                 $activite->setAuteur(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Article>
+     */
+    public function getArticles(): Collection
+    {
+        return $this->articles;
+    }
+
+    public function addArticle(Article $article): self
+    {
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+            $article->setAuteur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArticle(Article $article): self
+    {
+        if ($this->articles->removeElement($article)) {
+            // set the owning side to null (unless already changed)
+            if ($article->getAuteur() === $this) {
+                $article->setAuteur(null);
             }
         }
 

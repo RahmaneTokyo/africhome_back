@@ -8423,7 +8423,7 @@ return [[
                     'auteur',
                 ],
                 'targetEntity' => [
-                    'App\\Entity\\Activite',
+                    'App\\Entity\\Article',
                 ],
             ],
         ],
